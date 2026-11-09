@@ -45,8 +45,8 @@ print("aroll ok")
 # ---------- B-roll: crop on the shoe, 0.6x slow motion, muted
 BROLL = {  # name: (source, src_start, crop w, crop h, x, y) — product close-ups from unused footage
     "broll_ringan": ("k1", 3.20, 608, 1080, 60, 600),   # shoes only, no face
-    "broll_design": ("k2", 30.20, 540, 960, 430, 420),  # twist knobs close-up
-    "broll_tapak": ("k2", 72.80, 486, 864, 270, 300),   # sole (anti-slip) close-up
+    "broll_design": ("k2", 30.80, 540, 960, 430, 420),  # twist knobs close-up (after hand wave)
+    "broll_tapak": ("k2", 72.60, 486, 864, 250, 640),   # sole (anti-slip) close-up, cropped below the face
 }
 SPEED = 1.0  # real speed (slow-mo removed)
 for name, (src, s, cw, ch, x, y) in BROLL.items():
