@@ -23,13 +23,13 @@ HOOK_END = 3.0
 # (src time of the spoken word, pill text) — each point appears once
 KEYWORDS = [
     (24.38, "tiada tali"),
-    (11.18, "mak ayah recommend"),
+    (11.18, "memang recommend"),
     (14.60, "design sporty"),
     (33.72, "anak suka"),
     (40.08, "kalis air · water resistant"),
     (42.80, "kotor? cuci je"),
     (50.40, "tak tembus ke dalam"),
-    (54.34, "cara guna senang"),
+    (54.34, "senang guna"),
     (57.90, "tarik & ketat"),
     (67.30, "sesuai sekolah rendah"),
     (74.50, "tapak anti-slip"),
@@ -39,22 +39,148 @@ KEYWORDS = [
 ]
 COMFORT_SRC = 87.54          # "buat aktiviti dalam sekolah, luar sekolah"
 BROLLS = [(14.60, "broll_design"), (40.08, "broll_kalis"), (57.82, "broll_tarik"),
-          (73.20, "broll_tapak"), (85.60, "broll_ringan"), (91.38, "broll_cta")]
-BR_LEN = 2.6
+          (74.50, "broll_tapak"), (84.74, "broll_ringan"), (91.38, "broll_cta")]
+BR_LEN = 2.2
 FADE = 0.4
 
-items = sorted((out(s), t) for s, t in KEYWORDS)
-comfort_t = out(COMFORT_SRC)
-ov = []
-for i, (t, txt) in enumerate(items):
-    start = max(t - 0.08, HOOK_END + 0.15)
-    nxt = items[i + 1][0] - 0.08 if i + 1 < len(items) else DUR
-    if start < comfort_t < nxt:
-        nxt = comfort_t
-    ov.append((round(start, 3), round(min(2.3, nxt - start - 0.12), 3), txt))
+comfort_t0 = out(COMFORT_SRC)
+COMFORT_CD = 2.2
+# b-roll comes in ~1.5s AFTER its keyword, so the pill is read on the face shot first,
+# then the full-screen close-up takes over (on the beat)
+kw_out = {s: out(s) for s, _ in KEYWORDS}
+brolls = []
+for s_, a in BROLLS:      # keep >=1.3s of face between two b-rolls
+    bt = snap(out(s_) + 1.5)
+    while brolls and bt < brolls[-1][0] + BR_LEN + 1.3:
+        bt = round(bt + BEAT, 3)
+    brolls.append((bt, a))
 
-brolls = [(snap(out(s) - 0.15), a) for s, a in BROLLS]
+
+def in_broll(t, pad=0.0):
+    for bt, _ in brolls:
+        if bt - pad <= t < bt + BR_LEN - 0.2:
+            return bt
+    return None
+
+
+# overlays never sit on a b-roll (full-screen shoe = no empty space): shift to when the face is back
+events = sorted([(kw_out[s], "kw", txt) for s, txt in KEYWORDS] + [(comfort_t0, "comfort", "")])
+placed = []
+prev_end = HOOK_END + 0.15
+for t, kind, txt in events:
+    t = max(t - 0.08, prev_end + 0.1)
+    bt = in_broll(t, pad=1.3)          # inside a b-roll, or too close before one to be read
+    if bt is not None:
+        t = max(t, bt + BR_LEN - 0.2)
+    placed.append([round(t, 3), kind, txt])
+    prev_end = t + 1.4
+ov, comfort_t, SLOT = [], None, {"hook": HOOK_END - 0.1}
+for i, (t, kind, txt) in enumerate(placed):
+    lim = placed[i + 1][0] - 0.1 if i + 1 < len(placed) else DUR
+    nb = min([bt for bt, _ in brolls if bt > t] + [DUR])      # gone by the time the next b-roll is in
+    full = COMFORT_CD if kind == "comfort" else 1.8
+    slot = round(min(lim - t, nb - 0.05 - t, DUR - 0.05 - t), 3)   # time it may use without hitting the next pill/b-roll
+    d = round(min(full, slot), 3)
+    SLOT["comfort" if kind == "comfort" else f"kw{len(ov)}"] = slot
+    if kind == "comfort":
+        comfort_t, COMFORT_CD = t, d
+    else:
+        ov.append((t, d, txt))
+
 cuts = [r["out_start"] for r in edl[1:]]
+
+# ---------- empty-space placement: every overlay sits only on wall/floor (see find_empty.py)
+import os
+CHAR_W, PILL_H, GAP = 23, 74, 10        # Inter 600 @40px pill, generous
+BIG_W, BIG_H = 40, 66                   # Inter 800 @66px
+
+
+def splits(txt, n):
+    w = txt.split()
+    if n == 1 or len(w) < n:
+        return [txt] if n == 1 else None
+    if n == 2:
+        k = min(range(1, len(w)), key=lambda k: abs(len(" ".join(w[:k])) - len(" ".join(w[k:]))))
+        return [" ".join(w[:k]), " ".join(w[k:])]
+    best = None
+    for i in range(1, len(w) - 1):
+        for j in range(i + 1, len(w)):
+            parts = [" ".join(w[:i]), " ".join(w[i:j]), " ".join(w[j:])]
+            m = max(map(len, parts))
+            if best is None or m < best[0]:
+                best = (m, parts)
+    return best[1]
+
+
+def make(rows, sc):
+    """rows: [(kind, text)] -> layout with pixel size at scale sc (bigger scale first = preferred)"""
+    w = max((len(t) * (BIG_W if k == "big" else CHAR_W) + (0 if k == "big" else 64)) * sc for k, t in rows)
+    h = sum((BIG_H if k == "big" else PILL_H) * sc for k, _ in rows) + GAP * (len(rows) - 1)
+    return {"rows": rows, "s": sc, "w": int(w) + 4, "h": int(h) + 4}
+
+
+def layouts(txt):
+    L = []
+    for sc in (1.0, 0.8):
+        for n in (1, 2, 3):
+            parts = splits(txt, n)
+            if parts:
+                L.append(make([("pill", x) for x in parts], sc))
+    return L
+
+
+HOOK_SUB = "berbaloi ke tak?"
+hook_L = []
+for sc in (1.0, 0.8):
+    for big in (["bawah RM50?"], ["bawah", "RM50?"]):
+        for sub in ([HOOK_SUB], splits(HOOK_SUB, 2)):
+            hook_L.append(make([("big", x) for x in big] + [("pill", x) for x in sub], sc))
+blocks = [("hook", 0.1, HOOK_END - 0.1, hook_L)]
+blocks += [(f"kw{i}", t, d, layouts(txt)) for i, (t, d, txt) in enumerate(ov)]
+blocks += [("comfort", comfort_t, COMFORT_CD, [make([("pill", "comfort level 9/10")], 1.0) | {"w": 420, "h": 132},
+                                               make([("pill", "comfort level 9/10")], 0.8) | {"w": 340, "h": 108}])]
+
+
+def visible(t):
+    """which video file(s) are on screen at output time t -> [(path, media time)]"""
+    for bt, a in brolls:
+        if bt <= t <= bt + BR_LEN:
+            v = [(f"hyperframes/kasut2/assets/{a}.mp4", t - bt)]
+            if t < bt + FADE or t > bt + BR_LEN - FADE:     # cross-fade: both layers show
+                v.append(("hyperframes/kasut2/assets/aroll.mp4", t))
+            return v
+    return [("hyperframes/kasut2/assets/aroll.mp4", t)]
+
+
+jobs = []
+for bid, t, d, lay in blocks:
+    variants = []       # small timing freedom: start up to 0.5s later and/or show 1.4s, inside the original slot
+    slot = SLOT[bid]
+    for dt in ((0.0,) if bid == "hook" else (0.0, 0.25, 0.5, 0.75, 1.0)):
+        for dd in sorted({round(min(d, slot - dt), 3), round(min(d, 1.4), 3)}, reverse=True):
+            if dd < 1.2 or dt + dd > slot + 1e-6:
+                continue
+            samples = []
+            for k in range(6):
+                samples += visible(t + dt + dd * k / 5)
+            variants.append({"dt": dt, "d": round(dd, 3), "samples": samples})
+    jobs.append({"id": bid, "layouts": lay, "variants": variants})
+json.dump(jobs, open("scripts/v2/overlay_jobs.json", "w"), indent=1)
+PL = json.load(open("scripts/v2/placements.json")) if os.path.exists("scripts/v2/placements.json") else {}
+LAY = {bid: lay for bid, _, _, lay in blocks}
+def timing(bid, t, d):
+    p = PL.get(bid)
+    return (round(t + p["dt"], 3), p["d"]) if p else (t, d)
+def lay(bid):
+    return LAY[bid][PL.get(bid, {}).get("layout", 0)]
+
+
+def rows_html(bid):
+    L = lay(bid)
+    return "".join(f'<div class="{k}">{html.escape(t)}</div>' for k, t in L["rows"])
+def pos(bid):
+    p = PL.get(bid, {"x": 80, "y": 1330})
+    return f'style="left:{p['x']}px; top:{p['y']}px; --s:{lay(bid)["s"]}"'
 el, js, sfx = [], [], []
 
 # ---------- A-roll (muted; voice.wav carries the cleaned voice)
@@ -85,26 +211,26 @@ for i, (t, a) in enumerate(brolls):
     sfx.append((round(t + 0.7, 3), "sfx_sparkle", 0.12, 1.4))
 
 # ---------- Hook text
-el.append(f'''<div id="hook" class="clip hook" data-start="0.1" data-duration="{HOOK_END - 0.1:.2f}" data-track-index="3">
-      <div class="big">bawah RM50?</div>
-      <div class="pill">kasut sekolah ni berbaloi ke?</div>
+el.append(f'''<div id="hook" class="clip hook" {pos("hook")} data-start="0.1" data-duration="{HOOK_END - 0.1:.2f}" data-track-index="3">
+      {rows_html("hook")}
     </div>''')
-js.append('tl.fromTo("#hook .big", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(2.2)" }, 0.1);')
-js.append('tl.fromTo("#hook .pill", { opacity: 0, scale: 0.7, y: 10 }, { opacity: 1, scale: 1, y: 0, duration: 0.45, ease: "back.out(2)" }, 0.45);')
+js.append('tl.fromTo("#hook .big", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(2.2)", stagger: 0.1 }, 0.1);')
+js.append('tl.fromTo("#hook .pill", { opacity: 0, scale: 0.7, y: 10 }, { opacity: 1, scale: 1, y: 0, duration: 0.45, ease: "back.out(2)", stagger: 0.08 }, 0.45);')
 js.append(f'tl.to("#hook", {{ opacity: 0, scale: 0.96, duration: 0.3, ease: "sine.in" }}, {HOOK_END - 0.35:.2f});')
 sfx += [(0.1, "sfx_pop", 0.5, 0.2), (0.45, "sfx_pop", 0.4, 0.2)]
 
 # ---------- point pills (pop-in)
 for i, (t, d, txt) in enumerate(ov):
     oid = f"kw{i}"
-    el.append(f'<div id="{oid}" class="clip ov" data-start="{t}" data-duration="{d}" data-track-index="3"><div class="pill">{html.escape(txt)}</div></div>')
-    js.append(f'tl.fromTo("#{oid} .pill", {{ opacity: 0, scale: 0.6 }}, {{ opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2.2)" }}, {t});')
+    t, d = timing(oid, t, d)
+    el.append(f'<div id="{oid}" class="clip ov" {pos(oid)} data-start="{t}" data-duration="{d}" data-track-index="3">{rows_html(oid)}</div>')
+    js.append(f'tl.fromTo("#{oid} .pill", {{ opacity: 0, scale: 0.6 }}, {{ opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2.2)", stagger: 0.08 }}, {t});')
     js.append(f'tl.to("#{oid} .pill", {{ opacity: 0, scale: 0.92, duration: 0.25, ease: "sine.in" }}, {t + d - 0.25:.3f});')
     sfx.append((t, "sfx_pop", 0.4, 0.2))
 
 # ---------- comfort level card
-cd = 2.6
-el.append(f'''<div id="comfort" class="clip ov" data-start="{comfort_t}" data-duration="{cd}" data-track-index="3">
+comfort_t, cd = timing("comfort", comfort_t, COMFORT_CD)
+el.append(f'''<div id="comfort" class="clip ov" {pos("comfort")} data-start="{comfort_t}" data-duration="{cd}" data-track-index="3">
       <div class="card"><div class="row"><span>comfort level</span><span id="cnum">9/10</span></div>
       <div class="bar"><div class="fill"></div></div></div>
     </div>''')
@@ -141,19 +267,18 @@ HTML = f'''<!doctype html>
         background: linear-gradient(105deg, rgba(255,255,255,0) 40%, rgba(255,255,255,.6) 50%, rgba(255,255,255,0) 60%); }}
       /* safe zone: lower third, clear of the face (top third), TikTok caption (bottom ~360px)
          and the right-hand action rail (~140px) */
-      .ov, .hook {{ inset: auto; left: 80px; right: 160px; top: 1330px; display: flex; flex-direction: column;
-        align-items: flex-start; gap: 18px; }}
-      .hook {{ top: 1230px; }}
-      .pill {{ background: var(--glass); color: var(--ink); font-weight: 600; font-size: 44px; letter-spacing: -0.01em;
-        padding: 18px 34px; border-radius: 999px; box-shadow: 0 10px 30px rgba(0,0,0,.18); transform-origin: 0% 50%;
+      .ov, .hook {{ inset: auto; display: flex; flex-direction: column;
+        align-items: flex-start; gap: 10px; }}
+      .pill {{ background: var(--glass); color: var(--ink); font-weight: 600; font-size: calc(40px * var(--s, 1)); letter-spacing: -0.01em; line-height: 1;
+        padding: calc(17px * var(--s, 1)) calc(32px * var(--s, 1)); border-radius: 999px; box-shadow: 0 10px 30px rgba(0,0,0,.18); transform-origin: 0% 50%;
         backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); white-space: nowrap; }}
-      .big {{ font-weight: 800; font-size: 104px; letter-spacing: -0.035em; color: #fff; line-height: 1;
+      .big {{ font-weight: 800; font-size: calc(66px * var(--s, 1)); letter-spacing: -0.035em; color: #fff; line-height: 1;
         text-shadow: 0 6px 30px rgba(0,0,0,.35); transform-origin: 0% 100%; }}
-      .card {{ background: var(--glass); color: var(--ink); border-radius: 34px; padding: 26px 34px 30px; width: 560px;
+      .card {{ background: var(--glass); color: var(--ink); border-radius: 34px; padding: calc(22px * var(--s, 1)) calc(28px * var(--s, 1)) calc(26px * var(--s, 1)); width: calc(420px * var(--s, 1));
         box-shadow: 0 10px 30px rgba(0,0,0,.18); transform-origin: 0% 50%; backdrop-filter: blur(18px); }}
-      .row {{ display: flex; justify-content: space-between; font-weight: 600; font-size: 40px; }}
+      .row {{ display: flex; justify-content: space-between; font-weight: 600; font-size: calc(34px * var(--s, 1)); }}
       #cnum {{ color: var(--accent); }}
-      .bar {{ height: 10px; border-radius: 6px; background: rgba(0,0,0,.1); margin-top: 18px; overflow: hidden; }}
+      .bar {{ height: 10px; border-radius: 6px; background: rgba(0,0,0,.1); margin-top: calc(18px * var(--s, 1)); overflow: hidden; }}
       .fill {{ width: 100%; height: 100%; background: var(--accent); border-radius: 6px; transform-origin: 0 50%; }}
     </style>
   </head>

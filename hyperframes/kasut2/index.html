@@ -20,19 +20,18 @@
         background: linear-gradient(105deg, rgba(255,255,255,0) 40%, rgba(255,255,255,.6) 50%, rgba(255,255,255,0) 60%); }
       /* safe zone: lower third, clear of the face (top third), TikTok caption (bottom ~360px)
          and the right-hand action rail (~140px) */
-      .ov, .hook { inset: auto; left: 80px; right: 160px; top: 1330px; display: flex; flex-direction: column;
-        align-items: flex-start; gap: 18px; }
-      .hook { top: 1230px; }
-      .pill { background: var(--glass); color: var(--ink); font-weight: 600; font-size: 44px; letter-spacing: -0.01em;
-        padding: 18px 34px; border-radius: 999px; box-shadow: 0 10px 30px rgba(0,0,0,.18); transform-origin: 0% 50%;
+      .ov, .hook { inset: auto; display: flex; flex-direction: column;
+        align-items: flex-start; gap: 10px; }
+      .pill { background: var(--glass); color: var(--ink); font-weight: 600; font-size: calc(40px * var(--s, 1)); letter-spacing: -0.01em; line-height: 1;
+        padding: calc(17px * var(--s, 1)) calc(32px * var(--s, 1)); border-radius: 999px; box-shadow: 0 10px 30px rgba(0,0,0,.18); transform-origin: 0% 50%;
         backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); white-space: nowrap; }
-      .big { font-weight: 800; font-size: 104px; letter-spacing: -0.035em; color: #fff; line-height: 1;
+      .big { font-weight: 800; font-size: calc(66px * var(--s, 1)); letter-spacing: -0.035em; color: #fff; line-height: 1;
         text-shadow: 0 6px 30px rgba(0,0,0,.35); transform-origin: 0% 100%; }
-      .card { background: var(--glass); color: var(--ink); border-radius: 34px; padding: 26px 34px 30px; width: 560px;
+      .card { background: var(--glass); color: var(--ink); border-radius: 34px; padding: calc(22px * var(--s, 1)) calc(28px * var(--s, 1)) calc(26px * var(--s, 1)); width: calc(420px * var(--s, 1));
         box-shadow: 0 10px 30px rgba(0,0,0,.18); transform-origin: 0% 50%; backdrop-filter: blur(18px); }
-      .row { display: flex; justify-content: space-between; font-weight: 600; font-size: 40px; }
+      .row { display: flex; justify-content: space-between; font-weight: 600; font-size: calc(34px * var(--s, 1)); }
       #cnum { color: var(--accent); }
-      .bar { height: 10px; border-radius: 6px; background: rgba(0,0,0,.1); margin-top: 18px; overflow: hidden; }
+      .bar { height: 10px; border-radius: 6px; background: rgba(0,0,0,.1); margin-top: calc(18px * var(--s, 1)); overflow: hidden; }
       .fill { width: 100%; height: 100%; background: var(--accent); border-radius: 6px; transform-origin: 0 50%; }
     </style>
   </head>
@@ -42,37 +41,36 @@
       <video id="aroll" class="clip" src="assets/aroll.mp4" data-start="0" data-duration="55.779"
         data-media-start="0" data-track-index="0" muted playsinline></video>
     </div>
-    <video id="br0" class="clip broll" src="assets/broll_design.mp4" data-start="11.786" data-duration="2.6" data-media-start="0" data-track-index="1" muted playsinline></video>
-    <div id="br0s" class="clip sweep-full" data-start="11.786" data-duration="2.6" data-track-index="2"><div class="sweep"></div></div>
-    <video id="br1" class="clip broll" src="assets/broll_kalis.mp4" data-start="21.964" data-duration="2.6" data-media-start="0" data-track-index="1" muted playsinline></video>
-    <div id="br1s" class="clip sweep-full" data-start="21.964" data-duration="2.6" data-track-index="2"><div class="sweep"></div></div>
-    <video id="br2" class="clip broll" src="assets/broll_tarik.mp4" data-start="32.143" data-duration="2.6" data-media-start="0" data-track-index="1" muted playsinline></video>
-    <div id="br2s" class="clip sweep-full" data-start="32.143" data-duration="2.6" data-track-index="2"><div class="sweep"></div></div>
-    <video id="br3" class="clip broll" src="assets/broll_tapak.mp4" data-start="39.107" data-duration="2.6" data-media-start="0" data-track-index="1" muted playsinline></video>
-    <div id="br3s" class="clip sweep-full" data-start="39.107" data-duration="2.6" data-track-index="2"><div class="sweep"></div></div>
-    <video id="br4" class="clip broll" src="assets/broll_ringan.mp4" data-start="43.393" data-duration="2.6" data-media-start="0" data-track-index="1" muted playsinline></video>
-    <div id="br4s" class="clip sweep-full" data-start="43.393" data-duration="2.6" data-track-index="2"><div class="sweep"></div></div>
-    <video id="br5" class="clip broll" src="assets/broll_cta.mp4" data-start="48.75" data-duration="2.6" data-media-start="0" data-track-index="1" muted playsinline></video>
-    <div id="br5s" class="clip sweep-full" data-start="48.75" data-duration="2.6" data-track-index="2"><div class="sweep"></div></div>
-    <div id="hook" class="clip hook" data-start="0.1" data-duration="2.90" data-track-index="3">
-      <div class="big">bawah RM50?</div>
-      <div class="pill">kasut sekolah ni berbaloi ke?</div>
+    <video id="br0" class="clip broll" src="assets/broll_design.mp4" data-start="13.393" data-duration="2.2" data-media-start="0" data-track-index="1" muted playsinline></video>
+    <div id="br0s" class="clip sweep-full" data-start="13.393" data-duration="2.2" data-track-index="2"><div class="sweep"></div></div>
+    <video id="br1" class="clip broll" src="assets/broll_kalis.mp4" data-start="23.571" data-duration="2.2" data-media-start="0" data-track-index="1" muted playsinline></video>
+    <div id="br1s" class="clip sweep-full" data-start="23.571" data-duration="2.2" data-track-index="2"><div class="sweep"></div></div>
+    <video id="br2" class="clip broll" src="assets/broll_tarik.mp4" data-start="33.75" data-duration="2.2" data-media-start="0" data-track-index="1" muted playsinline></video>
+    <div id="br2s" class="clip sweep-full" data-start="33.75" data-duration="2.2" data-track-index="2"><div class="sweep"></div></div>
+    <video id="br3" class="clip broll" src="assets/broll_tapak.mp4" data-start="42.321" data-duration="2.2" data-media-start="0" data-track-index="1" muted playsinline></video>
+    <div id="br3s" class="clip sweep-full" data-start="42.321" data-duration="2.2" data-track-index="2"><div class="sweep"></div></div>
+    <video id="br4" class="clip broll" src="assets/broll_ringan.mp4" data-start="46.073" data-duration="2.2" data-media-start="0" data-track-index="1" muted playsinline></video>
+    <div id="br4s" class="clip sweep-full" data-start="46.073" data-duration="2.2" data-track-index="2"><div class="sweep"></div></div>
+    <video id="br5" class="clip broll" src="assets/broll_cta.mp4" data-start="50.357" data-duration="2.2" data-media-start="0" data-track-index="1" muted playsinline></video>
+    <div id="br5s" class="clip sweep-full" data-start="50.357" data-duration="2.2" data-track-index="2"><div class="sweep"></div></div>
+    <div id="hook" class="clip hook" style="left:824px; top:564px; --s:0.8" data-start="0.1" data-duration="2.90" data-track-index="3">
+      <div class="big">bawah</div><div class="big">RM50?</div><div class="pill">berbaloi</div><div class="pill">ke tak?</div>
     </div>
-    <div id="kw0" class="clip ov" data-start="5.561" data-duration="2.3" data-track-index="3"><div class="pill">tiada tali</div></div>
-    <div id="kw1" class="clip ov" data-start="8.801" data-duration="2.3" data-track-index="3"><div class="pill">mak ayah recommend</div></div>
-    <div id="kw2" class="clip ov" data-start="11.791" data-duration="2.3" data-track-index="3"><div class="pill">design sporty</div></div>
-    <div id="kw3" class="clip ov" data-start="15.661" data-duration="2.3" data-track-index="3"><div class="pill">anak suka</div></div>
-    <div id="kw4" class="clip ov" data-start="21.78" data-duration="2.03" data-track-index="3"><div class="pill">kalis air · water resistant</div></div>
-    <div id="kw5" class="clip ov" data-start="23.93" data-duration="2.3" data-track-index="3"><div class="pill">kotor? cuci je</div></div>
-    <div id="kw6" class="clip ov" data-start="27.71" data-duration="2.3" data-track-index="3"><div class="pill">tak tembus ke dalam</div></div>
-    <div id="kw7" class="clip ov" data-start="30.379" data-duration="1.57" data-track-index="3"><div class="pill">cara guna senang</div></div>
-    <div id="kw8" class="clip ov" data-start="32.069" data-duration="2.3" data-track-index="3"><div class="pill">tarik &amp; ketat</div></div>
-    <div id="kw9" class="clip ov" data-start="35.319" data-duration="2.3" data-track-index="3"><div class="pill">sesuai sekolah rendah</div></div>
-    <div id="kw10" class="clip ov" data-start="40.669" data-duration="1.62" data-track-index="3"><div class="pill">tapak anti-slip</div></div>
-    <div id="kw11" class="clip ov" data-start="42.409" data-duration="2.3" data-track-index="3"><div class="pill">super ringan</div></div>
-    <div id="kw12" class="clip ov" data-start="51.259" data-duration="1.7" data-track-index="3"><div class="pill">cek beg kuning</div></div>
-    <div id="kw13" class="clip ov" data-start="53.079" data-duration="2.3" data-track-index="3"><div class="pill">size cepat habis</div></div>
-    <div id="comfort" class="clip ov" data-start="45.289" data-duration="2.6" data-track-index="3">
+    <div id="kw0" class="clip ov" style="left:728px; top:268px; --s:1.0" data-start="5.561" data-duration="1.8" data-track-index="3"><div class="pill">tiada tali</div></div>
+    <div id="kw1" class="clip ov" style="left:808px; top:228px; --s:0.8" data-start="9.801" data-duration="1.8" data-track-index="3"><div class="pill">memang</div><div class="pill">recommend</div></div>
+    <div id="kw2" class="clip ov" style="left:48px; top:508px; --s:0.8" data-start="11.791" data-duration="1.552" data-track-index="3"><div class="pill">design</div><div class="pill">sporty</div></div>
+    <div id="kw3" class="clip ov" style="left:752px; top:228px; --s:1.0" data-start="15.661" data-duration="1.8" data-track-index="3"><div class="pill">anak suka</div></div>
+    <div id="kw4" class="clip ov" style="left:56px; top:508px; --s:0.8" data-start="21.78" data-duration="1.741" data-track-index="3"><div class="pill">kalis air ·</div><div class="pill">water resistant</div></div>
+    <div id="kw5" class="clip ov" style="left:144px; top:228px; --s:0.8" data-start="25.571" data-duration="1.4" data-track-index="3"><div class="pill">kotor? cuci je</div></div>
+    <div id="kw6" class="clip ov" style="left:120px; top:428px; --s:0.8" data-start="27.71" data-duration="1.8" data-track-index="3"><div class="pill">tak tembus ke dalam</div></div>
+    <div id="kw7" class="clip ov" style="left:864px; top:228px; --s:0.8" data-start="30.629" data-duration="1.34" data-track-index="3"><div class="pill">senang</div><div class="pill">guna</div></div>
+    <div id="kw8" class="clip ov" style="left:680px; top:596px; --s:0.8" data-start="32.069" data-duration="1.631" data-track-index="3"><div class="pill">tarik &amp; ketat</div></div>
+    <div id="kw9" class="clip ov" style="left:48px; top:244px; --s:0.8" data-start="35.75" data-duration="1.8" data-track-index="3"><div class="pill">sesuai</div><div class="pill">sekolah</div><div class="pill">rendah</div></div>
+    <div id="kw10" class="clip ov" style="left:48px; top:228px; --s:1.0" data-start="40.669" data-duration="1.602" data-track-index="3"><div class="pill">tapak anti-slip</div></div>
+    <div id="kw11" class="clip ov" style="left:64px; top:420px; --s:0.8" data-start="44.321" data-duration="1.702" data-track-index="3"><div class="pill">super</div><div class="pill">ringan</div></div>
+    <div id="kw12" class="clip ov" style="left:48px; top:228px; --s:1.0" data-start="52.357" data-duration="1.4" data-track-index="3"><div class="pill">cek beg kuning</div></div>
+    <div id="kw13" class="clip ov" style="left:592px; top:228px; --s:1.0" data-start="53.857" data-duration="1.8" data-track-index="3"><div class="pill">size cepat habis</div></div>
+    <div id="comfort" class="clip ov" style="left:48px; top:228px; --s:1.0" data-start="48.323" data-duration="1.984" data-track-index="3">
       <div class="card"><div class="row"><span>comfort level</span><span id="cnum">9/10</span></div>
       <div class="bar"><div class="fill"></div></div></div>
     </div>
@@ -81,32 +79,32 @@
     <audio id="sfx0" src="assets/sfx_pop.wav" data-start="0.1" data-duration="0.2" data-media-start="0" data-volume="0.5" data-track-index="12"></audio>
     <audio id="sfx1" src="assets/sfx_pop.wav" data-start="0.45" data-duration="0.2" data-media-start="0" data-volume="0.4" data-track-index="13"></audio>
     <audio id="sfx2" src="assets/sfx_pop.wav" data-start="5.561" data-duration="0.2" data-media-start="0" data-volume="0.4" data-track-index="14"></audio>
-    <audio id="sfx3" src="assets/sfx_pop.wav" data-start="8.801" data-duration="0.2" data-media-start="0" data-volume="0.4" data-track-index="15"></audio>
-    <audio id="sfx4" src="assets/sfx_swish.wav" data-start="11.586" data-duration="0.6" data-media-start="0" data-volume="0.3" data-track-index="12"></audio>
-    <audio id="sfx5" src="assets/sfx_pop.wav" data-start="11.791" data-duration="0.2" data-media-start="0" data-volume="0.4" data-track-index="13"></audio>
-    <audio id="sfx6" src="assets/sfx_sparkle.wav" data-start="12.486" data-duration="1.4" data-media-start="0" data-volume="0.12" data-track-index="14"></audio>
+    <audio id="sfx3" src="assets/sfx_pop.wav" data-start="9.801" data-duration="0.2" data-media-start="0" data-volume="0.4" data-track-index="15"></audio>
+    <audio id="sfx4" src="assets/sfx_pop.wav" data-start="11.791" data-duration="0.2" data-media-start="0" data-volume="0.4" data-track-index="12"></audio>
+    <audio id="sfx5" src="assets/sfx_swish.wav" data-start="13.193" data-duration="0.6" data-media-start="0" data-volume="0.3" data-track-index="13"></audio>
+    <audio id="sfx6" src="assets/sfx_sparkle.wav" data-start="14.093" data-duration="1.4" data-media-start="0" data-volume="0.12" data-track-index="14"></audio>
     <audio id="sfx7" src="assets/sfx_pop.wav" data-start="15.661" data-duration="0.2" data-media-start="0" data-volume="0.4" data-track-index="15"></audio>
-    <audio id="sfx8" src="assets/sfx_swish.wav" data-start="21.764" data-duration="0.6" data-media-start="0" data-volume="0.3" data-track-index="12"></audio>
-    <audio id="sfx9" src="assets/sfx_pop.wav" data-start="21.78" data-duration="0.2" data-media-start="0" data-volume="0.4" data-track-index="13"></audio>
-    <audio id="sfx10" src="assets/sfx_sparkle.wav" data-start="22.664" data-duration="1.4" data-media-start="0" data-volume="0.12" data-track-index="14"></audio>
-    <audio id="sfx11" src="assets/sfx_pop.wav" data-start="23.93" data-duration="0.2" data-media-start="0" data-volume="0.4" data-track-index="15"></audio>
+    <audio id="sfx8" src="assets/sfx_pop.wav" data-start="21.78" data-duration="0.2" data-media-start="0" data-volume="0.4" data-track-index="12"></audio>
+    <audio id="sfx9" src="assets/sfx_swish.wav" data-start="23.371" data-duration="0.6" data-media-start="0" data-volume="0.3" data-track-index="13"></audio>
+    <audio id="sfx10" src="assets/sfx_sparkle.wav" data-start="24.271" data-duration="1.4" data-media-start="0" data-volume="0.12" data-track-index="14"></audio>
+    <audio id="sfx11" src="assets/sfx_pop.wav" data-start="25.571" data-duration="0.2" data-media-start="0" data-volume="0.4" data-track-index="15"></audio>
     <audio id="sfx12" src="assets/sfx_pop.wav" data-start="27.71" data-duration="0.2" data-media-start="0" data-volume="0.4" data-track-index="12"></audio>
-    <audio id="sfx13" src="assets/sfx_pop.wav" data-start="30.379" data-duration="0.2" data-media-start="0" data-volume="0.4" data-track-index="13"></audio>
-    <audio id="sfx14" src="assets/sfx_swish.wav" data-start="31.943" data-duration="0.6" data-media-start="0" data-volume="0.3" data-track-index="14"></audio>
-    <audio id="sfx15" src="assets/sfx_pop.wav" data-start="32.069" data-duration="0.2" data-media-start="0" data-volume="0.4" data-track-index="15"></audio>
-    <audio id="sfx16" src="assets/sfx_sparkle.wav" data-start="32.843" data-duration="1.4" data-media-start="0" data-volume="0.12" data-track-index="12"></audio>
-    <audio id="sfx17" src="assets/sfx_pop.wav" data-start="35.319" data-duration="0.2" data-media-start="0" data-volume="0.4" data-track-index="13"></audio>
-    <audio id="sfx18" src="assets/sfx_swish.wav" data-start="38.907" data-duration="0.6" data-media-start="0" data-volume="0.3" data-track-index="14"></audio>
-    <audio id="sfx19" src="assets/sfx_sparkle.wav" data-start="39.807" data-duration="1.4" data-media-start="0" data-volume="0.12" data-track-index="15"></audio>
-    <audio id="sfx20" src="assets/sfx_pop.wav" data-start="40.669" data-duration="0.2" data-media-start="0" data-volume="0.4" data-track-index="12"></audio>
-    <audio id="sfx21" src="assets/sfx_pop.wav" data-start="42.409" data-duration="0.2" data-media-start="0" data-volume="0.4" data-track-index="13"></audio>
-    <audio id="sfx22" src="assets/sfx_swish.wav" data-start="43.193" data-duration="0.6" data-media-start="0" data-volume="0.3" data-track-index="14"></audio>
-    <audio id="sfx23" src="assets/sfx_sparkle.wav" data-start="44.093" data-duration="1.4" data-media-start="0" data-volume="0.12" data-track-index="15"></audio>
-    <audio id="sfx24" src="assets/sfx_pop.wav" data-start="45.289" data-duration="0.2" data-media-start="0" data-volume="0.4" data-track-index="12"></audio>
-    <audio id="sfx25" src="assets/sfx_swish.wav" data-start="48.55" data-duration="0.6" data-media-start="0" data-volume="0.3" data-track-index="13"></audio>
-    <audio id="sfx26" src="assets/sfx_sparkle.wav" data-start="49.45" data-duration="1.4" data-media-start="0" data-volume="0.12" data-track-index="14"></audio>
-    <audio id="sfx27" src="assets/sfx_pop.wav" data-start="51.259" data-duration="0.2" data-media-start="0" data-volume="0.4" data-track-index="15"></audio>
-    <audio id="sfx28" src="assets/sfx_pop.wav" data-start="53.079" data-duration="0.2" data-media-start="0" data-volume="0.4" data-track-index="12"></audio>
+    <audio id="sfx13" src="assets/sfx_pop.wav" data-start="30.629" data-duration="0.2" data-media-start="0" data-volume="0.4" data-track-index="13"></audio>
+    <audio id="sfx14" src="assets/sfx_pop.wav" data-start="32.069" data-duration="0.2" data-media-start="0" data-volume="0.4" data-track-index="14"></audio>
+    <audio id="sfx15" src="assets/sfx_swish.wav" data-start="33.55" data-duration="0.6" data-media-start="0" data-volume="0.3" data-track-index="15"></audio>
+    <audio id="sfx16" src="assets/sfx_sparkle.wav" data-start="34.45" data-duration="1.4" data-media-start="0" data-volume="0.12" data-track-index="12"></audio>
+    <audio id="sfx17" src="assets/sfx_pop.wav" data-start="35.75" data-duration="0.2" data-media-start="0" data-volume="0.4" data-track-index="13"></audio>
+    <audio id="sfx18" src="assets/sfx_pop.wav" data-start="40.669" data-duration="0.2" data-media-start="0" data-volume="0.4" data-track-index="14"></audio>
+    <audio id="sfx19" src="assets/sfx_swish.wav" data-start="42.121" data-duration="0.6" data-media-start="0" data-volume="0.3" data-track-index="15"></audio>
+    <audio id="sfx20" src="assets/sfx_sparkle.wav" data-start="43.021" data-duration="1.4" data-media-start="0" data-volume="0.12" data-track-index="12"></audio>
+    <audio id="sfx21" src="assets/sfx_pop.wav" data-start="44.321" data-duration="0.2" data-media-start="0" data-volume="0.4" data-track-index="13"></audio>
+    <audio id="sfx22" src="assets/sfx_swish.wav" data-start="45.873" data-duration="0.6" data-media-start="0" data-volume="0.3" data-track-index="14"></audio>
+    <audio id="sfx23" src="assets/sfx_sparkle.wav" data-start="46.773" data-duration="1.4" data-media-start="0" data-volume="0.12" data-track-index="15"></audio>
+    <audio id="sfx24" src="assets/sfx_pop.wav" data-start="48.323" data-duration="0.2" data-media-start="0" data-volume="0.4" data-track-index="12"></audio>
+    <audio id="sfx25" src="assets/sfx_swish.wav" data-start="50.157" data-duration="0.6" data-media-start="0" data-volume="0.3" data-track-index="13"></audio>
+    <audio id="sfx26" src="assets/sfx_sparkle.wav" data-start="51.057" data-duration="1.4" data-media-start="0" data-volume="0.12" data-track-index="14"></audio>
+    <audio id="sfx27" src="assets/sfx_pop.wav" data-start="52.357" data-duration="0.2" data-media-start="0" data-volume="0.4" data-track-index="15"></audio>
+    <audio id="sfx28" src="assets/sfx_pop.wav" data-start="53.857" data-duration="0.2" data-media-start="0" data-volume="0.4" data-track-index="12"></audio>
     </div>
     <script>
       window.__timelines = window.__timelines || {};
@@ -132,64 +130,64 @@
       tl.set("#aroll-wrap", { scale: 1.06 }, 46.167);
       tl.set("#aroll-wrap", { scale: 1.0 }, 47.879);
       tl.set("#aroll-wrap", { scale: 1.06 }, 52.219);
-      tl.fromTo("#br0", { opacity: 0 }, { opacity: 1, duration: 0.4, ease: "sine.inOut" }, 11.786);
-      tl.to("#br0", { opacity: 0, duration: 0.4, ease: "sine.inOut" }, 13.986);
-      tl.fromTo("#br0", { scale: 1.12 }, { scale: 1.0, duration: 2.6, ease: "power1.out" }, 11.786);
-      tl.fromTo("#br0s .sweep", { xPercent: -130, opacity: 0 }, { xPercent: 130, opacity: 1, duration: 1.3, ease: "sine.inOut" }, 12.386);
-      tl.fromTo("#br1", { opacity: 0 }, { opacity: 1, duration: 0.4, ease: "sine.inOut" }, 21.964);
-      tl.to("#br1", { opacity: 0, duration: 0.4, ease: "sine.inOut" }, 24.164);
-      tl.fromTo("#br1", { scale: 1.12 }, { scale: 1.0, duration: 2.6, ease: "power1.out" }, 21.964);
-      tl.fromTo("#br1s .sweep", { xPercent: -130, opacity: 0 }, { xPercent: 130, opacity: 1, duration: 1.3, ease: "sine.inOut" }, 22.564);
-      tl.fromTo("#br2", { opacity: 0 }, { opacity: 1, duration: 0.4, ease: "sine.inOut" }, 32.143);
-      tl.to("#br2", { opacity: 0, duration: 0.4, ease: "sine.inOut" }, 34.343);
-      tl.fromTo("#br2", { scale: 1.12 }, { scale: 1.0, duration: 2.6, ease: "power1.out" }, 32.143);
-      tl.fromTo("#br2s .sweep", { xPercent: -130, opacity: 0 }, { xPercent: 130, opacity: 1, duration: 1.3, ease: "sine.inOut" }, 32.743);
-      tl.fromTo("#br3", { opacity: 0 }, { opacity: 1, duration: 0.4, ease: "sine.inOut" }, 39.107);
-      tl.to("#br3", { opacity: 0, duration: 0.4, ease: "sine.inOut" }, 41.307);
-      tl.fromTo("#br3", { scale: 1.12 }, { scale: 1.0, duration: 2.6, ease: "power1.out" }, 39.107);
-      tl.fromTo("#br3s .sweep", { xPercent: -130, opacity: 0 }, { xPercent: 130, opacity: 1, duration: 1.3, ease: "sine.inOut" }, 39.707);
-      tl.fromTo("#br4", { opacity: 0 }, { opacity: 1, duration: 0.4, ease: "sine.inOut" }, 43.393);
-      tl.to("#br4", { opacity: 0, duration: 0.4, ease: "sine.inOut" }, 45.593);
-      tl.fromTo("#br4", { scale: 1.12 }, { scale: 1.0, duration: 2.6, ease: "power1.out" }, 43.393);
-      tl.fromTo("#br4s .sweep", { xPercent: -130, opacity: 0 }, { xPercent: 130, opacity: 1, duration: 1.3, ease: "sine.inOut" }, 43.993);
-      tl.fromTo("#br5", { opacity: 0 }, { opacity: 1, duration: 0.4, ease: "sine.inOut" }, 48.75);
-      tl.to("#br5", { opacity: 0, duration: 0.4, ease: "sine.inOut" }, 50.950);
-      tl.fromTo("#br5", { scale: 1.12 }, { scale: 1.0, duration: 2.6, ease: "power1.out" }, 48.75);
-      tl.fromTo("#br5s .sweep", { xPercent: -130, opacity: 0 }, { xPercent: 130, opacity: 1, duration: 1.3, ease: "sine.inOut" }, 49.350);
-      tl.fromTo("#hook .big", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(2.2)" }, 0.1);
-      tl.fromTo("#hook .pill", { opacity: 0, scale: 0.7, y: 10 }, { opacity: 1, scale: 1, y: 0, duration: 0.45, ease: "back.out(2)" }, 0.45);
+      tl.fromTo("#br0", { opacity: 0 }, { opacity: 1, duration: 0.4, ease: "sine.inOut" }, 13.393);
+      tl.to("#br0", { opacity: 0, duration: 0.4, ease: "sine.inOut" }, 15.193);
+      tl.fromTo("#br0", { scale: 1.12 }, { scale: 1.0, duration: 2.2, ease: "power1.out" }, 13.393);
+      tl.fromTo("#br0s .sweep", { xPercent: -130, opacity: 0 }, { xPercent: 130, opacity: 1, duration: 1.3, ease: "sine.inOut" }, 13.993);
+      tl.fromTo("#br1", { opacity: 0 }, { opacity: 1, duration: 0.4, ease: "sine.inOut" }, 23.571);
+      tl.to("#br1", { opacity: 0, duration: 0.4, ease: "sine.inOut" }, 25.371);
+      tl.fromTo("#br1", { scale: 1.12 }, { scale: 1.0, duration: 2.2, ease: "power1.out" }, 23.571);
+      tl.fromTo("#br1s .sweep", { xPercent: -130, opacity: 0 }, { xPercent: 130, opacity: 1, duration: 1.3, ease: "sine.inOut" }, 24.171);
+      tl.fromTo("#br2", { opacity: 0 }, { opacity: 1, duration: 0.4, ease: "sine.inOut" }, 33.75);
+      tl.to("#br2", { opacity: 0, duration: 0.4, ease: "sine.inOut" }, 35.550);
+      tl.fromTo("#br2", { scale: 1.12 }, { scale: 1.0, duration: 2.2, ease: "power1.out" }, 33.75);
+      tl.fromTo("#br2s .sweep", { xPercent: -130, opacity: 0 }, { xPercent: 130, opacity: 1, duration: 1.3, ease: "sine.inOut" }, 34.350);
+      tl.fromTo("#br3", { opacity: 0 }, { opacity: 1, duration: 0.4, ease: "sine.inOut" }, 42.321);
+      tl.to("#br3", { opacity: 0, duration: 0.4, ease: "sine.inOut" }, 44.121);
+      tl.fromTo("#br3", { scale: 1.12 }, { scale: 1.0, duration: 2.2, ease: "power1.out" }, 42.321);
+      tl.fromTo("#br3s .sweep", { xPercent: -130, opacity: 0 }, { xPercent: 130, opacity: 1, duration: 1.3, ease: "sine.inOut" }, 42.921);
+      tl.fromTo("#br4", { opacity: 0 }, { opacity: 1, duration: 0.4, ease: "sine.inOut" }, 46.073);
+      tl.to("#br4", { opacity: 0, duration: 0.4, ease: "sine.inOut" }, 47.873);
+      tl.fromTo("#br4", { scale: 1.12 }, { scale: 1.0, duration: 2.2, ease: "power1.out" }, 46.073);
+      tl.fromTo("#br4s .sweep", { xPercent: -130, opacity: 0 }, { xPercent: 130, opacity: 1, duration: 1.3, ease: "sine.inOut" }, 46.673);
+      tl.fromTo("#br5", { opacity: 0 }, { opacity: 1, duration: 0.4, ease: "sine.inOut" }, 50.357);
+      tl.to("#br5", { opacity: 0, duration: 0.4, ease: "sine.inOut" }, 52.157);
+      tl.fromTo("#br5", { scale: 1.12 }, { scale: 1.0, duration: 2.2, ease: "power1.out" }, 50.357);
+      tl.fromTo("#br5s .sweep", { xPercent: -130, opacity: 0 }, { xPercent: 130, opacity: 1, duration: 1.3, ease: "sine.inOut" }, 50.957);
+      tl.fromTo("#hook .big", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(2.2)", stagger: 0.1 }, 0.1);
+      tl.fromTo("#hook .pill", { opacity: 0, scale: 0.7, y: 10 }, { opacity: 1, scale: 1, y: 0, duration: 0.45, ease: "back.out(2)", stagger: 0.08 }, 0.45);
       tl.to("#hook", { opacity: 0, scale: 0.96, duration: 0.3, ease: "sine.in" }, 2.65);
-      tl.fromTo("#kw0 .pill", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2.2)" }, 5.561);
-      tl.to("#kw0 .pill", { opacity: 0, scale: 0.92, duration: 0.25, ease: "sine.in" }, 7.611);
-      tl.fromTo("#kw1 .pill", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2.2)" }, 8.801);
-      tl.to("#kw1 .pill", { opacity: 0, scale: 0.92, duration: 0.25, ease: "sine.in" }, 10.851);
-      tl.fromTo("#kw2 .pill", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2.2)" }, 11.791);
-      tl.to("#kw2 .pill", { opacity: 0, scale: 0.92, duration: 0.25, ease: "sine.in" }, 13.841);
-      tl.fromTo("#kw3 .pill", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2.2)" }, 15.661);
-      tl.to("#kw3 .pill", { opacity: 0, scale: 0.92, duration: 0.25, ease: "sine.in" }, 17.711);
-      tl.fromTo("#kw4 .pill", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2.2)" }, 21.78);
-      tl.to("#kw4 .pill", { opacity: 0, scale: 0.92, duration: 0.25, ease: "sine.in" }, 23.560);
-      tl.fromTo("#kw5 .pill", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2.2)" }, 23.93);
-      tl.to("#kw5 .pill", { opacity: 0, scale: 0.92, duration: 0.25, ease: "sine.in" }, 25.980);
-      tl.fromTo("#kw6 .pill", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2.2)" }, 27.71);
-      tl.to("#kw6 .pill", { opacity: 0, scale: 0.92, duration: 0.25, ease: "sine.in" }, 29.760);
-      tl.fromTo("#kw7 .pill", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2.2)" }, 30.379);
-      tl.to("#kw7 .pill", { opacity: 0, scale: 0.92, duration: 0.25, ease: "sine.in" }, 31.699);
-      tl.fromTo("#kw8 .pill", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2.2)" }, 32.069);
-      tl.to("#kw8 .pill", { opacity: 0, scale: 0.92, duration: 0.25, ease: "sine.in" }, 34.119);
-      tl.fromTo("#kw9 .pill", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2.2)" }, 35.319);
-      tl.to("#kw9 .pill", { opacity: 0, scale: 0.92, duration: 0.25, ease: "sine.in" }, 37.369);
-      tl.fromTo("#kw10 .pill", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2.2)" }, 40.669);
-      tl.to("#kw10 .pill", { opacity: 0, scale: 0.92, duration: 0.25, ease: "sine.in" }, 42.039);
-      tl.fromTo("#kw11 .pill", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2.2)" }, 42.409);
-      tl.to("#kw11 .pill", { opacity: 0, scale: 0.92, duration: 0.25, ease: "sine.in" }, 44.459);
-      tl.fromTo("#kw12 .pill", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2.2)" }, 51.259);
-      tl.to("#kw12 .pill", { opacity: 0, scale: 0.92, duration: 0.25, ease: "sine.in" }, 52.709);
-      tl.fromTo("#kw13 .pill", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2.2)" }, 53.079);
-      tl.to("#kw13 .pill", { opacity: 0, scale: 0.92, duration: 0.25, ease: "sine.in" }, 55.129);
-      tl.fromTo("#comfort .card", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2.2)" }, 45.289);
-      tl.fromTo("#comfort .fill", { scaleX: 0 }, { scaleX: 0.9, duration: 1.0, ease: "power3.out" }, 45.589);
-      tl.to("#comfort .card", { opacity: 0, scale: 0.92, duration: 0.25 }, 47.639);
+      tl.fromTo("#kw0 .pill", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2.2)", stagger: 0.08 }, 5.561);
+      tl.to("#kw0 .pill", { opacity: 0, scale: 0.92, duration: 0.25, ease: "sine.in" }, 7.111);
+      tl.fromTo("#kw1 .pill", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2.2)", stagger: 0.08 }, 9.801);
+      tl.to("#kw1 .pill", { opacity: 0, scale: 0.92, duration: 0.25, ease: "sine.in" }, 11.351);
+      tl.fromTo("#kw2 .pill", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2.2)", stagger: 0.08 }, 11.791);
+      tl.to("#kw2 .pill", { opacity: 0, scale: 0.92, duration: 0.25, ease: "sine.in" }, 13.093);
+      tl.fromTo("#kw3 .pill", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2.2)", stagger: 0.08 }, 15.661);
+      tl.to("#kw3 .pill", { opacity: 0, scale: 0.92, duration: 0.25, ease: "sine.in" }, 17.211);
+      tl.fromTo("#kw4 .pill", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2.2)", stagger: 0.08 }, 21.78);
+      tl.to("#kw4 .pill", { opacity: 0, scale: 0.92, duration: 0.25, ease: "sine.in" }, 23.271);
+      tl.fromTo("#kw5 .pill", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2.2)", stagger: 0.08 }, 25.571);
+      tl.to("#kw5 .pill", { opacity: 0, scale: 0.92, duration: 0.25, ease: "sine.in" }, 26.721);
+      tl.fromTo("#kw6 .pill", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2.2)", stagger: 0.08 }, 27.71);
+      tl.to("#kw6 .pill", { opacity: 0, scale: 0.92, duration: 0.25, ease: "sine.in" }, 29.260);
+      tl.fromTo("#kw7 .pill", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2.2)", stagger: 0.08 }, 30.629);
+      tl.to("#kw7 .pill", { opacity: 0, scale: 0.92, duration: 0.25, ease: "sine.in" }, 31.719);
+      tl.fromTo("#kw8 .pill", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2.2)", stagger: 0.08 }, 32.069);
+      tl.to("#kw8 .pill", { opacity: 0, scale: 0.92, duration: 0.25, ease: "sine.in" }, 33.450);
+      tl.fromTo("#kw9 .pill", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2.2)", stagger: 0.08 }, 35.75);
+      tl.to("#kw9 .pill", { opacity: 0, scale: 0.92, duration: 0.25, ease: "sine.in" }, 37.300);
+      tl.fromTo("#kw10 .pill", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2.2)", stagger: 0.08 }, 40.669);
+      tl.to("#kw10 .pill", { opacity: 0, scale: 0.92, duration: 0.25, ease: "sine.in" }, 42.021);
+      tl.fromTo("#kw11 .pill", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2.2)", stagger: 0.08 }, 44.321);
+      tl.to("#kw11 .pill", { opacity: 0, scale: 0.92, duration: 0.25, ease: "sine.in" }, 45.773);
+      tl.fromTo("#kw12 .pill", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2.2)", stagger: 0.08 }, 52.357);
+      tl.to("#kw12 .pill", { opacity: 0, scale: 0.92, duration: 0.25, ease: "sine.in" }, 53.507);
+      tl.fromTo("#kw13 .pill", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2.2)", stagger: 0.08 }, 53.857);
+      tl.to("#kw13 .pill", { opacity: 0, scale: 0.92, duration: 0.25, ease: "sine.in" }, 55.407);
+      tl.fromTo("#comfort .card", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2.2)" }, 48.323);
+      tl.fromTo("#comfort .fill", { scaleX: 0 }, { scaleX: 0.9, duration: 1.0, ease: "power3.out" }, 48.623);
+      tl.to("#comfort .card", { opacity: 0, scale: 0.92, duration: 0.25 }, 50.057);
       window.__timelines["main"] = tl;
       tl.seek(0);
     </script>
