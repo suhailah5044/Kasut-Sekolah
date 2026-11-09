@@ -206,8 +206,8 @@ sfx.append((round(comfort_t, 3), "sfx_pop", 0.32, 1.0))
 sfx.append((round(comfort_t + 0.3, 3), "sfx_rise", 0.22, 1.2))
 
 # ---------- audio
-aud = [f'<audio id="voice" src="assets/voice.wav" data-start="0" data-duration="{DUR}" data-media-start="0" data-volume="1" data-track-index="10"></audio>',
-       f'<audio id="music" src="assets/music.wav" data-start="0" data-duration="{DUR}" data-media-start="0" data-volume="0.13" data-fade-in="0.8" data-fade-out="1.5" data-track-index="11"></audio>']
+# no background music (by request): voice + SFX only
+aud = [f'<audio id="voice" src="assets/voice.wav" data-start="0" data-duration="{DUR}" data-media-start="0" data-volume="1" data-track-index="10"></audio>']
 for i, (t, name, vol, d) in enumerate(sorted(sfx)):
     aud.append(f'<audio id="sfx{i}" src="assets/{name}.wav" data-start="{max(t, 0)}" data-duration="{d}" data-media-start="0" data-volume="{vol}" data-track-index="{12 + i % 4}"></audio>')
 
