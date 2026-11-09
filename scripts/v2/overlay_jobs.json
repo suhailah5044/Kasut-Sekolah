@@ -6,153 +6,69 @@
     "rows": [
      [
       "big",
-      "bawah RM50?"
+      "kasut sekolah bawah RM50"
      ],
      [
-      "pill",
-      "berbaloi ke tak?"
+      "big",
+      "worth ke tak?"
      ]
     ],
     "s": 1.0,
-    "w": 444,
-    "h": 154
+    "w": 611,
+    "h": 150
    },
    {
     "rows": [
      [
       "big",
-      "bawah RM50?"
+      "kasut sekolah"
      ],
      [
-      "pill",
-      "berbaloi"
+      "big",
+      "bawah RM50"
      ],
      [
-      "pill",
-      "ke tak?"
+      "big",
+      "worth ke tak?"
      ]
     ],
     "s": 1.0,
-    "w": 444,
-    "h": 238
+    "w": 335,
+    "h": 218
    },
    {
     "rows": [
      [
       "big",
-      "bawah"
+      "kasut sekolah bawah RM50"
      ],
      [
       "big",
-      "RM50?"
-     ],
-     [
-      "pill",
-      "berbaloi ke tak?"
+      "worth ke tak?"
      ]
     ],
-    "s": 1.0,
-    "w": 436,
-    "h": 230
+    "s": 0.85,
+    "w": 512,
+    "h": 131
    },
    {
     "rows": [
      [
       "big",
-      "bawah"
+      "kasut sekolah"
      ],
      [
       "big",
-      "RM50?"
+      "bawah RM50"
      ],
      [
-      "pill",
-      "berbaloi"
-     ],
-     [
-      "pill",
-      "ke tak?"
+      "big",
+      "worth ke tak?"
      ]
     ],
-    "s": 1.0,
-    "w": 252,
-    "h": 314
-   },
-   {
-    "rows": [
-     [
-      "big",
-      "bawah RM50?"
-     ],
-     [
-      "pill",
-      "berbaloi ke tak?"
-     ]
-    ],
-    "s": 0.8,
-    "w": 356,
-    "h": 126
-   },
-   {
-    "rows": [
-     [
-      "big",
-      "bawah RM50?"
-     ],
-     [
-      "pill",
-      "berbaloi"
-     ],
-     [
-      "pill",
-      "ke tak?"
-     ]
-    ],
-    "s": 0.8,
-    "w": 356,
-    "h": 195
-   },
-   {
-    "rows": [
-     [
-      "big",
-      "bawah"
-     ],
-     [
-      "big",
-      "RM50?"
-     ],
-     [
-      "pill",
-      "berbaloi ke tak?"
-     ]
-    ],
-    "s": 0.8,
-    "w": 349,
-    "h": 188
-   },
-   {
-    "rows": [
-     [
-      "big",
-      "bawah"
-     ],
-     [
-      "big",
-      "RM50?"
-     ],
-     [
-      "pill",
-      "berbaloi"
-     ],
-     [
-      "pill",
-      "ke tak?"
-     ]
-    ],
-    "s": 0.8,
-    "w": 202,
-    "h": 258
+    "s": 0.85,
+    "w": 282,
+    "h": 190
    }
   ],
   "variants": [
@@ -224,54 +140,54 @@
    {
     "rows": [
      [
-      "pill",
+      "txt",
       "tiada tali"
      ]
     ],
     "s": 1.0,
-    "w": 298,
-    "h": 78
+    "w": 192,
+    "h": 68
    },
    {
     "rows": [
      [
-      "pill",
+      "txt",
       "tiada"
      ],
      [
-      "pill",
+      "txt",
       "tali"
      ]
     ],
     "s": 1.0,
-    "w": 183,
-    "h": 162
+    "w": 118,
+    "h": 122
    },
    {
     "rows": [
      [
-      "pill",
+      "txt",
       "tiada tali"
      ]
     ],
-    "s": 0.8,
-    "w": 239,
-    "h": 63
+    "s": 0.85,
+    "w": 163,
+    "h": 61
    },
    {
     "rows": [
      [
-      "pill",
+      "txt",
       "tiada"
      ],
      [
-      "pill",
+      "txt",
       "tali"
      ]
     ],
-    "s": 0.8,
-    "w": 147,
-    "h": 132
+    "s": 0.85,
+    "w": 102,
+    "h": 108
    }
   ],
   "variants": [
@@ -583,54 +499,54 @@
    {
     "rows": [
      [
-      "pill",
+      "txt",
       "memang recommend"
      ]
     ],
     "s": 1.0,
-    "w": 436,
-    "h": 78
+    "w": 358,
+    "h": 68
    },
    {
     "rows": [
      [
-      "pill",
+      "txt",
       "memang"
      ],
      [
-      "pill",
+      "txt",
       "recommend"
      ]
     ],
     "s": 1.0,
-    "w": 275,
-    "h": 162
+    "w": 212,
+    "h": 122
    },
    {
     "rows": [
      [
-      "pill",
+      "txt",
       "memang recommend"
      ]
     ],
-    "s": 0.8,
-    "w": 349,
-    "h": 63
+    "s": 0.85,
+    "w": 301,
+    "h": 61
    },
    {
     "rows": [
      [
-      "pill",
+      "txt",
       "memang"
      ],
      [
-      "pill",
+      "txt",
       "recommend"
      ]
     ],
-    "s": 0.8,
-    "w": 220,
-    "h": 132
+    "s": 0.85,
+    "w": 180,
+    "h": 108
    }
   ],
   "variants": [
@@ -942,60 +858,60 @@
    {
     "rows": [
      [
-      "pill",
+      "txt",
       "design sporty"
      ]
     ],
     "s": 1.0,
-    "w": 367,
-    "h": 78
+    "w": 251,
+    "h": 68
    },
    {
     "rows": [
      [
-      "pill",
+      "txt",
       "design"
      ],
      [
-      "pill",
+      "txt",
       "sporty"
      ]
     ],
     "s": 1.0,
-    "w": 206,
-    "h": 162
+    "w": 134,
+    "h": 122
    },
    {
     "rows": [
      [
-      "pill",
+      "txt",
       "design sporty"
      ]
     ],
-    "s": 0.8,
-    "w": 294,
-    "h": 63
+    "s": 0.85,
+    "w": 212,
+    "h": 61
    },
    {
     "rows": [
      [
-      "pill",
+      "txt",
       "design"
      ],
      [
-      "pill",
+      "txt",
       "sporty"
      ]
     ],
-    "s": 0.8,
-    "w": 165,
-    "h": 132
+    "s": 0.85,
+    "w": 115,
+    "h": 108
    }
   ],
   "variants": [
    {
     "dt": 0.0,
-    "d": 1.552,
+    "d": 1.359,
     "samples": [
      [
       "hyperframes/kasut2/assets/aroll.mp4",
@@ -1003,83 +919,23 @@
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      12.1014
+      12.062800000000001
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      12.4118
+      12.3346
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      12.7222
+      12.6064
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      13.0326
+      12.8782
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      13.343
-     ]
-    ]
-   },
-   {
-    "dt": 0.0,
-    "d": 1.4,
-    "samples": [
-     [
-      "hyperframes/kasut2/assets/aroll.mp4",
-      11.791
-     ],
-     [
-      "hyperframes/kasut2/assets/aroll.mp4",
-      12.071
-     ],
-     [
-      "hyperframes/kasut2/assets/aroll.mp4",
-      12.351
-     ],
-     [
-      "hyperframes/kasut2/assets/aroll.mp4",
-      12.631
-     ],
-     [
-      "hyperframes/kasut2/assets/aroll.mp4",
-      12.911
-     ],
-     [
-      "hyperframes/kasut2/assets/aroll.mp4",
-      13.191
-     ]
-    ]
-   },
-   {
-    "dt": 0.25,
-    "d": 1.302,
-    "samples": [
-     [
-      "hyperframes/kasut2/assets/aroll.mp4",
-      12.041
-     ],
-     [
-      "hyperframes/kasut2/assets/aroll.mp4",
-      12.301400000000001
-     ],
-     [
-      "hyperframes/kasut2/assets/aroll.mp4",
-      12.5618
-     ],
-     [
-      "hyperframes/kasut2/assets/aroll.mp4",
-      12.8222
-     ],
-     [
-      "hyperframes/kasut2/assets/aroll.mp4",
-      13.082600000000001
-     ],
-     [
-      "hyperframes/kasut2/assets/aroll.mp4",
-      13.343
+      13.15
      ]
     ]
    }
@@ -1091,54 +947,54 @@
    {
     "rows": [
      [
-      "pill",
+      "txt",
       "anak suka"
      ]
     ],
     "s": 1.0,
-    "w": 275,
-    "h": 78
+    "w": 197,
+    "h": 68
    },
    {
     "rows": [
      [
-      "pill",
+      "txt",
       "anak"
      ],
      [
-      "pill",
+      "txt",
       "suka"
      ]
     ],
     "s": 1.0,
-    "w": 160,
-    "h": 162
+    "w": 107,
+    "h": 122
    },
    {
     "rows": [
      [
-      "pill",
+      "txt",
       "anak suka"
      ]
     ],
-    "s": 0.8,
-    "w": 220,
-    "h": 63
+    "s": 0.85,
+    "w": 168,
+    "h": 61
    },
    {
     "rows": [
      [
-      "pill",
+      "txt",
       "anak"
      ],
      [
-      "pill",
+      "txt",
       "suka"
      ]
     ],
-    "s": 0.8,
-    "w": 128,
-    "h": 132
+    "s": 0.85,
+    "w": 92,
+    "h": 108
    }
   ],
   "variants": [
@@ -1450,98 +1306,98 @@
    {
     "rows": [
      [
-      "pill",
-      "kalis air \u00b7 water resistant"
+      "txt",
+      "kalis air water resistant"
      ]
     ],
     "s": 1.0,
-    "w": 689,
-    "h": 78
+    "w": 455,
+    "h": 68
    },
    {
     "rows": [
      [
-      "pill",
-      "kalis air \u00b7"
+      "txt",
+      "kalis air"
      ],
      [
-      "pill",
+      "txt",
       "water resistant"
      ]
     ],
     "s": 1.0,
-    "w": 413,
-    "h": 162
+    "w": 304,
+    "h": 122
    },
    {
     "rows": [
      [
-      "pill",
-      "kalis air"
+      "txt",
+      "kalis"
      ],
      [
-      "pill",
-      "\u00b7 water"
+      "txt",
+      "air water"
      ],
      [
-      "pill",
+      "txt",
       "resistant"
      ]
     ],
     "s": 1.0,
-    "w": 275,
-    "h": 246
+    "w": 191,
+    "h": 176
    },
    {
     "rows": [
      [
-      "pill",
-      "kalis air \u00b7 water resistant"
+      "txt",
+      "kalis air water resistant"
      ]
     ],
-    "s": 0.8,
-    "w": 552,
-    "h": 63
+    "s": 0.85,
+    "w": 383,
+    "h": 61
    },
    {
     "rows": [
      [
-      "pill",
-      "kalis air \u00b7"
-     ],
-     [
-      "pill",
-      "water resistant"
-     ]
-    ],
-    "s": 0.8,
-    "w": 331,
-    "h": 132
-   },
-   {
-    "rows": [
-     [
-      "pill",
+      "txt",
       "kalis air"
      ],
      [
-      "pill",
-      "\u00b7 water"
+      "txt",
+      "water resistant"
+     ]
+    ],
+    "s": 0.85,
+    "w": 257,
+    "h": 108
+   },
+   {
+    "rows": [
+     [
+      "txt",
+      "kalis"
      ],
      [
-      "pill",
+      "txt",
+      "air water"
+     ],
+     [
+      "txt",
       "resistant"
      ]
     ],
-    "s": 0.8,
-    "w": 220,
-    "h": 201
+    "s": 0.85,
+    "w": 163,
+    "h": 155
    }
   ],
   "variants": [
    {
     "dt": 0.0,
-    "d": 1.741,
+    "d": 1.57,
     "samples": [
      [
       "hyperframes/kasut2/assets/aroll.mp4",
@@ -1549,23 +1405,23 @@
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      22.1282
+      22.094
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      22.4764
+      22.408
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      22.8246
+      22.722
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      23.172800000000002
+      23.036
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      23.521
+      23.35
      ]
     ]
    },
@@ -1601,7 +1457,7 @@
    },
    {
     "dt": 0.25,
-    "d": 1.491,
+    "d": 1.32,
     "samples": [
      [
       "hyperframes/kasut2/assets/aroll.mp4",
@@ -1609,83 +1465,23 @@
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      22.328200000000002
+      22.294
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      22.6264
+      22.558
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      22.9246
+      22.822000000000003
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      23.2228
+      23.086000000000002
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      23.521
-     ]
-    ]
-   },
-   {
-    "dt": 0.25,
-    "d": 1.4,
-    "samples": [
-     [
-      "hyperframes/kasut2/assets/aroll.mp4",
-      22.03
-     ],
-     [
-      "hyperframes/kasut2/assets/aroll.mp4",
-      22.310000000000002
-     ],
-     [
-      "hyperframes/kasut2/assets/aroll.mp4",
-      22.59
-     ],
-     [
-      "hyperframes/kasut2/assets/aroll.mp4",
-      22.87
-     ],
-     [
-      "hyperframes/kasut2/assets/aroll.mp4",
-      23.150000000000002
-     ],
-     [
-      "hyperframes/kasut2/assets/aroll.mp4",
-      23.43
-     ]
-    ]
-   },
-   {
-    "dt": 0.5,
-    "d": 1.241,
-    "samples": [
-     [
-      "hyperframes/kasut2/assets/aroll.mp4",
-      22.28
-     ],
-     [
-      "hyperframes/kasut2/assets/aroll.mp4",
-      22.528200000000002
-     ],
-     [
-      "hyperframes/kasut2/assets/aroll.mp4",
-      22.776400000000002
-     ],
-     [
-      "hyperframes/kasut2/assets/aroll.mp4",
-      23.0246
-     ],
-     [
-      "hyperframes/kasut2/assets/aroll.mp4",
-      23.2728
-     ],
-     [
-      "hyperframes/kasut2/assets/aroll.mp4",
-      23.521
+      23.35
      ]
     ]
    }
@@ -1697,92 +1493,92 @@
    {
     "rows": [
      [
-      "pill",
+      "txt",
       "kotor? cuci je"
      ]
     ],
     "s": 1.0,
-    "w": 390,
-    "h": 78
+    "w": 261,
+    "h": 68
    },
    {
     "rows": [
      [
-      "pill",
+      "txt",
       "kotor?"
      ],
      [
-      "pill",
+      "txt",
       "cuci je"
      ]
     ],
     "s": 1.0,
-    "w": 229,
-    "h": 162
+    "w": 137,
+    "h": 122
    },
    {
     "rows": [
      [
-      "pill",
+      "txt",
       "kotor?"
      ],
      [
-      "pill",
+      "txt",
       "cuci"
      ],
      [
-      "pill",
+      "txt",
       "je"
      ]
     ],
     "s": 1.0,
-    "w": 206,
-    "h": 246
+    "w": 133,
+    "h": 176
    },
    {
     "rows": [
      [
-      "pill",
+      "txt",
       "kotor? cuci je"
      ]
     ],
-    "s": 0.8,
-    "w": 312,
-    "h": 63
+    "s": 0.85,
+    "w": 221,
+    "h": 61
    },
    {
     "rows": [
      [
-      "pill",
+      "txt",
       "kotor?"
      ],
      [
-      "pill",
+      "txt",
       "cuci je"
      ]
     ],
-    "s": 0.8,
-    "w": 184,
-    "h": 132
+    "s": 0.85,
+    "w": 117,
+    "h": 108
    },
    {
     "rows": [
      [
-      "pill",
+      "txt",
       "kotor?"
      ],
      [
-      "pill",
+      "txt",
       "cuci"
      ],
      [
-      "pill",
+      "txt",
       "je"
      ]
     ],
-    "s": 0.8,
-    "w": 165,
-    "h": 201
+    "s": 0.85,
+    "w": 115,
+    "h": 155
    }
   ],
   "variants": [
@@ -1796,27 +1592,27 @@
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      25.571
+      25.4
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      25.931
+      25.759999999999998
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      26.291
+      26.119999999999997
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      26.651000000000003
+      26.479999999999997
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      27.011000000000003
+      26.84
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      27.371000000000002
+      27.2
      ]
     ]
    },
@@ -1830,57 +1626,57 @@
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      25.571
+      25.4
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      25.851000000000003
+      25.68
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      26.131
+      25.959999999999997
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      26.411
+      26.24
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      26.691000000000003
+      26.52
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      26.971
+      26.799999999999997
      ]
     ]
    },
    {
     "dt": 0.25,
-    "d": 1.789,
+    "d": 1.8,
     "samples": [
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      25.821
+      25.65
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      26.178800000000003
+      26.009999999999998
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      26.5366
+      26.369999999999997
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      26.8944
+      26.729999999999997
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      27.252200000000002
+      27.09
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      27.610000000000003
+      27.45
      ]
     ]
    },
@@ -1890,57 +1686,57 @@
     "samples": [
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      25.821
+      25.65
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      26.101000000000003
+      25.93
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      26.381
+      26.209999999999997
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      26.661
+      26.49
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      26.941000000000003
+      26.77
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      27.221
+      27.049999999999997
      ]
     ]
    },
    {
     "dt": 0.5,
-    "d": 1.539,
+    "d": 1.71,
     "samples": [
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      26.071
+      25.9
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      26.378800000000002
+      26.241999999999997
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      26.686600000000002
+      26.584
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      26.994400000000002
+      26.926
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      27.302200000000003
+      27.267999999999997
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      27.610000000000003
+      27.61
      ]
     ]
    },
@@ -1950,57 +1746,117 @@
     "samples": [
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      26.071
+      25.9
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      26.351000000000003
+      26.18
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      26.631
+      26.459999999999997
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      26.911
+      26.74
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      27.191000000000003
+      27.02
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      27.471
+      27.299999999999997
      ]
     ]
    },
    {
     "dt": 0.75,
-    "d": 1.289,
+    "d": 1.46,
     "samples": [
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      26.321
+      26.15
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      26.5788
+      26.442
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      26.8366
+      26.733999999999998
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      27.0944
+      27.026
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      27.3522
+      27.317999999999998
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      27.610000000000003
+      27.61
+     ]
+    ]
+   },
+   {
+    "dt": 0.75,
+    "d": 1.4,
+    "samples": [
+     [
+      "hyperframes/kasut2/assets/aroll.mp4",
+      26.15
+     ],
+     [
+      "hyperframes/kasut2/assets/aroll.mp4",
+      26.43
+     ],
+     [
+      "hyperframes/kasut2/assets/aroll.mp4",
+      26.709999999999997
+     ],
+     [
+      "hyperframes/kasut2/assets/aroll.mp4",
+      26.99
+     ],
+     [
+      "hyperframes/kasut2/assets/aroll.mp4",
+      27.27
+     ],
+     [
+      "hyperframes/kasut2/assets/aroll.mp4",
+      27.549999999999997
+     ]
+    ]
+   },
+   {
+    "dt": 1.0,
+    "d": 1.21,
+    "samples": [
+     [
+      "hyperframes/kasut2/assets/aroll.mp4",
+      26.4
+     ],
+     [
+      "hyperframes/kasut2/assets/aroll.mp4",
+      26.642
+     ],
+     [
+      "hyperframes/kasut2/assets/aroll.mp4",
+      26.884
+     ],
+     [
+      "hyperframes/kasut2/assets/aroll.mp4",
+      27.125999999999998
+     ],
+     [
+      "hyperframes/kasut2/assets/aroll.mp4",
+      27.368
+     ],
+     [
+      "hyperframes/kasut2/assets/aroll.mp4",
+      27.61
      ]
     ]
    }
@@ -2012,92 +1868,92 @@
    {
     "rows": [
      [
-      "pill",
+      "txt",
       "tak tembus ke dalam"
      ]
     ],
     "s": 1.0,
-    "w": 505,
-    "h": 78
+    "w": 383,
+    "h": 68
    },
    {
     "rows": [
      [
-      "pill",
+      "txt",
       "tak tembus"
      ],
      [
-      "pill",
+      "txt",
       "ke dalam"
      ]
     ],
     "s": 1.0,
-    "w": 298,
-    "h": 162
+    "w": 216,
+    "h": 122
    },
    {
     "rows": [
      [
-      "pill",
+      "txt",
       "tak"
      ],
      [
-      "pill",
+      "txt",
       "tembus"
      ],
      [
-      "pill",
+      "txt",
       "ke dalam"
      ]
     ],
     "s": 1.0,
-    "w": 252,
-    "h": 246
+    "w": 176,
+    "h": 176
    },
    {
     "rows": [
      [
-      "pill",
+      "txt",
       "tak tembus ke dalam"
      ]
     ],
-    "s": 0.8,
-    "w": 404,
-    "h": 63
+    "s": 0.85,
+    "w": 323,
+    "h": 61
    },
    {
     "rows": [
      [
-      "pill",
+      "txt",
       "tak tembus"
      ],
      [
-      "pill",
+      "txt",
       "ke dalam"
      ]
     ],
-    "s": 0.8,
-    "w": 239,
-    "h": 132
+    "s": 0.85,
+    "w": 183,
+    "h": 108
    },
    {
     "rows": [
      [
-      "pill",
+      "txt",
       "tak"
      ],
      [
-      "pill",
+      "txt",
       "tembus"
      ],
      [
-      "pill",
+      "txt",
       "ke dalam"
      ]
     ],
-    "s": 0.8,
-    "w": 202,
-    "h": 201
+    "s": 0.85,
+    "w": 150,
+    "h": 155
    }
   ],
   "variants": [
@@ -2409,54 +2265,54 @@
    {
     "rows": [
      [
-      "pill",
+      "txt",
       "senang guna"
      ]
     ],
     "s": 1.0,
-    "w": 321,
-    "h": 78
+    "w": 232,
+    "h": 68
    },
    {
     "rows": [
      [
-      "pill",
+      "txt",
       "senang"
      ],
      [
-      "pill",
+      "txt",
       "guna"
      ]
     ],
     "s": 1.0,
-    "w": 206,
-    "h": 162
+    "w": 139,
+    "h": 122
    },
    {
     "rows": [
      [
-      "pill",
+      "txt",
       "senang guna"
      ]
     ],
-    "s": 0.8,
-    "w": 257,
-    "h": 63
+    "s": 0.85,
+    "w": 197,
+    "h": 61
    },
    {
     "rows": [
      [
-      "pill",
+      "txt",
       "senang"
      ],
      [
-      "pill",
+      "txt",
       "guna"
      ]
     ],
-    "s": 0.8,
-    "w": 165,
-    "h": 132
+    "s": 0.85,
+    "w": 119,
+    "h": 108
    }
   ],
   "variants": [
@@ -2558,98 +2414,98 @@
    {
     "rows": [
      [
-      "pill",
+      "txt",
       "tarik & ketat"
      ]
     ],
     "s": 1.0,
-    "w": 367,
-    "h": 78
+    "w": 251,
+    "h": 68
    },
    {
     "rows": [
      [
-      "pill",
+      "txt",
       "tarik"
      ],
      [
-      "pill",
+      "txt",
       "& ketat"
      ]
     ],
     "s": 1.0,
-    "w": 229,
-    "h": 162
+    "w": 150,
+    "h": 122
    },
    {
     "rows": [
      [
-      "pill",
+      "txt",
       "tarik"
      ],
      [
-      "pill",
+      "txt",
       "&"
      ],
      [
-      "pill",
+      "txt",
       "ketat"
      ]
     ],
     "s": 1.0,
-    "w": 183,
-    "h": 246
+    "w": 124,
+    "h": 176
    },
    {
     "rows": [
      [
-      "pill",
+      "txt",
       "tarik & ketat"
      ]
     ],
-    "s": 0.8,
-    "w": 294,
-    "h": 63
+    "s": 0.85,
+    "w": 213,
+    "h": 61
    },
    {
     "rows": [
      [
-      "pill",
+      "txt",
       "tarik"
      ],
      [
-      "pill",
+      "txt",
       "& ketat"
      ]
     ],
-    "s": 0.8,
-    "w": 184,
-    "h": 132
+    "s": 0.85,
+    "w": 129,
+    "h": 108
    },
    {
     "rows": [
      [
-      "pill",
+      "txt",
       "tarik"
      ],
      [
-      "pill",
+      "txt",
       "&"
      ],
      [
-      "pill",
+      "txt",
       "ketat"
      ]
     ],
-    "s": 0.8,
-    "w": 147,
-    "h": 201
+    "s": 0.85,
+    "w": 107,
+    "h": 155
    }
   ],
   "variants": [
    {
     "dt": 0.0,
-    "d": 1.631,
+    "d": 1.481,
     "samples": [
      [
       "hyperframes/kasut2/assets/aroll.mp4",
@@ -2657,23 +2513,23 @@
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      32.3952
+      32.3652
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      32.7214
+      32.6614
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      33.0476
+      32.9576
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      33.3738
+      33.253800000000005
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      33.7
+      33.550000000000004
      ]
     ]
    },
@@ -2709,7 +2565,7 @@
    },
    {
     "dt": 0.25,
-    "d": 1.381,
+    "d": 1.231,
     "samples": [
      [
       "hyperframes/kasut2/assets/aroll.mp4",
@@ -2717,23 +2573,23 @@
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      32.595200000000006
+      32.565200000000004
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      32.8714
+      32.811400000000006
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      33.147600000000004
+      33.0576
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      33.4238
+      33.3038
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      33.7
+      33.550000000000004
      ]
     ]
    }
@@ -2745,92 +2601,92 @@
    {
     "rows": [
      [
-      "pill",
+      "txt",
       "sesuai sekolah rendah"
      ]
     ],
     "s": 1.0,
-    "w": 551,
-    "h": 78
+    "w": 402,
+    "h": 68
    },
    {
     "rows": [
      [
-      "pill",
+      "txt",
       "sesuai"
      ],
      [
-      "pill",
+      "txt",
       "sekolah rendah"
      ]
     ],
     "s": 1.0,
-    "w": 390,
-    "h": 162
+    "w": 284,
+    "h": 122
    },
    {
     "rows": [
      [
-      "pill",
+      "txt",
       "sesuai"
      ],
      [
-      "pill",
+      "txt",
       "sekolah"
      ],
      [
-      "pill",
+      "txt",
       "rendah"
      ]
     ],
     "s": 1.0,
-    "w": 229,
-    "h": 246
+    "w": 150,
+    "h": 176
    },
    {
     "rows": [
      [
-      "pill",
+      "txt",
       "sesuai sekolah rendah"
      ]
     ],
-    "s": 0.8,
-    "w": 441,
-    "h": 63
+    "s": 0.85,
+    "w": 338,
+    "h": 61
    },
    {
     "rows": [
      [
-      "pill",
+      "txt",
       "sesuai"
      ],
      [
-      "pill",
+      "txt",
       "sekolah rendah"
      ]
     ],
-    "s": 0.8,
-    "w": 312,
-    "h": 132
+    "s": 0.85,
+    "w": 240,
+    "h": 108
    },
    {
     "rows": [
      [
-      "pill",
+      "txt",
       "sesuai"
      ],
      [
-      "pill",
+      "txt",
       "sekolah"
      ],
      [
-      "pill",
+      "txt",
       "rendah"
      ]
     ],
-    "s": 0.8,
-    "w": 184,
-    "h": 201
+    "s": 0.85,
+    "w": 128,
+    "h": 155
    }
   ],
   "variants": [
@@ -2844,27 +2700,27 @@
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      35.75
+      35.6
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      36.11
+      35.96
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      36.47
+      36.32
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      36.83
+      36.68
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      37.19
+      37.04
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      37.55
+      37.4
      ]
     ]
    },
@@ -2878,41 +2734,19 @@
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      35.75
+      35.6
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      36.03
+      35.88
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      36.31
+      36.160000000000004
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      36.59
-     ],
-     [
-      "hyperframes/kasut2/assets/aroll.mp4",
-      36.87
-     ],
-     [
-      "hyperframes/kasut2/assets/aroll.mp4",
-      37.15
-     ]
-    ]
-   },
-   {
-    "dt": 0.25,
-    "d": 1.8,
-    "samples": [
-     [
-      "hyperframes/kasut2/assets/aroll.mp4",
-      36.0
-     ],
-     [
-      "hyperframes/kasut2/assets/aroll.mp4",
-      36.36
+      36.44
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
@@ -2920,101 +2754,33 @@
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      37.08
-     ],
-     [
-      "hyperframes/kasut2/assets/aroll.mp4",
-      37.44
-     ],
-     [
-      "hyperframes/kasut2/assets/aroll.mp4",
-      37.8
+      37.0
      ]
     ]
    },
    {
     "dt": 0.25,
-    "d": 1.4,
-    "samples": [
-     [
-      "hyperframes/kasut2/assets/aroll.mp4",
-      36.0
-     ],
-     [
-      "hyperframes/kasut2/assets/aroll.mp4",
-      36.28
-     ],
-     [
-      "hyperframes/kasut2/assets/aroll.mp4",
-      36.56
-     ],
-     [
-      "hyperframes/kasut2/assets/aroll.mp4",
-      36.84
-     ],
-     [
-      "hyperframes/kasut2/assets/aroll.mp4",
-      37.12
-     ],
-     [
-      "hyperframes/kasut2/assets/aroll.mp4",
-      37.4
-     ]
-    ]
-   },
-   {
-    "dt": 0.5,
     "d": 1.8,
     "samples": [
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      36.25
+      35.85
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      36.61
+      36.21
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      36.97
+      36.57
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      37.33
+      36.93
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      37.69
-     ],
-     [
-      "hyperframes/kasut2/assets/aroll.mp4",
-      38.05
-     ]
-    ]
-   },
-   {
-    "dt": 0.5,
-    "d": 1.4,
-    "samples": [
-     [
-      "hyperframes/kasut2/assets/aroll.mp4",
-      36.25
-     ],
-     [
-      "hyperframes/kasut2/assets/aroll.mp4",
-      36.53
-     ],
-     [
-      "hyperframes/kasut2/assets/aroll.mp4",
-      36.81
-     ],
-     [
-      "hyperframes/kasut2/assets/aroll.mp4",
-      37.09
-     ],
-     [
-      "hyperframes/kasut2/assets/aroll.mp4",
-      37.37
+      37.29
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
@@ -3023,58 +2789,58 @@
     ]
    },
    {
-    "dt": 0.75,
-    "d": 1.8,
-    "samples": [
-     [
-      "hyperframes/kasut2/assets/aroll.mp4",
-      36.5
-     ],
-     [
-      "hyperframes/kasut2/assets/aroll.mp4",
-      36.86
-     ],
-     [
-      "hyperframes/kasut2/assets/aroll.mp4",
-      37.22
-     ],
-     [
-      "hyperframes/kasut2/assets/aroll.mp4",
-      37.58
-     ],
-     [
-      "hyperframes/kasut2/assets/aroll.mp4",
-      37.94
-     ],
-     [
-      "hyperframes/kasut2/assets/aroll.mp4",
-      38.3
-     ]
-    ]
-   },
-   {
-    "dt": 0.75,
+    "dt": 0.25,
     "d": 1.4,
     "samples": [
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      36.5
+      35.85
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      36.78
+      36.13
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      37.06
+      36.410000000000004
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      37.34
+      36.69
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      37.62
+      36.97
+     ],
+     [
+      "hyperframes/kasut2/assets/aroll.mp4",
+      37.25
+     ]
+    ]
+   },
+   {
+    "dt": 0.5,
+    "d": 1.8,
+    "samples": [
+     [
+      "hyperframes/kasut2/assets/aroll.mp4",
+      36.1
+     ],
+     [
+      "hyperframes/kasut2/assets/aroll.mp4",
+      36.46
+     ],
+     [
+      "hyperframes/kasut2/assets/aroll.mp4",
+      36.82
+     ],
+     [
+      "hyperframes/kasut2/assets/aroll.mp4",
+      37.18
+     ],
+     [
+      "hyperframes/kasut2/assets/aroll.mp4",
+      37.54
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
@@ -3083,16 +2849,84 @@
     ]
    },
    {
-    "dt": 1.0,
+    "dt": 0.5,
+    "d": 1.4,
+    "samples": [
+     [
+      "hyperframes/kasut2/assets/aroll.mp4",
+      36.1
+     ],
+     [
+      "hyperframes/kasut2/assets/aroll.mp4",
+      36.38
+     ],
+     [
+      "hyperframes/kasut2/assets/aroll.mp4",
+      36.660000000000004
+     ],
+     [
+      "hyperframes/kasut2/assets/aroll.mp4",
+      36.94
+     ],
+     [
+      "hyperframes/kasut2/assets/aroll.mp4",
+      37.22
+     ],
+     [
+      "hyperframes/kasut2/assets/aroll.mp4",
+      37.5
+     ]
+    ]
+   },
+   {
+    "dt": 0.75,
     "d": 1.8,
     "samples": [
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      36.75
+      36.35
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      37.11
+      36.71
+     ],
+     [
+      "hyperframes/kasut2/assets/aroll.mp4",
+      37.07
+     ],
+     [
+      "hyperframes/kasut2/assets/aroll.mp4",
+      37.43
+     ],
+     [
+      "hyperframes/kasut2/assets/aroll.mp4",
+      37.79
+     ],
+     [
+      "hyperframes/kasut2/assets/aroll.mp4",
+      38.15
+     ]
+    ]
+   },
+   {
+    "dt": 0.75,
+    "d": 1.4,
+    "samples": [
+     [
+      "hyperframes/kasut2/assets/aroll.mp4",
+      36.35
+     ],
+     [
+      "hyperframes/kasut2/assets/aroll.mp4",
+      36.63
+     ],
+     [
+      "hyperframes/kasut2/assets/aroll.mp4",
+      36.910000000000004
+     ],
+     [
+      "hyperframes/kasut2/assets/aroll.mp4",
+      37.19
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
@@ -3100,15 +2934,37 @@
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      37.83
+      37.75
+     ]
+    ]
+   },
+   {
+    "dt": 1.0,
+    "d": 1.8,
+    "samples": [
+     [
+      "hyperframes/kasut2/assets/aroll.mp4",
+      36.6
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      38.19
+      36.96
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      38.55
+      37.32
+     ],
+     [
+      "hyperframes/kasut2/assets/aroll.mp4",
+      37.68
+     ],
+     [
+      "hyperframes/kasut2/assets/aroll.mp4",
+      38.04
+     ],
+     [
+      "hyperframes/kasut2/assets/aroll.mp4",
+      38.4
      ]
     ]
    },
@@ -3118,27 +2974,27 @@
     "samples": [
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      36.75
+      36.6
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      37.03
+      36.88
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      37.31
+      37.160000000000004
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      37.59
+      37.44
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      37.87
+      37.72
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      38.15
+      38.0
      ]
     ]
    }
@@ -3150,60 +3006,60 @@
    {
     "rows": [
      [
-      "pill",
+      "txt",
       "tapak anti-slip"
      ]
     ],
     "s": 1.0,
-    "w": 413,
-    "h": 78
+    "w": 277,
+    "h": 68
    },
    {
     "rows": [
      [
-      "pill",
+      "txt",
       "tapak"
      ],
      [
-      "pill",
+      "txt",
       "anti-slip"
      ]
     ],
     "s": 1.0,
-    "w": 275,
-    "h": 162
+    "w": 160,
+    "h": 122
    },
    {
     "rows": [
      [
-      "pill",
+      "txt",
       "tapak anti-slip"
      ]
     ],
-    "s": 0.8,
-    "w": 331,
-    "h": 63
+    "s": 0.85,
+    "w": 234,
+    "h": 61
    },
    {
     "rows": [
      [
-      "pill",
+      "txt",
       "tapak"
      ],
      [
-      "pill",
+      "txt",
       "anti-slip"
      ]
     ],
-    "s": 0.8,
-    "w": 220,
-    "h": 132
+    "s": 0.85,
+    "w": 137,
+    "h": 108
    }
   ],
   "variants": [
    {
     "dt": 0.0,
-    "d": 1.602,
+    "d": 1.281,
     "samples": [
      [
       "hyperframes/kasut2/assets/aroll.mp4",
@@ -3211,83 +3067,23 @@
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      40.989399999999996
+      40.9252
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      41.309799999999996
+      41.1814
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      41.630199999999995
+      41.437599999999996
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      41.950599999999994
+      41.693799999999996
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      42.270999999999994
-     ]
-    ]
-   },
-   {
-    "dt": 0.0,
-    "d": 1.4,
-    "samples": [
-     [
-      "hyperframes/kasut2/assets/aroll.mp4",
-      40.669
-     ],
-     [
-      "hyperframes/kasut2/assets/aroll.mp4",
-      40.949
-     ],
-     [
-      "hyperframes/kasut2/assets/aroll.mp4",
-      41.229
-     ],
-     [
-      "hyperframes/kasut2/assets/aroll.mp4",
-      41.509
-     ],
-     [
-      "hyperframes/kasut2/assets/aroll.mp4",
-      41.788999999999994
-     ],
-     [
-      "hyperframes/kasut2/assets/aroll.mp4",
-      42.068999999999996
-     ]
-    ]
-   },
-   {
-    "dt": 0.25,
-    "d": 1.352,
-    "samples": [
-     [
-      "hyperframes/kasut2/assets/aroll.mp4",
-      40.919
-     ],
-     [
-      "hyperframes/kasut2/assets/aroll.mp4",
-      41.1894
-     ],
-     [
-      "hyperframes/kasut2/assets/aroll.mp4",
-      41.459799999999994
-     ],
-     [
-      "hyperframes/kasut2/assets/aroll.mp4",
-      41.730199999999996
-     ],
-     [
-      "hyperframes/kasut2/assets/aroll.mp4",
-      42.0006
-     ],
-     [
-      "hyperframes/kasut2/assets/aroll.mp4",
-      42.270999999999994
+      41.949999999999996
      ]
     ]
    }
@@ -3299,60 +3095,60 @@
    {
     "rows": [
      [
-      "pill",
+      "txt",
       "super ringan"
      ]
     ],
     "s": 1.0,
-    "w": 344,
-    "h": 78
+    "w": 232,
+    "h": 68
    },
    {
     "rows": [
      [
-      "pill",
+      "txt",
       "super"
      ],
      [
-      "pill",
+      "txt",
       "ringan"
      ]
     ],
     "s": 1.0,
-    "w": 206,
-    "h": 162
+    "w": 128,
+    "h": 122
    },
    {
     "rows": [
      [
-      "pill",
+      "txt",
       "super ringan"
      ]
     ],
-    "s": 0.8,
-    "w": 276,
-    "h": 63
+    "s": 0.85,
+    "w": 197,
+    "h": 61
    },
    {
     "rows": [
      [
-      "pill",
+      "txt",
       "super"
      ],
      [
-      "pill",
+      "txt",
       "ringan"
      ]
     ],
-    "s": 0.8,
-    "w": 165,
-    "h": 132
+    "s": 0.85,
+    "w": 110,
+    "h": 108
    }
   ],
   "variants": [
    {
     "dt": 0.0,
-    "d": 1.702,
+    "d": 1.55,
     "samples": [
      [
       "hyperframes/kasut2/assets/broll_tapak.mp4",
@@ -3360,27 +3156,27 @@
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      44.321
+      44.0
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      44.6614
+      44.31
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      45.001799999999996
+      44.62
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      45.3422
+      44.93
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      45.6826
+      45.24
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      46.022999999999996
+      45.55
      ]
     ]
    },
@@ -3394,117 +3190,57 @@
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      44.321
+      44.0
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      44.601
+      44.28
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      44.881
+      44.56
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      45.161
+      44.84
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      45.440999999999995
+      45.12
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      45.721
+      45.4
      ]
     ]
    },
    {
     "dt": 0.25,
-    "d": 1.452,
+    "d": 1.3,
     "samples": [
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      44.571
+      44.25
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      44.861399999999996
+      44.51
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      45.151799999999994
+      44.77
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      45.4422
+      45.03
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      45.7326
+      45.29
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      46.022999999999996
-     ]
-    ]
-   },
-   {
-    "dt": 0.25,
-    "d": 1.4,
-    "samples": [
-     [
-      "hyperframes/kasut2/assets/aroll.mp4",
-      44.571
-     ],
-     [
-      "hyperframes/kasut2/assets/aroll.mp4",
-      44.851
-     ],
-     [
-      "hyperframes/kasut2/assets/aroll.mp4",
-      45.131
-     ],
-     [
-      "hyperframes/kasut2/assets/aroll.mp4",
-      45.411
-     ],
-     [
-      "hyperframes/kasut2/assets/aroll.mp4",
-      45.690999999999995
-     ],
-     [
-      "hyperframes/kasut2/assets/aroll.mp4",
-      45.971
-     ]
-    ]
-   },
-   {
-    "dt": 0.5,
-    "d": 1.202,
-    "samples": [
-     [
-      "hyperframes/kasut2/assets/aroll.mp4",
-      44.821
-     ],
-     [
-      "hyperframes/kasut2/assets/aroll.mp4",
-      45.0614
-     ],
-     [
-      "hyperframes/kasut2/assets/aroll.mp4",
-      45.3018
-     ],
-     [
-      "hyperframes/kasut2/assets/aroll.mp4",
-      45.5422
-     ],
-     [
-      "hyperframes/kasut2/assets/aroll.mp4",
-      45.782599999999995
-     ],
-     [
-      "hyperframes/kasut2/assets/aroll.mp4",
-      46.022999999999996
+      45.55
      ]
     ]
    }
@@ -3516,92 +3252,92 @@
    {
     "rows": [
      [
-      "pill",
+      "txt",
       "cek beg kuning"
      ]
     ],
     "s": 1.0,
-    "w": 390,
-    "h": 78
+    "w": 265,
+    "h": 68
    },
    {
     "rows": [
      [
-      "pill",
+      "txt",
       "cek beg"
      ],
      [
-      "pill",
+      "txt",
       "kuning"
      ]
     ],
     "s": 1.0,
-    "w": 229,
-    "h": 162
+    "w": 150,
+    "h": 122
    },
    {
     "rows": [
      [
-      "pill",
+      "txt",
       "cek"
      ],
      [
-      "pill",
+      "txt",
       "beg"
      ],
      [
-      "pill",
+      "txt",
       "kuning"
      ]
     ],
     "s": 1.0,
-    "w": 206,
-    "h": 246
+    "w": 124,
+    "h": 176
    },
    {
     "rows": [
      [
-      "pill",
+      "txt",
       "cek beg kuning"
      ]
     ],
-    "s": 0.8,
-    "w": 312,
-    "h": 63
+    "s": 0.85,
+    "w": 224,
+    "h": 61
    },
    {
     "rows": [
      [
-      "pill",
+      "txt",
       "cek beg"
      ],
      [
-      "pill",
+      "txt",
       "kuning"
      ]
     ],
-    "s": 0.8,
-    "w": 184,
-    "h": 132
+    "s": 0.85,
+    "w": 128,
+    "h": 108
    },
    {
     "rows": [
      [
-      "pill",
+      "txt",
       "cek"
      ],
      [
-      "pill",
+      "txt",
       "beg"
      ],
      [
-      "pill",
+      "txt",
       "kuning"
      ]
     ],
-    "s": 0.8,
-    "w": 165,
-    "h": 201
+    "s": 0.85,
+    "w": 107,
+    "h": 155
    }
   ],
   "variants": [
@@ -3615,27 +3351,27 @@
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      52.357
+      52.4
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      52.637
+      52.68
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      52.917
+      52.96
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      53.197
+      53.239999999999995
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      53.477
+      53.519999999999996
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      53.757
+      53.8
      ]
     ]
    }
@@ -3647,92 +3383,92 @@
    {
     "rows": [
      [
-      "pill",
+      "txt",
       "size cepat habis"
      ]
     ],
     "s": 1.0,
-    "w": 436,
-    "h": 78
+    "w": 299,
+    "h": 68
    },
    {
     "rows": [
      [
-      "pill",
+      "txt",
       "size cepat"
      ],
      [
-      "pill",
+      "txt",
       "habis"
      ]
     ],
     "s": 1.0,
-    "w": 298,
-    "h": 162
+    "w": 200,
+    "h": 122
    },
    {
     "rows": [
      [
-      "pill",
+      "txt",
       "size"
      ],
      [
-      "pill",
+      "txt",
       "cepat"
      ],
      [
-      "pill",
+      "txt",
       "habis"
      ]
     ],
     "s": 1.0,
-    "w": 183,
-    "h": 246
+    "w": 123,
+    "h": 176
    },
    {
     "rows": [
      [
-      "pill",
+      "txt",
       "size cepat habis"
      ]
     ],
-    "s": 0.8,
-    "w": 349,
-    "h": 63
+    "s": 0.85,
+    "w": 253,
+    "h": 61
    },
    {
     "rows": [
      [
-      "pill",
+      "txt",
       "size cepat"
      ],
      [
-      "pill",
+      "txt",
       "habis"
      ]
     ],
-    "s": 0.8,
-    "w": 239,
-    "h": 132
+    "s": 0.85,
+    "w": 170,
+    "h": 108
    },
    {
     "rows": [
      [
-      "pill",
+      "txt",
       "size"
      ],
      [
-      "pill",
+      "txt",
       "cepat"
      ],
      [
-      "pill",
+      "txt",
       "habis"
      ]
     ],
-    "s": 0.8,
-    "w": 147,
-    "h": 201
+    "s": 0.85,
+    "w": 106,
+    "h": 155
    }
   ],
   "variants": [
@@ -3742,27 +3478,27 @@
     "samples": [
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      53.857
+      53.9
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      54.217
+      54.26
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      54.577
+      54.62
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      54.937
+      54.98
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      55.297
+      55.339999999999996
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      55.657
+      55.699999999999996
      ]
     ]
    },
@@ -3772,53 +3508,53 @@
     "samples": [
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      53.857
+      53.9
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      54.137
+      54.18
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      54.417
+      54.46
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      54.697
+      54.739999999999995
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      54.977
+      55.019999999999996
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      55.257
+      55.3
      ]
     ]
    },
    {
     "dt": 0.25,
-    "d": 1.622,
+    "d": 1.579,
     "samples": [
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      54.107
+      54.15
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      54.4314
+      54.4658
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      54.7558
+      54.7816
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      55.0802
+      55.0974
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      55.4046
+      55.413199999999996
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
@@ -3832,53 +3568,53 @@
     "samples": [
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      54.107
+      54.15
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      54.387
+      54.43
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      54.667
+      54.71
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      54.947
+      54.989999999999995
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      55.227
+      55.269999999999996
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      55.507
+      55.55
      ]
     ]
    },
    {
     "dt": 0.5,
-    "d": 1.372,
+    "d": 1.329,
     "samples": [
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      54.357
+      54.4
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      54.6314
+      54.6658
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      54.9058
+      54.931599999999996
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      55.1802
+      55.1974
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      55.4546
+      55.4632
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
@@ -3894,24 +3630,24 @@
    {
     "rows": [
      [
-      "pill",
-      "comfort level 9/10"
+      "txt",
+      "comfort level"
      ]
     ],
     "s": 1.0,
-    "w": 420,
-    "h": 132
+    "w": 320,
+    "h": 81
    },
    {
     "rows": [
      [
-      "pill",
-      "comfort level 9/10"
+      "txt",
+      "comfort level"
      ]
     ],
-    "s": 0.8,
-    "w": 340,
-    "h": 108
+    "s": 0.85,
+    "w": 275,
+    "h": 72
    }
   ],
   "variants": [
@@ -3925,27 +3661,27 @@
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      48.073
+      47.6
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      48.513
+      48.04
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      48.953
+      48.480000000000004
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      49.393
+      48.92
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      49.833
+      49.36
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      50.273
+      49.800000000000004
      ]
     ]
    },
@@ -3959,57 +3695,57 @@
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      48.073
+      47.6
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      48.353
+      47.88
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      48.633
+      48.160000000000004
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      48.913
+      48.44
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      49.193
+      48.72
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      49.473
+      49.0
      ]
     ]
    },
    {
     "dt": 0.25,
-    "d": 1.984,
+    "d": 2.2,
     "samples": [
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      48.323
+      47.85
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      48.7198
+      48.29
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      49.1166
+      48.730000000000004
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      49.5134
+      49.17
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      49.9102
+      49.61
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      50.307
+      50.050000000000004
      ]
     ]
    },
@@ -4019,57 +3755,57 @@
     "samples": [
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      48.323
+      47.85
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      48.603
+      48.13
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      48.883
+      48.410000000000004
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      49.163
+      48.69
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      49.443
+      48.97
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      49.723
+      49.25
      ]
     ]
    },
    {
     "dt": 0.5,
-    "d": 1.734,
+    "d": 2.2,
     "samples": [
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      48.573
+      48.1
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      48.9198
+      48.54
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      49.2666
+      48.980000000000004
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      49.6134
+      49.42
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      49.9602
+      49.86
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      50.307
+      50.300000000000004
      ]
     ]
    },
@@ -4079,57 +3815,57 @@
     "samples": [
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      48.573
+      48.1
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      48.853
+      48.38
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      49.133
+      48.660000000000004
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      49.413
+      48.94
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      49.693
+      49.22
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      49.973
+      49.5
      ]
     ]
    },
    {
     "dt": 0.75,
-    "d": 1.484,
+    "d": 2.0,
     "samples": [
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      48.823
+      48.35
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      49.1198
+      48.75
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      49.4166
+      49.15
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      49.7134
+      49.550000000000004
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      50.0102
+      49.95
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      50.307
+      50.35
      ]
     ]
    },
@@ -4139,57 +3875,87 @@
     "samples": [
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      48.823
+      48.35
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      49.103
+      48.63
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      49.383
+      48.910000000000004
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      49.663
+      49.19
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      49.943
+      49.47
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      50.223
+      49.75
      ]
     ]
    },
    {
     "dt": 1.0,
-    "d": 1.234,
+    "d": 1.75,
     "samples": [
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      49.073
+      48.6
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      49.3198
+      48.95
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      49.5666
+      49.300000000000004
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      49.8134
+      49.65
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      50.0602
+      50.0
      ],
      [
       "hyperframes/kasut2/assets/aroll.mp4",
-      50.307
+      50.35
+     ]
+    ]
+   },
+   {
+    "dt": 1.0,
+    "d": 1.4,
+    "samples": [
+     [
+      "hyperframes/kasut2/assets/aroll.mp4",
+      48.6
+     ],
+     [
+      "hyperframes/kasut2/assets/aroll.mp4",
+      48.88
+     ],
+     [
+      "hyperframes/kasut2/assets/aroll.mp4",
+      49.160000000000004
+     ],
+     [
+      "hyperframes/kasut2/assets/aroll.mp4",
+      49.44
+     ],
+     [
+      "hyperframes/kasut2/assets/aroll.mp4",
+      49.72
+     ],
+     [
+      "hyperframes/kasut2/assets/aroll.mp4",
+      50.0
      ]
     ]
    }

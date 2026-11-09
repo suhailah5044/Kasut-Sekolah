@@ -1,8 +1,8 @@
 {
  "hook": {
-  "x": 824,
-  "y": 564,
-  "layout": 7,
+  "x": 704,
+  "y": 500,
+  "layout": 3,
   "dt": 0.0,
   "d": 2.9,
   "on_face_hands_shoe_px": 0,
@@ -10,124 +10,124 @@
   "clearance_px": 23
  },
  "kw0": {
-  "x": 728,
-  "y": 268,
+  "x": 832,
+  "y": 228,
   "layout": 0,
   "dt": 0.0,
   "d": 1.8,
   "on_face_hands_shoe_px": 0,
   "on_clothes_px": 0,
-  "clearance_px": 76
+  "clearance_px": 135
  },
  "kw1": {
-  "x": 808,
-  "y": 228,
+  "x": 48,
+  "y": 628,
   "layout": 3,
-  "dt": 1.0,
-  "d": 1.8,
+  "dt": 0.0,
+  "d": 1.4,
   "on_face_hands_shoe_px": 0,
-  "on_clothes_px": 6976,
+  "on_clothes_px": 160,
   "clearance_px": 0
  },
  "kw2": {
-  "x": 48,
-  "y": 508,
-  "layout": 3,
+  "x": 776,
+  "y": 228,
+  "layout": 0,
   "dt": 0.0,
-  "d": 1.552,
+  "d": 1.359,
   "on_face_hands_shoe_px": 0,
   "on_clothes_px": 0,
-  "clearance_px": 23
+  "clearance_px": 67
  },
  "kw3": {
-  "x": 752,
+  "x": 832,
   "y": 228,
   "layout": 0,
   "dt": 0.0,
   "d": 1.8,
   "on_face_hands_shoe_px": 0,
   "on_clothes_px": 0,
-  "clearance_px": 255
+  "clearance_px": 317
  },
  "kw4": {
-  "x": 56,
-  "y": 508,
+  "x": 96,
+  "y": 564,
   "layout": 4,
   "dt": 0.0,
-  "d": 1.741,
+  "d": 1.57,
   "on_face_hands_shoe_px": 0,
   "on_clothes_px": 0,
   "clearance_px": 23
  },
  "kw5": {
-  "x": 144,
+  "x": 48,
   "y": 228,
-  "layout": 3,
-  "dt": 0.0,
-  "d": 1.4,
-  "on_face_hands_shoe_px": 0,
-  "on_clothes_px": 0,
-  "clearance_px": 20
- },
- "kw6": {
-  "x": 120,
-  "y": 428,
-  "layout": 3,
+  "layout": 0,
   "dt": 0.0,
   "d": 1.8,
   "on_face_hands_shoe_px": 0,
   "on_clothes_px": 0,
-  "clearance_px": 23
+  "clearance_px": 24
+ },
+ "kw6": {
+  "x": 48,
+  "y": 388,
+  "layout": 0,
+  "dt": 0.0,
+  "d": 1.8,
+  "on_face_hands_shoe_px": 0,
+  "on_clothes_px": 0,
+  "clearance_px": 112
  },
  "kw7": {
-  "x": 864,
+  "x": 904,
   "y": 228,
   "layout": 3,
   "dt": 0.25,
   "d": 1.34,
   "on_face_hands_shoe_px": 0,
-  "on_clothes_px": 10336,
+  "on_clothes_px": 3728,
   "clearance_px": 0
  },
  "kw8": {
-  "x": 680,
-  "y": 596,
-  "layout": 3,
+  "x": 776,
+  "y": 268,
+  "layout": 0,
   "dt": 0.0,
-  "d": 1.631,
+  "d": 1.481,
   "on_face_hands_shoe_px": 0,
   "on_clothes_px": 0,
-  "clearance_px": 23
+  "clearance_px": 136
  },
  "kw9": {
-  "x": 56,
-  "y": 260,
+  "x": 128,
+  "y": 276,
   "layout": 5,
   "dt": 0.0,
   "d": 1.8,
   "on_face_hands_shoe_px": 0,
   "on_clothes_px": 0,
-  "clearance_px": 21
+  "clearance_px": 23
  },
  "kw10": {
   "x": 48,
   "y": 228,
   "layout": 0,
   "dt": 0.0,
-  "d": 1.602,
+  "d": 1.281,
   "on_face_hands_shoe_px": 0,
   "on_clothes_px": 0,
-  "clearance_px": 102
+  "clearance_px": 230
  },
  "kw11": {
-  "x": 96,
-  "y": 604,
-  "layout": 2,
+  "x": 48,
+  "y": 228,
+  "layout": 0,
   "dt": 0.0,
-  "d": 1.702,
+  "d": 1.55,
   "on_face_hands_shoe_px": 0,
   "on_clothes_px": 0,
-  "clearance_px": 23
+  "clearance_px": 166
  },
  "kw12": {
   "x": 48,
@@ -137,26 +137,26 @@
   "d": 1.4,
   "on_face_hands_shoe_px": 0,
   "on_clothes_px": 0,
-  "clearance_px": 100
+  "clearance_px": 154
  },
  "kw13": {
-  "x": 592,
+  "x": 728,
   "y": 228,
   "layout": 0,
   "dt": 0.0,
   "d": 1.8,
   "on_face_hands_shoe_px": 0,
   "on_clothes_px": 0,
-  "clearance_px": 117
+  "clearance_px": 174
  },
  "comfort": {
-  "x": 608,
+  "x": 704,
   "y": 228,
   "layout": 0,
   "dt": 0.0,
   "d": 2.2,
   "on_face_hands_shoe_px": 0,
   "on_clothes_px": 0,
-  "clearance_px": 128
+  "clearance_px": 169
  }
 }

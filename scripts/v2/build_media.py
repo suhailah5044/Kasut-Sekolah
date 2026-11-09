@@ -1,4 +1,4 @@
-"""Video 2: cut A-roll from the EDL, b-roll close-ups, new music + SFX.
+"""Video 2: cut A-roll from the EDL, b-roll close-ups, music + SFX in video 1 style.
 Run from repo root: python3 scripts/v2/build_media.py [--preview]
 No colour grade: only full->limited range conversion so browser colours match the source."""
 import json, subprocess, os, sys
@@ -52,13 +52,10 @@ for name, (s, cw, ch, x, y) in BROLL.items():   # normal speed (no slow-mo)
          "-vf", vf, "-an", *VENC, f"{OUT}/{name}.mp4"])
     print(name, "ok")
 
-# ---------- Music: original clean/upbeat bed, 112 BPM, Fmaj7-G6-Am7-Em7
-SR, BPM = 48000, 112
+# ---------- Music + SFX: same as video 1 (original synth, 100 BPM clean/upbeat, ting/whoosh/shimmer)
+SR = 48000
+BPM = 100
 BEAT = 60 / BPM
-dur = 58.0
-N = int(dur * SR)
-mix = np.zeros((N, 2))
-rng = np.random.default_rng(11)
 
 
 def write_wav(path, x):
@@ -75,8 +72,15 @@ def env(n, a=0.005, d=0.3):
     return np.minimum(t / a, 1) * np.exp(-t / d)
 
 
+dur = 58.0
+N = int(dur * SR)
+mix = np.zeros((N, 2))
+rng = np.random.default_rng(7)
+
+
 def add(sig, at, pan=0.0, gain=1.0):
-    i = int(at * SR); j = min(N, i + len(sig))
+    i = int(at * SR)
+    j = min(N, i + len(sig))
     if i >= N:
         return
     l, r = np.cos((pan + 1) * np.pi / 4), np.sin((pan + 1) * np.pi / 4)
@@ -84,53 +88,51 @@ def add(sig, at, pan=0.0, gain=1.0):
     mix[i:j, 1] += sig[: j - i] * gain * r
 
 
-def tone(f, length, kind):
+def note(f, length, kind="pluck"):
     n = int(length * SR); t = np.arange(n) / SR
-    if kind == "keys":   # soft electric-piano-ish
-        s = (np.sin(2*np.pi*f*t) + 0.25*np.sin(2*np.pi*2*f*t + 0.3*np.sin(2*np.pi*f*t))) * env(n, 0.003, 0.55)
-    elif kind == "bell":
-        s = (np.sin(2*np.pi*f*t) + 0.3*np.sin(2*np.pi*3.01*f*t)) * env(n, 0.002, 0.25)
-    else:  # sub bass
-        s = np.tanh(1.6*np.sin(2*np.pi*f*t)) * env(n, 0.008, 0.35)
+    if kind == "pluck":
+        s = (np.sin(2*np.pi*f*t) + 0.35*np.sin(4*np.pi*f*t) + 0.12*np.sin(6*np.pi*f*t)) * env(n, 0.004, 0.35)
+    elif kind == "pad":
+        s = sum(np.sin(2*np.pi*f*(1+dt)*t) for dt in (-0.003, 0, 0.003)) / 3
+        s *= np.minimum(t/0.4, 1) * np.minimum((length - t)/0.4, 1)
+    else:  # bass
+        s = np.sin(2*np.pi*f*t) * env(n, 0.01, 0.5)
     return s
 
 
 def kick():
-    n = int(0.3*SR); t = np.arange(n)/SR
-    f = 48 + 90*np.exp(-t/0.03)
-    return np.sin(2*np.pi*np.cumsum(f)/SR) * env(n, 0.002, 0.1)
+    n = int(0.35*SR); t = np.arange(n)/SR
+    f = 50 + 70*np.exp(-t/0.04)
+    return np.sin(2*np.pi*np.cumsum(f)/SR) * env(n, 0.002, 0.12)
 
 
-def noise_hit(length, decay, hp=True):
-    n = int(length*SR); s = rng.standard_normal(n)
-    if hp:
-        s = np.diff(np.concatenate([[0], s]))
-    return s * env(n, 0.001, decay)
+def hat():
+    n = int(0.06*SR)
+    s = rng.standard_normal(n); s = np.diff(np.concatenate([[0], s]))
+    return s * env(n, 0.001, 0.015) * 0.5
 
 
 def mtof(m): return 440 * 2 ** ((m - 69) / 12)
 
 
-CHORDS = [[53, 57, 60, 64], [55, 59, 62, 64], [57, 60, 64, 67], [52, 55, 59, 62]]
-BASS = [29, 31, 33, 28]
-for b in range(int(dur / (4*BEAT)) + 1):
+# Cmaj7 - Am7 - Fmaj7 - G6, one chord per bar (4 beats)
+CHORDS = [[60, 64, 67, 71], [57, 60, 64, 67], [53, 57, 60, 64], [55, 59, 62, 64]]
+BASS = [36, 33, 29, 31]
+bars = int(dur / (4*BEAT)) + 1
+for b in range(bars):
     t0 = b * 4 * BEAT
     ch = CHORDS[b % 4]
-    for k in (0, 1.5, 2.5):  # syncopated chord stabs
-        for m in ch:
-            add(tone(mtof(m), 1.2*BEAT, "keys"), t0 + k*BEAT, 0, 0.045)
-    for k, off in enumerate((0, 0.75, 2, 3.5)):
-        add(tone(mtof(BASS[b % 4] + (12 if k == 3 else 0)), 0.9*BEAT, "bass"), t0 + off*BEAT, 0, 0.22)
-    mel = [ch[3]+12, ch[2]+12, ch[3]+12, ch[1]+24]
-    for k, m in enumerate(mel):
-        add(tone(mtof(m), BEAT, "bell"), t0 + (k + 0.5)*BEAT, (-0.5 if k % 2 else 0.5), 0.035)
+    for m in ch:
+        add(note(mtof(m), 4*BEAT, "pad"), t0, 0, 0.05)
+    add(note(mtof(BASS[b % 4]), 2*BEAT, "bass"), t0, 0, 0.30)
+    add(note(mtof(BASS[b % 4]), 2*BEAT, "bass"), t0 + 2.5*BEAT, 0, 0.22)
+    arp = [ch[0]+12, ch[2]+12, ch[1]+12, ch[3]+12, ch[2]+12, ch[1]+12, ch[3]+12, ch[2]+12]
+    for k, m in enumerate(arp):
+        add(note(mtof(m), BEAT, "pluck"), t0 + k*BEAT/2, (-0.4 if k % 2 else 0.4), 0.07)
     for k in range(4):
-        add(kick(), t0 + k*BEAT, 0, 0.5)
-        add(noise_hit(0.05, 0.012), t0 + k*BEAT + BEAT/2, 0.35, 0.18)
-        add(noise_hit(0.05, 0.008), t0 + k*BEAT + BEAT/4*3, -0.35, 0.08)
-    for k in (1, 3):  # clap
-        add(noise_hit(0.2, 0.05, hp=False) * 0.6, t0 + k*BEAT, 0, 0.22)
-fade = np.minimum(1, np.minimum(np.arange(N)/SR/0.8, (dur - np.arange(N)/SR)/2.0))
+        add(kick(), t0 + k*BEAT, 0, 0.45)
+        add(hat(), t0 + k*BEAT + BEAT/2, 0.3, 0.35)
+fade = np.minimum(1, np.minimum(np.arange(N)/SR/1.0, (dur - np.arange(N)/SR)/2.0))
 mix *= fade[:, None]
 mix /= np.abs(mix).max() * 1.12
 write_wav(f"{OUT}/music.wav", mix)
@@ -138,34 +140,36 @@ json.dump({"bpm": BPM, "beat": BEAT, "offset": 0.0}, open(f"{OUT}/beats.json", "
 print("music ok")
 
 
-# ---------- SFX: soft pop (text pop-in), swish (b-roll), sparkle (light sweep)
-def pop():
-    n = int(0.18*SR); t = np.arange(n)/SR
-    f = 900*np.exp(-t/0.03) + 380
-    s = np.sin(2*np.pi*np.cumsum(f)/SR) * env(n, 0.001, 0.035)
-    return s / np.abs(s).max() * 0.55
+def ting(f0=2093.0):
+    n = int(1.2*SR); t = np.arange(n)/SR
+    s = (np.sin(2*np.pi*f0*t)*np.exp(-t/0.35) + 0.5*np.sin(2*np.pi*f0*1.5*t)*np.exp(-t/0.22)
+         + 0.25*np.sin(2*np.pi*f0*2.76*t)*np.exp(-t/0.12))
+    s *= np.minimum(t/0.002, 1)
+    return s / np.abs(s).max() * 0.6
 
 
-def swish(length=0.55):
+def whoosh(length=0.7):
     n = int(length*SR); t = np.arange(n)/SR
     x = rng.standard_normal(n)
-    cut = 800 + 7000*(t/length)**1.5
+    # sweeping one-pole low-pass
+    cut = 300 + 5000*np.sin(np.pi*t/length)**2
     a = np.exp(-2*np.pi*cut/SR); y = np.zeros(n); acc = 0.0
     for i in range(n):
         acc = (1-a[i])*x[i] + a[i]*acc; y[i] = acc
-    y *= np.sin(np.pi*t/length)**3
-    return y / np.abs(y).max() * 0.4
+    y *= np.sin(np.pi*t/length)**2
+    return y / np.abs(y).max() * 0.45
 
 
-def sparkle():
-    n = int(1.4*SR); s = np.zeros(n)
-    for k, f in enumerate([3520, 4186, 4699, 5588, 6272]):
-        o = int(k*0.05*SR); tt = np.arange(n - o)/SR
-        s[o:] += np.sin(2*np.pi*f*tt)*np.exp(-tt/0.3)*0.4
-    return s / np.abs(s).max() * 0.35
+def shimmer():
+    n = int(1.6*SR); s = np.zeros(n)
+    for k, f in enumerate([2637, 3136, 3951, 5274]):
+        tt = np.arange(n - int(k*0.07*SR))/SR
+        s[int(k*0.07*SR):] += np.sin(2*np.pi*f*tt)*np.exp(-tt/0.4)*0.5
+    return s / np.abs(s).max() * 0.4
 
 
-write_wav(f"{OUT}/sfx_pop.wav", pop())
-write_wav(f"{OUT}/sfx_swish.wav", swish())
-write_wav(f"{OUT}/sfx_sparkle.wav", sparkle())
+write_wav(f"{OUT}/sfx_ting.wav", ting())
+write_wav(f"{OUT}/sfx_ting_hi.wav", ting(2637.0))
+write_wav(f"{OUT}/sfx_whoosh.wav", whoosh())
+write_wav(f"{OUT}/sfx_shimmer.wav", shimmer())
 print("sfx ok")
