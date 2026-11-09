@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="ms" data-resolution="portrait">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "Cweyons"; src: url("assets/Cweyons-Regular.ttf") format("truetype"); font-display: block; }
+      :root { --ink: #ffffff; --font-display: "Cweyons", "Inter", "Helvetica Neue", sans-serif; }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { margin: 0; width: 1080px; height: 1920px; overflow: hidden; background: #fff; }
+      #root { position: relative; width: 1080px; height: 1920px; overflow: hidden; }
+      .clip { position: absolute; inset: 0; }
+      #aroll-wrap { position: absolute; inset: 0; }
+      #aroll-wrap video, video.broll { width: 1080px; height: 1920px; object-fit: cover; transform-origin: 50% 45%; }
+      .broll { overflow: hidden; }
+      .sweep-full { pointer-events: none; overflow: hidden; }
+      .sweep { position: absolute; inset: -10% -40%; mix-blend-mode: soft-light;
+        background: linear-gradient(105deg, rgba(255,255,255,0) 42%, rgba(255,255,255,.55) 50%, rgba(255,255,255,0) 58%); }
+      /* overlays: small white text in the empty top-left wall area, below TikTok's top bar,
+         clear of face/product and the right-hand action rail */
+      .ov { inset: auto; left: 76px; top: 250px; max-width: 480px; color: var(--ink);
+        font-family: var(--font-display); font-size: 42px; line-height: 1.15; letter-spacing: 0.01em;
+        text-shadow: 0 2px 14px rgba(0,0,0,.28); display: flex; flex-direction: column; gap: 6px; }
+      .ov.hook { font-size: 54px; }
+      .ov.hook span { display: block; }
+      .bar { width: 300px; height: 3px; background: rgba(255,255,255,.35); border-radius: 2px; margin-top: 10px;
+        box-shadow: 0 1px 8px rgba(0,0,0,.18); }
+      .fill { width: 100%; height: 100%; background: #fff; border-radius: 2px; transform-origin: 0 50%; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="60.372" data-width="1080" data-height="1920">
+        <div id="aroll-wrap" class="stage">
+      <video id="aroll" class="clip" src="assets/aroll.mp4" data-start="0" data-duration="60.372"
+        data-media-start="0" data-track-index="0" muted playsinline></video>
+    </div>
+    <video id="br0" class="clip broll" src="assets/broll_ringan.mp4" data-start="23.4" data-duration="2.4" data-media-start="0" data-track-index="1" muted playsinline></video>
+    <div id="br0s" class="clip sweep-full" data-start="23.4" data-duration="2.4" data-track-index="2"><div class="sweep"></div></div>
+    <video id="br1" class="clip broll" src="assets/broll_antislip.mp4" data-start="30.0" data-duration="2.4" data-media-start="0" data-track-index="1" muted playsinline></video>
+    <div id="br1s" class="clip sweep-full" data-start="30.0" data-duration="2.4" data-track-index="2"><div class="sweep"></div></div>
+    <video id="br2" class="clip broll" src="assets/broll_design.mp4" data-start="46.8" data-duration="2.4" data-media-start="0" data-track-index="1" muted playsinline></video>
+    <div id="br2s" class="clip sweep-full" data-start="46.8" data-duration="2.4" data-track-index="2"><div class="sweep"></div></div>
+    <video id="br3" class="clip broll" src="assets/broll_harga.mp4" data-start="57.0" data-duration="2.4" data-media-start="0" data-track-index="1" muted playsinline></video>
+    <div id="br3s" class="clip sweep-full" data-start="57.0" data-duration="2.4" data-track-index="2"><div class="sweep"></div></div>
+    <div id="tw-sweep" class="clip sweep-full" data-start="41.640" data-duration="1.8" data-track-index="2"><div class="sweep"></div></div>
+    <div id="hook" class="clip ov hook" data-start="0.15" data-duration="2.75" data-track-index="3">
+      <span>kasut sekolah ni</span><span>worth ke tak?</span>
+    </div>
+    <div id="kw0" class="clip ov" data-start="3.03" data-duration="2.2" data-track-index="3"><span>tak tembus air</span></div>
+    <div id="kw1" class="clip ov" data-start="6.35" data-duration="2.2" data-track-index="3"><span>2 minggu lagi cuti sekolah</span></div>
+    <div id="kw2" class="clip ov" data-start="12.48" data-duration="2.2" data-track-index="3"><span>persiapan awal-awal</span></div>
+    <div id="kw3" class="clip ov" data-start="18.32" data-duration="2.2" data-track-index="3"><span>stok &amp; size masih ada</span></div>
+    <div id="kw4" class="clip ov" data-start="23.41" data-duration="1.02" data-track-index="3"><span>super ringan</span></div>
+    <div id="kw5" class="clip ov" data-start="24.53" data-duration="2.2" data-track-index="3"><span>sesuai sekolah rendah</span></div>
+    <div id="kw6" class="clip ov" data-start="29.949" data-duration="1.2" data-track-index="3"><span>tapak anti-slip</span></div>
+    <div id="kw7" class="clip ov" data-start="36.249" data-duration="2.2" data-track-index="3"><span>tahan lasak</span></div>
+    <div id="kw8" class="clip ov" data-start="39.669" data-duration="2.021" data-track-index="3"><span>tiada tali</span></div>
+    <div id="kw9" class="clip ov" data-start="41.79" data-duration="1.821" data-track-index="3"><span>twist lock</span></div>
+    <div id="kw10" class="clip ov" data-start="43.711" data-duration="2.2" data-track-index="3"><span>tarik &amp; ketat</span></div>
+    <div id="kw11" class="clip ov" data-start="46.791" data-duration="1.38" data-track-index="3"><span>design cantik</span></div>
+    <div id="kw12" class="clip ov" data-start="48.271" data-duration="1.52" data-track-index="3"><span>anak suka</span></div>
+    <div id="kw13" class="clip ov" data-start="49.891" data-duration="2.2" data-track-index="3"><span>kotor? just lap</span></div>
+    <div id="kw14" class="clip ov" data-start="54.341" data-duration="2.2" data-track-index="3"><span>selesa · cantik</span></div>
+    <div id="kw15" class="clip ov" data-start="57.242" data-duration="2.2" data-track-index="3"><span>cek beg kuning</span><span>lagi murah dari mall</span></div>
+    <div id="comfort" class="clip ov" data-start="31.299" data-duration="2.2" data-track-index="3">
+      <span>comfort level</span>
+      <div class="bar"><div class="fill"></div></div>
+    </div>
+        <audio id="voice" src="assets/voice.wav" data-start="0" data-duration="60.372" data-media-start="0" data-volume="1" data-track-index="10"></audio>
+    <audio id="music" src="assets/music.wav" data-start="0" data-duration="60.372" data-media-start="0" data-volume="0.13" data-fade-in="0.8" data-fade-out="1.5" data-track-index="11"></audio>
+    <audio id="sfx0" src="assets/sfx_ting.wav" data-start="0.15" data-duration="1.2" data-media-start="0" data-volume="0.45" data-track-index="12"></audio>
+    <audio id="sfx1" src="assets/sfx_ting.wav" data-start="3.03" data-duration="1.2" data-media-start="0" data-volume="0.3" data-track-index="13"></audio>
+    <audio id="sfx2" src="assets/sfx_ting_hi.wav" data-start="6.35" data-duration="1.2" data-media-start="0" data-volume="0.3" data-track-index="14"></audio>
+    <audio id="sfx3" src="assets/sfx_ting.wav" data-start="12.48" data-duration="1.2" data-media-start="0" data-volume="0.3" data-track-index="15"></audio>
+    <audio id="sfx4" src="assets/sfx_ting_hi.wav" data-start="18.32" data-duration="1.2" data-media-start="0" data-volume="0.3" data-track-index="12"></audio>
+    <audio id="sfx5" src="assets/sfx_whoosh.wav" data-start="23.15" data-duration="0.8" data-media-start="0" data-volume="0.35" data-track-index="13"></audio>
+    <audio id="sfx6" src="assets/sfx_ting.wav" data-start="23.41" data-duration="1.2" data-media-start="0" data-volume="0.3" data-track-index="14"></audio>
+    <audio id="sfx7" src="assets/sfx_ting_hi.wav" data-start="24.53" data-duration="1.2" data-media-start="0" data-volume="0.3" data-track-index="15"></audio>
+    <audio id="sfx8" src="assets/sfx_whoosh.wav" data-start="29.75" data-duration="0.8" data-media-start="0" data-volume="0.35" data-track-index="12"></audio>
+    <audio id="sfx9" src="assets/sfx_ting.wav" data-start="29.949" data-duration="1.2" data-media-start="0" data-volume="0.3" data-track-index="13"></audio>
+    <audio id="sfx10" src="assets/sfx_ting.wav" data-start="31.299" data-duration="1.2" data-media-start="0" data-volume="0.3" data-track-index="14"></audio>
+    <audio id="sfx11" src="assets/sfx_ting_hi.wav" data-start="36.249" data-duration="1.2" data-media-start="0" data-volume="0.3" data-track-index="15"></audio>
+    <audio id="sfx12" src="assets/sfx_ting.wav" data-start="39.669" data-duration="1.2" data-media-start="0" data-volume="0.3" data-track-index="12"></audio>
+    <audio id="sfx13" src="assets/sfx_shimmer.wav" data-start="41.74" data-duration="1.5" data-media-start="0" data-volume="0.25" data-track-index="13"></audio>
+    <audio id="sfx14" src="assets/sfx_ting_hi.wav" data-start="41.79" data-duration="1.2" data-media-start="0" data-volume="0.3" data-track-index="14"></audio>
+    <audio id="sfx15" src="assets/sfx_ting.wav" data-start="43.711" data-duration="1.2" data-media-start="0" data-volume="0.3" data-track-index="15"></audio>
+    <audio id="sfx16" src="assets/sfx_whoosh.wav" data-start="46.55" data-duration="0.8" data-media-start="0" data-volume="0.35" data-track-index="12"></audio>
+    <audio id="sfx17" src="assets/sfx_ting_hi.wav" data-start="46.791" data-duration="1.2" data-media-start="0" data-volume="0.3" data-track-index="13"></audio>
+    <audio id="sfx18" src="assets/sfx_ting.wav" data-start="48.271" data-duration="1.2" data-media-start="0" data-volume="0.3" data-track-index="14"></audio>
+    <audio id="sfx19" src="assets/sfx_ting_hi.wav" data-start="49.891" data-duration="1.2" data-media-start="0" data-volume="0.3" data-track-index="15"></audio>
+    <audio id="sfx20" src="assets/sfx_ting.wav" data-start="54.341" data-duration="1.2" data-media-start="0" data-volume="0.3" data-track-index="12"></audio>
+    <audio id="sfx21" src="assets/sfx_whoosh.wav" data-start="56.75" data-duration="0.8" data-media-start="0" data-volume="0.35" data-track-index="13"></audio>
+    <audio id="sfx22" src="assets/sfx_ting_hi.wav" data-start="57.242" data-duration="1.2" data-media-start="0" data-volume="0.3" data-track-index="14"></audio>
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+            tl.set("#aroll-wrap", { scale: 1.045 }, 1.559);
+      tl.set("#aroll-wrap", { scale: 1.0 }, 4.22);
+      tl.set("#aroll-wrap", { scale: 1.045 }, 8.44);
+      tl.set("#aroll-wrap", { scale: 1.0 }, 11.447);
+      tl.set("#aroll-wrap", { scale: 1.045 }, 15.747);
+      tl.set("#aroll-wrap", { scale: 1.0 }, 20.54);
+      tl.set("#aroll-wrap", { scale: 1.045 }, 23.344);
+      tl.set("#aroll-wrap", { scale: 1.0 }, 26.76);
+      tl.set("#aroll-wrap", { scale: 1.045 }, 28.465);
+      tl.set("#aroll-wrap", { scale: 1.0 }, 34.319);
+      tl.set("#aroll-wrap", { scale: 1.045 }, 37.225);
+      tl.set("#aroll-wrap", { scale: 1.045 }, 47.791);
+      tl.set("#aroll-wrap", { scale: 1.0 }, 49.578);
+      tl.set("#aroll-wrap", { scale: 1.045 }, 51.671);
+      tl.set("#aroll-wrap", { scale: 1.0 }, 56.392);
+      tl.set("#aroll-wrap", { scale: 1 }, 38.879);
+      tl.fromTo("#aroll", { scale: 1 }, { scale: 1.1, duration: 7.182, ease: "sine.inOut" }, 38.879);
+      tl.set("#aroll", { scale: 1 }, 46.061);
+      tl.fromTo("#aroll-wrap", { scale: 1.0 }, { scale: 1.04, duration: 3.0, ease: "sine.out" }, 0);
+      tl.fromTo("#br0", { opacity: 0 }, { opacity: 1, duration: 0.45, ease: "sine.inOut" }, 23.4);
+      tl.to("#br0", { opacity: 0, duration: 0.45, ease: "sine.inOut" }, 25.350);
+      tl.fromTo("#br0", { scale: 1.0 }, { scale: 1.08, duration: 2.4, ease: "none" }, 23.4);
+      tl.fromTo("#br0s .sweep", { xPercent: -120, opacity: 0 }, { xPercent: 120, opacity: 1, duration: 1.4, ease: "sine.inOut" }, 23.900);
+      tl.fromTo("#br1", { opacity: 0 }, { opacity: 1, duration: 0.45, ease: "sine.inOut" }, 30.0);
+      tl.to("#br1", { opacity: 0, duration: 0.45, ease: "sine.inOut" }, 31.950);
+      tl.fromTo("#br1", { scale: 1.0 }, { scale: 1.08, duration: 2.4, ease: "none" }, 30.0);
+      tl.fromTo("#br1s .sweep", { xPercent: -120, opacity: 0 }, { xPercent: 120, opacity: 1, duration: 1.4, ease: "sine.inOut" }, 30.500);
+      tl.fromTo("#br2", { opacity: 0 }, { opacity: 1, duration: 0.45, ease: "sine.inOut" }, 46.8);
+      tl.to("#br2", { opacity: 0, duration: 0.45, ease: "sine.inOut" }, 48.750);
+      tl.fromTo("#br2", { scale: 1.0 }, { scale: 1.08, duration: 2.4, ease: "none" }, 46.8);
+      tl.fromTo("#br2s .sweep", { xPercent: -120, opacity: 0 }, { xPercent: 120, opacity: 1, duration: 1.4, ease: "sine.inOut" }, 47.300);
+      tl.fromTo("#br3", { opacity: 0 }, { opacity: 1, duration: 0.45, ease: "sine.inOut" }, 57.0);
+      tl.to("#br3", { opacity: 0, duration: 0.45, ease: "sine.inOut" }, 58.950);
+      tl.fromTo("#br3", { scale: 1.0 }, { scale: 1.08, duration: 2.4, ease: "none" }, 57.0);
+      tl.fromTo("#br3s .sweep", { xPercent: -120, opacity: 0 }, { xPercent: 120, opacity: 1, duration: 1.4, ease: "sine.inOut" }, 57.500);
+      tl.fromTo("#tw-sweep .sweep", { xPercent: -120, opacity: 0 }, { xPercent: 120, opacity: 1, duration: 1.5, ease: "sine.inOut" }, 41.640);
+      tl.fromTo("#hook span", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.6, ease: "power2.out", stagger: 0.18 }, 0.15);
+      tl.to("#hook", { opacity: 0, y: -8, duration: 0.35, ease: "sine.in" }, 2.50);
+      tl.fromTo("#kw0", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 3.03);
+      tl.to("#kw0", { opacity: 0, duration: 0.3, ease: "sine.in" }, 4.930);
+      tl.fromTo("#kw1", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 6.35);
+      tl.to("#kw1", { opacity: 0, duration: 0.3, ease: "sine.in" }, 8.250);
+      tl.fromTo("#kw2", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 12.48);
+      tl.to("#kw2", { opacity: 0, duration: 0.3, ease: "sine.in" }, 14.380);
+      tl.fromTo("#kw3", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 18.32);
+      tl.to("#kw3", { opacity: 0, duration: 0.3, ease: "sine.in" }, 20.220);
+      tl.fromTo("#kw4", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 23.41);
+      tl.to("#kw4", { opacity: 0, duration: 0.3, ease: "sine.in" }, 24.130);
+      tl.fromTo("#kw5", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 24.53);
+      tl.to("#kw5", { opacity: 0, duration: 0.3, ease: "sine.in" }, 26.430);
+      tl.fromTo("#kw6", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 29.949);
+      tl.to("#kw6", { opacity: 0, duration: 0.3, ease: "sine.in" }, 30.849);
+      tl.fromTo("#kw7", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 36.249);
+      tl.to("#kw7", { opacity: 0, duration: 0.3, ease: "sine.in" }, 38.149);
+      tl.fromTo("#kw8", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 39.669);
+      tl.to("#kw8", { opacity: 0, duration: 0.3, ease: "sine.in" }, 41.390);
+      tl.fromTo("#kw9", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 41.79);
+      tl.to("#kw9", { opacity: 0, duration: 0.3, ease: "sine.in" }, 43.311);
+      tl.fromTo("#kw10", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 43.711);
+      tl.to("#kw10", { opacity: 0, duration: 0.3, ease: "sine.in" }, 45.611);
+      tl.fromTo("#kw11", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 46.791);
+      tl.to("#kw11", { opacity: 0, duration: 0.3, ease: "sine.in" }, 47.871);
+      tl.fromTo("#kw12", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 48.271);
+      tl.to("#kw12", { opacity: 0, duration: 0.3, ease: "sine.in" }, 49.491);
+      tl.fromTo("#kw13", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 49.891);
+      tl.to("#kw13", { opacity: 0, duration: 0.3, ease: "sine.in" }, 51.791);
+      tl.fromTo("#kw14", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 54.341);
+      tl.to("#kw14", { opacity: 0, duration: 0.3, ease: "sine.in" }, 56.241);
+      tl.fromTo("#kw15", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 57.242);
+      tl.to("#kw15", { opacity: 0, duration: 0.3, ease: "sine.in" }, 59.142);
+      tl.fromTo("#comfort", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 31.299);
+      tl.fromTo("#comfort .fill", { scaleX: 0 }, { scaleX: 0.9, duration: 1.1, ease: "power2.out" }, 31.549);
+      tl.to("#comfort", { opacity: 0, duration: 0.3 }, 33.199);
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>

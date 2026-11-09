@@ -1,0 +1,10 @@
+# large media: regenerate with scripts/ (see README)
+*.mp4
+*.mov
+src/
+hyperframes/kasut/assets/aroll.mp4
+hyperframes/kasut/assets/broll_*.mp4
+hyperframes/kasut/assets/voice.wav
+hyperframes/kasut/assets/music.wav
+.hyperframes/
+node_modules/
