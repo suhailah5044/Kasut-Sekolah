@@ -4,7 +4,7 @@
 
 ## Edit summary
 - **Script from both takes:** the best delivery of each line is used once; repeats, false starts and the second take of the same point are dropped. Every kept sentence plays in full. Pauses trimmed to 0.1s.
-  1. Hook (k1): "Kalau kena air pun jangan risau… takkan tembus ke dalam" + text "kasut sekolah ni worth ke tak?"
+  1. Hook (k1 voice): "Kalau kena air pun jangan risau… takkan tembus ke dalam" + hook text "hujan-hujan pun tak perlu risau sangat, kasut ni water resistant tau" (word-by-word, 0–4s)
   2. (k2) Ibu ayah cari kasut sekolah → memang recommend
   3. (k2) Harga murah, design sporty, cantik → mall takkan dapat harga bawah RM50
   4. (k1) Tapak anti-slip, selesa, bersukan → anak lasak

@@ -22,7 +22,6 @@ def snap(t):
 
 # keyword overlays: (take, src time of the spoken word, text)
 KEYWORDS = [  # optional 4th field = zone: "tl" top-left wall (default), "r" right of face, "ml" mid-left
-    ("k1", 63.18, "tak tembus air"),
     ("k2", 10.84, "highly recommend"),
     ("k2", 14.60, "design sporty"),
     ("k2", 20.68, "bawah RM50", "r"),         # product zoom pushes the face into top-left
@@ -48,7 +47,7 @@ BR_LEN = 2.4
 TWIST = ("k2", 53.10, 63.50)   # twist-lock section: slow push-in
 TWIST_SWEEP = ("k2", 57.82)    # "tarik" -> light sweep + shimmer
 
-HOOK_END = 2.9
+HOOK_END = 4.1  # hook text stays for the whole spoken hook
 items = sorted((out(k[0], k[1]), k[2], (k[3] if len(k) > 3 else "tl")) for k in KEYWORDS)
 comfort_t = out(*COMFORT)
 
@@ -153,9 +152,12 @@ def lines_html(txt):
     return "".join(f'<span class="ln">{chars(x)}</span>' for x in txt.split("|"))
 
 
-# ---------- Hook text (first 3s): word-by-word rise
-el.append(f'<div id="hook" class="clip ov hook" data-start="0.15" data-duration="{HOOK_END - 0.15:.2f}" data-track-index="3">{lines_html("kasut sekolah ni|worth ke tak?")}</div>')
-js.append('tl.fromTo("#hook .ch", { opacity: 0, yPercent: 60 }, { opacity: 1, yPercent: 0, duration: 0.4, ease: "power3.out", stagger: 0.035 }, 0.15);')
+# ---------- Hook text: word-by-word rise
+HOOK_TEXT = "hujan-hujan pun tak|perlu risau sangat,|kasut ni water|resistant tau"
+HOOK_HTML = "".join('<span class="ln">' + "&nbsp;".join(f'<i class="w">{html.escape(w)}</i>' for w in ln.split()) + "</span>"
+                    for ln in HOOK_TEXT.split("|"))
+el.append(f'<div id="hook" class="clip ov hook" data-start="0.15" data-duration="{HOOK_END - 0.15:.2f}" data-track-index="3">{HOOK_HTML}</div>')
+js.append('tl.fromTo("#hook .w", { opacity: 0, yPercent: 70 }, { opacity: 1, yPercent: 0, duration: 0.4, ease: "power3.out", stagger: 0.11 }, 0.15);')
 js.append(f'tl.to("#hook", {{ opacity: 0, y: -10, filter: "blur(6px)", duration: 0.35, ease: "sine.in" }}, {HOOK_END - 0.4:.2f});')
 sfx.append((0.15, "sfx_ting", 0.45, 1.2))
 
@@ -239,7 +241,8 @@ HTML = f'''<!doctype html>
       .ov .ch {{ display: inline-block; font-style: normal; }}
       .ov {{ transform-origin: 0% 50%; }}
       .ov.z-r {{ transform-origin: 100% 50%; }}
-      .ov.hook {{ font-size: 54px; }}
+      .ov.hook {{ font-size: 46px; max-width: none; }}
+      .ov .w {{ display: inline-block; font-style: normal; }}
       .ov.hook span {{ display: block; }}
       .bar {{ width: 300px; height: 3px; background: rgba(255,255,255,.35); border-radius: 2px; margin-top: 10px;
         box-shadow: 0 1px 8px rgba(0,0,0,.18); }}
