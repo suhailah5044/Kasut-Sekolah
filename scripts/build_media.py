@@ -3,7 +3,8 @@ No colour filters: only a full->limited range conversion so colours look identic
 import json, subprocess, os, sys
 import numpy as np, wave
 
-SRC = "src/kasut.mov"
+SRCS = {"k1": "src/k1.mov", "k2": "src/k2.mov"}  # kasut sekolah 1.mov, Kasut sekolah 2.mov
+IDX = {k: i for i, k in enumerate(SRCS)}
 OUT = "hf/kasut/assets"
 os.makedirs(OUT, exist_ok=True)
 edl = json.load(open("edl.json"))["edl"]
@@ -24,8 +25,9 @@ parts_v, parts_a, fc = [], [], []
 for i, r in enumerate(edl):
     s, e = r["src_start"], r["src_end"]
     d = e - s
-    fc.append(f"[0:v]trim={s}:{e},setpts=PTS-STARTPTS[v{i}]")
-    fc.append(f"[0:a]atrim={s}:{e},asetpts=PTS-STARTPTS,afade=t=in:d=0.008,"
+    k = IDX[r["src"]]
+    fc.append(f"[{k}:v]trim={s}:{e},setpts=PTS-STARTPTS[v{i}]")
+    fc.append(f"[{k}:a]atrim={s}:{e},asetpts=PTS-STARTPTS,afade=t=in:d=0.008,"
               f"afade=t=out:st={d-0.008:.3f}:d=0.008[a{i}]")
     parts_v.append(f"[v{i}]"); parts_a.append(f"[a{i}]")
 n = len(edl)
@@ -34,20 +36,23 @@ fc.append(f"[cv]{RANGE}[vo]")
 # voice: gentle cleanup + loudness to TikTok-ish level (no colour/visual change)
 fc.append("[ca]highpass=f=80,acompressor=threshold=-20dB:ratio=2.5:attack=10:release=150,"
           "loudnorm=I=-15:TP=-1.5:LRA=9,aresample=48000[ao]")
-run(["ffmpeg", "-v", "error", "-y", "-i", SRC, "-filter_complex", ";".join(fc),
+INPUTS = [x for p in SRCS.values() for x in ("-i", p)]
+run(["ffmpeg", "-v", "error", "-y", *INPUTS, "-filter_complex", ";".join(fc),
      "-map", "[vo]", *VENC, f"{OUT}/aroll.mp4", "-map", "[ao]", "-c:a", "pcm_s16le", f"{OUT}/voice.wav"])
 # A-roll video stays muted in the composition; voice.wav is the voice track
 print("aroll ok")
 
 # ---------- B-roll: crop on the shoe, 0.6x slow motion, muted
-BROLL = {  # name: (src_start, crop w, crop h, x, y)
-    "broll_ringan": (3.20, 608, 1080, 60, 600),  # shoes only, no face
+BROLL = {  # name: (source, src_start, crop w, crop h, x, y) — product close-ups from unused footage
+    "broll_ringan": ("k1", 3.20, 608, 1080, 60, 600),   # shoes only, no face
+    "broll_design": ("k2", 30.20, 540, 960, 430, 420),  # twist knobs close-up
+    "broll_tapak": ("k2", 72.80, 486, 864, 270, 300),   # sole (anti-slip) close-up
 }
 SPEED = 1.0  # real speed (slow-mo removed)
-for name, (s, cw, ch, x, y) in BROLL.items():
+for name, (src, s, cw, ch, x, y) in BROLL.items():
     src_len = 2.6 * SPEED
     vf = f"crop={cw}:{ch}:{x}:{y},{RANGE}"
-    run(["ffmpeg", "-v", "error", "-y", "-ss", str(s), "-t", f"{src_len:.3f}", "-i", SRC,
+    run(["ffmpeg", "-v", "error", "-y", "-ss", str(s), "-t", f"{src_len:.3f}", "-i", SRCS[src],
          "-vf", vf, "-an", *VENC, f"{OUT}/{name}.mp4"])
     print(name, "ok")
 
@@ -71,7 +76,7 @@ def env(n, a=0.005, d=0.3):
     return np.minimum(t / a, 1) * np.exp(-t / d)
 
 
-dur = 62.0
+dur = 56.0
 N = int(dur * SR)
 mix = np.zeros((N, 2))
 rng = np.random.default_rng(7)

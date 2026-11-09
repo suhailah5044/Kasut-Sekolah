@@ -6,12 +6,13 @@ edl, DUR = E["edl"], E["duration"]
 BEAT = 0.6  # 100 BPM music grid
 
 
-def out(src):
+def out(src, t):
+    """map (source take, source time) -> edited time"""
     for r in edl:
-        if r["src_start"] - 1e-6 <= src <= r["src_end"] + 1e-6:
-            return round(r["out_start"] + src - r["src_start"], 3)
-    # in a removed pause -> next kept range
-    nxt = min((r for r in edl if r["src_start"] > src), key=lambda r: r["src_start"])
+        if r["src"] == src and r["src_start"] - 1e-6 <= t <= r["src_end"] + 1e-6:
+            return round(r["out_start"] + t - r["src_start"], 3)
+    # inside a trimmed pause -> start of the next kept range of that take
+    nxt = min((r for r in edl if r["src"] == src and r["src_start"] > t), key=lambda r: r["src_start"])
     return nxt["out_start"]
 
 
@@ -19,50 +20,50 @@ def snap(t):
     return round(round(t / BEAT) * BEAT, 3)
 
 
-# keyword overlays: (src time of the spoken word, text)
-KEYWORDS = [
-    (63.18, "tak tembus air"),
-    (3.18, "2 minggu lagi cuti sekolah"),
-    (9.74, "persiapan awal-awal"),
-    (15.68, "stok & size masih ada"),
-    (24.92, "super ringan"),
-    (26.04, "sesuai sekolah rendah"),
-    (31.56, "tapak anti-slip"),
-    (42.10, "tahan lasak"),
-    (45.94, "tiada tali"),
-    (48.16, "twist lock"),
-    (50.28, "tarik & ketat"),
-    (54.08, "design cantik"),
-    (56.50, "anak suka"),
-    (58.22, "kotor? just lap"),
-    (73.44, "selesa · cantik"),
-    (76.44, "cek beg kuning|lagi murah dari mall"),
+# keyword overlays: (take, src time of the spoken word, text)
+KEYWORDS = [  # optional 4th field = zone: "tl" top-left wall (default), "r" right of face, "ml" mid-left
+    ("k1", 63.18, "tak tembus air"),
+    ("k2", 10.84, "highly recommend"),
+    ("k2", 14.60, "design sporty"),
+    ("k2", 20.68, "bawah RM50", "r"),         # product zoom pushes the face into top-left
+    ("k1", 30.54, "tapak anti-slip"),
+    ("k1", 42.10, "tahan lasak"),
+    ("k2", 84.74, "super ringan", "ml"),       # over the ringan b-roll: dress area, clear of shoe
+    ("k2", 54.90, "tiada tali"),
+    ("k2", 57.82, "tarik &|ketat", "r"),       # close-up: face sits top-left
+    ("k2", 61.66, "senang untuk|darjah 1-3"),  # she steps back here: top-left wall is clear
+    ("k1", 56.24, "anak suka"),
+    ("k1", 58.22, "kotor? just lap"),
+    ("k2", 92.70, "cek beg kuning"),
+    ("k2", 98.86, "beli sekarang|size cepat habis"),
 ]
-COMFORT_SRC = 32.86  # "memang selesa" -> comfort level + thin bar
+COMFORT = ("k1", 32.86)  # "memang selesa" -> comfort level + thin bar
 
-# b-roll inserts: (trigger src time, asset)
-BROLLS = [(24.92, "broll_ringan")]
+# b-roll inserts (full screen product close-ups): (take, trigger src time, asset)
+BROLLS = [("k2", 17.30, "broll_design"), ("k1", 31.30, "broll_tapak"), ("k2", 84.60, "broll_ringan")]
 # product moments: smooth zoom toward the shoe in the live shot (stays lip-synced)
-# (src start, src end, transform-origin of the shoe)
-ZOOMS = [(31.30, 33.70, "25% 42%"), (54.08, 56.50, "44% 45%"), (75.94, 78.40, "38% 55%")]
+# (take, src start, src end, transform-origin of the shoe)
+ZOOMS = [("k2", 19.00, 22.95, "55% 55%"), ("k1", 40.30, 44.60, "42% 55%"), ("k2", 90.60, 94.60, "48% 52%")]
 BR_LEN = 2.4
+TWIST = ("k2", 53.10, 63.50)   # twist-lock section: slow push-in
+TWIST_SWEEP = ("k2", 57.82)    # "tarik" -> light sweep + shimmer
 
 HOOK_END = 2.9
-items = sorted((out(s), t) for s, t in KEYWORDS)
-comfort_t = out(COMFORT_SRC)
+items = sorted((out(k[0], k[1]), k[2], (k[3] if len(k) > 3 else "tl")) for k in KEYWORDS)
+comfort_t = out(*COMFORT)
 
 ov = []
-for i, (t, txt) in enumerate(items):
+for i, (t, txt, zone) in enumerate(items):
     nxt = items[i + 1][0] if i + 1 < len(items) else DUR
     if t < comfort_t < nxt:
         nxt = comfort_t
     start = max(t - 0.05, HOOK_END + 0.1) if t < HOOK_END + 0.1 else t - 0.05
     dur = round(min(2.2, nxt - start - 0.15), 3)
-    ov.append((round(start, 3), dur, txt))
+    ov.append((round(start, 3), dur, txt, zone))
 
-brolls = [(snap(out(s)), a) for s, a in BROLLS]
+brolls = [(snap(out(k, s)), a) for k, s, a in BROLLS]
 # twist-lock close-up: the A-roll itself (slow push-in + light sweep)
-twist_start, twist_end = out(45.10), out(52.58)
+twist_start, twist_end = out(TWIST[0], TWIST[1]), out(TWIST[0], TWIST[2])
 
 cuts = [r["out_start"] for r in edl[1:]]
 
@@ -97,8 +98,8 @@ for i, (t, a) in enumerate(brolls):
     js.append(f'tl.fromTo("#{bid}s .sweep", {{ xPercent: -120, opacity: 0 }}, {{ xPercent: 120, opacity: 1, duration: 1.4, ease: "sine.inOut" }}, {t + 0.5:.3f});')
     sfx.append((round(t - 0.25, 3), "sfx_whoosh", 0.35, 0.8))
 
-for i, (a, b, origin) in enumerate(ZOOMS):
-    t0, t1 = out(a), out(b)
+for i, (k, a, b, origin) in enumerate(ZOOMS):
+    t0, t1 = out(k, a), out(k, b)
     js.append(f'tl.set("#aroll", {{ transformOrigin: "{origin}" }}, {t0});')
     js.append(f'tl.to("#aroll", {{ scale: 1.15, duration: {t1 - t0 - 0.5:.3f}, ease: "sine.inOut" }}, {t0});')
     js.append(f'tl.to("#aroll", {{ scale: 1.0, duration: 0.5, ease: "sine.inOut" }}, {t1 - 0.5:.3f});')
@@ -107,7 +108,7 @@ for i, (a, b, origin) in enumerate(ZOOMS):
     js.append(f'tl.fromTo("#pz{i} .sweep", {{ xPercent: -120, opacity: 0 }}, {{ xPercent: 120, opacity: 1, duration: 1.5, ease: "sine.inOut" }}, {t0 + 0.4:.3f});')
 
 # light sweep on the twist-lock close-up
-tw = out(48.16)
+tw = out(*TWIST_SWEEP)
 el.append(f'<div id="tw-sweep" class="clip sweep-full" data-start="{tw - 0.2:.3f}" data-duration="1.8" data-track-index="2"><div class="sweep"></div></div>')
 js.append(f'tl.fromTo("#tw-sweep .sweep", {{ xPercent: -120, opacity: 0 }}, {{ xPercent: 120, opacity: 1, duration: 1.5, ease: "sine.inOut" }}, {tw - 0.2:.3f});')
 sfx.append((round(tw - 0.1, 3), "sfx_shimmer", 0.25, 1.5))
@@ -121,9 +122,9 @@ js.append(f'tl.to("#hook", {{ opacity: 0, y: -8, duration: 0.35, ease: "sine.in"
 sfx.append((0.15, "sfx_ting", 0.45, 1.2))
 
 # ---------- keyword overlays
-for i, (t, d, txt) in enumerate(ov):
+for i, (t, d, txt, zone) in enumerate(ov):
     oid = f"kw{i}"
-    el.append(f'<div id="{oid}" class="clip ov" data-start="{t}" data-duration="{d}" data-track-index="3">{"".join(f"<span>{html.escape(x)}</span>" for x in txt.split("|"))}</div>')
+    el.append(f'<div id="{oid}" class="clip ov z-{zone}" data-start="{t}" data-duration="{d}" data-track-index="3">{"".join(f"<span>{html.escape(x)}</span>" for x in txt.split("|"))}</div>')
     js.append(f'tl.fromTo("#{oid}", {{ opacity: 0, y: 14 }}, {{ opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }}, {t});')
     js.append(f'tl.to("#{oid}", {{ opacity: 0, duration: 0.3, ease: "sine.in" }}, {t + d - 0.3:.3f});')
     sfx.append((round(t, 3), "sfx_ting" if i % 2 == 0 else "sfx_ting_hi", 0.3, 1.2))
@@ -169,6 +170,8 @@ HTML = f'''<!doctype html>
       .ov {{ inset: auto; left: 76px; top: 250px; max-width: 480px; color: var(--ink);
         font-family: var(--font-display); font-size: 42px; line-height: 1.15; letter-spacing: 0.01em;
         text-shadow: 0 2px 14px rgba(0,0,0,.28); display: flex; flex-direction: column; gap: 6px; }}
+      .ov.z-r {{ left: auto; right: 72px; top: 500px; text-align: right; align-items: flex-end; }}
+      .ov.z-ml {{ top: 1120px; }}
       .ov.hook {{ font-size: 54px; }}
       .ov.hook span {{ display: block; }}
       .bar {{ width: 300px; height: 3px; background: rgba(255,255,255,.35); border-radius: 2px; margin-top: 10px;
@@ -193,6 +196,6 @@ HTML = f'''<!doctype html>
 '''
 open("hf/kasut/index.html", "w").write(HTML)
 print("duration", DUR, "overlays", len(ov), "brolls", brolls, "twist", twist_start, twist_end)
-for t, d, txt in ov:
-    print(f"  {t:6.2f} +{d:.2f}  {txt}")
+for t, d, txt, zone in ov:
+    print(f"  {t:6.2f} +{d:.2f}  {zone:2} {txt}")
 print("  comfort", comfort_t)
