@@ -1,0 +1,131 @@
+{
+ "duration": 55.779,
+ "edl": [
+  {
+   "src_start": 18.5,
+   "src_end": 23.298,
+   "out_start": 0.0,
+   "label": "HOOK: dekat mall takkan dapat bawah RM50, tak ada tali"
+  },
+  {
+   "src_start": 23.418,
+   "src_end": 24.021,
+   "out_start": 4.798,
+   "label": "HOOK: dekat mall takkan dapat bawah RM50, tak ada tali"
+  },
+  {
+   "src_start": 24.14,
+   "src_end": 25.06,
+   "out_start": 5.401,
+   "label": "HOOK: dekat mall takkan dapat bawah RM50, tak ada tali"
+  },
+  {
+   "src_start": 8.62,
+   "src_end": 11.84,
+   "out_start": 6.321,
+   "label": "ibu ayah cari kasut sekolah, memang recommend"
+  },
+  {
+   "src_start": 12.15,
+   "src_end": 13.864,
+   "out_start": 9.541,
+   "label": "harga murah, design sporty, cantik"
+  },
+  {
+   "src_start": 13.984,
+   "src_end": 17.9,
+   "out_start": 11.255,
+   "label": "harga murah, design sporty, cantik"
+  },
+  {
+   "src_start": 33.15,
+   "src_end": 37.127,
+   "out_start": 15.171,
+   "label": "anak nak sangat, mudah, grab, kalis air"
+  },
+  {
+   "src_start": 37.248,
+   "src_end": 39.426,
+   "out_start": 19.148,
+   "label": "anak nak sangat, mudah, grab, kalis air"
+  },
+  {
+   "src_start": 39.546,
+   "src_end": 41.75,
+   "out_start": 21.326,
+   "label": "anak nak sangat, mudah, grab, kalis air"
+  },
+  {
+   "src_start": 42.32,
+   "src_end": 44.88,
+   "out_start": 23.53,
+   "label": "kotor? cuci je"
+  },
+  {
+   "src_start": 48.7,
+   "src_end": 51.33,
+   "out_start": 26.09,
+   "label": "kena air tak tembus ke dalam"
+  },
+  {
+   "src_start": 52.48,
+   "src_end": 52.85,
+   "out_start": 28.72,
+   "label": "cara guna senang"
+  },
+  {
+   "src_start": 52.971,
+   "src_end": 54.7,
+   "out_start": 29.09,
+   "label": "cara guna senang"
+  },
+  {
+   "src_start": 56.45,
+   "src_end": 57.359,
+   "out_start": 30.819,
+   "label": "tarik dan ketatkan"
+  },
+  {
+   "src_start": 57.479,
+   "src_end": 60.0,
+   "out_start": 31.728,
+   "label": "tarik dan ketatkan"
+  },
+  {
+   "src_start": 66.15,
+   "src_end": 71.18,
+   "out_start": 34.249,
+   "label": "sesuai sekolah rendah, senang pakai"
+  },
+  {
+   "src_start": 73.03,
+   "src_end": 74.98,
+   "out_start": 39.279,
+   "label": "tapak anti-slip"
+  },
+  {
+   "src_start": 83.48,
+   "src_end": 88.418,
+   "out_start": 41.229,
+   "label": "ringan, aktiviti dalam/luar sekolah"
+  },
+  {
+   "src_start": 88.538,
+   "src_end": 90.25,
+   "out_start": 46.167,
+   "label": "ringan, aktiviti dalam/luar sekolah"
+  },
+  {
+   "src_start": 90.5,
+   "src_end": 94.84,
+   "out_start": 47.879,
+   "label": "CTA: beg kuning"
+  },
+  {
+   "src_start": 98.76,
+   "src_end": 102.32,
+   "out_start": 52.219,
+   "label": "beli sekarang, takut size habis"
+  }
+ ]
+}
