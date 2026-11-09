@@ -1,5 +1,5 @@
 {
- "duration": 60.372,
+ "duration": 55.613,
  "edl": [
   {
    "src_start": 60.0,
@@ -20,111 +20,99 @@
    "label": "korang dah beli belum kasut sekolah"
   },
   {
-   "src_start": 5.55,
-   "src_end": 8.557,
-   "out_start": 8.44,
-   "label": "persiapan awal, stok, size ada"
-  },
-  {
-   "src_start": 8.657,
+   "src_start": 8.8,
    "src_end": 12.957,
-   "out_start": 11.447,
+   "out_start": 8.44,
    "label": "persiapan awal, stok, size ada"
   },
   {
    "src_start": 13.057,
    "src_end": 17.85,
-   "out_start": 15.747,
+   "out_start": 12.597,
    "label": "persiapan awal, stok, size ada"
   },
   {
    "src_start": 21.9,
    "src_end": 24.704,
-   "out_start": 20.54,
+   "out_start": 17.39,
    "label": "recommend, ringan, sekolah rendah"
   },
   {
    "src_start": 24.804,
    "src_end": 28.22,
-   "out_start": 23.344,
+   "out_start": 20.194,
    "label": "recommend, ringan, sekolah rendah"
   },
   {
-   "src_start": 28.22,
-   "src_end": 29.925,
-   "out_start": 26.76,
-   "label": "anti-slip, aktiviti, sukan"
-  },
-  {
-   "src_start": 30.026,
+   "src_start": 30.16,
    "src_end": 35.88,
-   "out_start": 28.465,
+   "out_start": 23.61,
    "label": "anti-slip, aktiviti, sukan"
   },
   {
    "src_start": 40.12,
    "src_end": 43.026,
-   "out_start": 34.319,
+   "out_start": 29.33,
    "label": "anak lasak, recommend"
   },
   {
    "src_start": 43.126,
    "src_end": 44.78,
-   "out_start": 37.225,
+   "out_start": 32.236,
    "label": "anak lasak, recommend"
   },
   {
    "src_start": 45.1,
    "src_end": 47.578,
-   "out_start": 38.879,
+   "out_start": 33.89,
    "label": "bukan bertali, twist lock"
   },
   {
    "src_start": 47.677,
    "src_end": 49.439,
-   "out_start": 41.357,
+   "out_start": 36.368,
    "label": "bukan bertali, twist lock"
   },
   {
    "src_start": 49.538,
    "src_end": 50.062,
-   "out_start": 43.119,
+   "out_start": 38.13,
    "label": "bukan bertali, twist lock"
   },
   {
    "src_start": 50.162,
    "src_end": 52.58,
-   "out_start": 43.643,
+   "out_start": 38.654,
    "label": "bukan bertali, twist lock"
   },
   {
    "src_start": 53.3,
    "src_end": 55.03,
-   "out_start": 46.061,
+   "out_start": 41.072,
    "label": "design mestilah cantik"
   },
   {
-   "src_start": 55.97,
+   "src_start": 55.74,
    "src_end": 57.757,
-   "out_start": 47.791,
+   "out_start": 42.802,
    "label": "anak suka, kotor just lap"
   },
   {
    "src_start": 57.857,
    "src_end": 59.95,
-   "out_start": 49.578,
+   "out_start": 44.819,
    "label": "anak suka, kotor just lap"
   },
   {
    "src_start": 70.72,
    "src_end": 75.441,
-   "out_start": 51.671,
+   "out_start": 46.912,
    "label": "CTA: selesa, cantik, beg kuning, harga murah"
   },
   {
    "src_start": 75.54,
    "src_end": 79.52,
-   "out_start": 56.392,
+   "out_start": 51.633,
    "label": "CTA: selesa, cantik, beg kuning, harga murah"
   }
  ]

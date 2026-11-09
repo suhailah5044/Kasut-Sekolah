@@ -41,8 +41,10 @@ KEYWORDS = [
 COMFORT_SRC = 32.86  # "memang selesa" -> comfort level + thin bar
 
 # b-roll inserts: (trigger src time, asset)
-BROLLS = [(24.92, "broll_ringan"), (31.30, "broll_antislip"),
-          (54.08, "broll_design"), (75.94, "broll_harga")]
+BROLLS = [(24.92, "broll_ringan")]
+# product moments: smooth zoom toward the shoe in the live shot (stays lip-synced)
+# (src start, src end, transform-origin of the shoe)
+ZOOMS = [(31.30, 33.70, "25% 42%"), (54.08, 56.50, "44% 45%"), (75.94, 78.40, "38% 55%")]
 BR_LEN = 2.4
 
 HOOK_END = 2.9
@@ -84,7 +86,7 @@ js.append(f'tl.set("#aroll", {{ scale: 1 }}, {twist_end});')
 # hook: gentle push-in on the face for the first 3s
 js.append('tl.fromTo("#aroll-wrap", { scale: 1.0 }, { scale: 1.04, duration: 3.0, ease: "sine.out" }, 0);')
 
-# ---------- B-roll: full screen, cross-dissolve, slow-mo already in the clip, slow zoom + light sweep
+# ---------- B-roll: full screen, cross-dissolve, real speed, gentle zoom + light sweep
 for i, (t, a) in enumerate(brolls):
     bid = f"br{i}"
     el.append(f'<video id="{bid}" class="clip broll" src="assets/{a}.mp4" data-start="{t}" data-duration="{BR_LEN}" data-media-start="0" data-track-index="1" muted playsinline></video>')
@@ -94,6 +96,15 @@ for i, (t, a) in enumerate(brolls):
     js.append(f'tl.fromTo("#{bid}", {{ scale: 1.0 }}, {{ scale: 1.08, duration: {BR_LEN}, ease: "none" }}, {t});')
     js.append(f'tl.fromTo("#{bid}s .sweep", {{ xPercent: -120, opacity: 0 }}, {{ xPercent: 120, opacity: 1, duration: 1.4, ease: "sine.inOut" }}, {t + 0.5:.3f});')
     sfx.append((round(t - 0.25, 3), "sfx_whoosh", 0.35, 0.8))
+
+for i, (a, b, origin) in enumerate(ZOOMS):
+    t0, t1 = out(a), out(b)
+    js.append(f'tl.set("#aroll", {{ transformOrigin: "{origin}" }}, {t0});')
+    js.append(f'tl.to("#aroll", {{ scale: 1.15, duration: {t1 - t0 - 0.5:.3f}, ease: "sine.inOut" }}, {t0});')
+    js.append(f'tl.to("#aroll", {{ scale: 1.0, duration: 0.5, ease: "sine.inOut" }}, {t1 - 0.5:.3f});')
+    js.append(f'tl.set("#aroll", {{ transformOrigin: "50% 45%" }}, {t1:.3f});')
+    el.append(f'<div id="pz{i}" class="clip sweep-full" data-start="{t0 + 0.4:.3f}" data-duration="1.6" data-track-index="2"><div class="sweep"></div></div>')
+    js.append(f'tl.fromTo("#pz{i} .sweep", {{ xPercent: -120, opacity: 0 }}, {{ xPercent: 120, opacity: 1, duration: 1.5, ease: "sine.inOut" }}, {t0 + 0.4:.3f});')
 
 # light sweep on the twist-lock close-up
 tw = out(48.16)

@@ -6,14 +6,14 @@ import json
 SEGMENTS = [
     (60.00, 64.32, "HOOK: kena air pun jangan risau, takkan tembus"),
     (1.00, 5.22, "korang dah beli belum kasut sekolah"),
-    (5.55, 17.85, "persiapan awal, stok, size ada"),
+    (8.80, 17.85, "persiapan awal, stok, size ada"),  # 5.55-8.8 false start "better korang beli, better korang..." dropped
     (21.90, 28.22, "recommend, ringan, sekolah rendah"),
-    (28.22, 35.88, "anti-slip, aktiviti, sukan"),
+    (30.16, 35.88, "anti-slip, aktiviti, sukan"),  # "Bagi yang belakang ni pun," restart dropped
     # 36.26-40.12 filler dropped ("ada main... tak kisahlah. Memang sangat sesuai")
     (40.12, 44.78, "anak lasak, recommend"),
     (45.10, 52.58, "bukan bertali, twist lock"),
     (53.30, 55.03, "design mestilah cantik"),          # 2nd 'design memang cantik' dropped
-    (55.97, 59.95, "anak suka, kotor just lap"),
+    (55.74, 59.95, "anak suka, kotor just lap"),
     # 64.3-70.7 dropped: 3rd 'design cantik' + repeat 'ringan' + false start
     (70.72, 79.52, "CTA: selesa, cantik, beg kuning, harga murah"),
 ]

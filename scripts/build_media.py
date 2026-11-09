@@ -41,16 +41,12 @@ print("aroll ok")
 
 # ---------- B-roll: crop on the shoe, 0.6x slow motion, muted
 BROLL = {  # name: (src_start, crop w, crop h, x, y)
-    "broll_ringan": (3.20, 720, 1280, 40, 240),
-    "broll_antislip": (33.00, 720, 1280, 150, 400),
-    "broll_design": (75.30, 720, 1280, 120, 280),
-    "broll_harga": (65.00, 720, 1280, 300, 180),
+    "broll_ringan": (3.20, 608, 1080, 60, 600),  # shoes only, no face
 }
-SPEED = 0.6
+SPEED = 1.0  # real speed (slow-mo removed)
 for name, (s, cw, ch, x, y) in BROLL.items():
     src_len = 2.6 * SPEED
-    vf = (f"crop={cw}:{ch}:{x}:{y},setpts=PTS/{SPEED},"
-          f"minterpolate=fps=30:mi_mode=blend,{RANGE}")
+    vf = f"crop={cw}:{ch}:{x}:{y},{RANGE}"
     run(["ffmpeg", "-v", "error", "-y", "-ss", str(s), "-t", f"{src_len:.3f}", "-i", SRC,
          "-vf", vf, "-an", *VENC, f"{OUT}/{name}.mp4"])
     print(name, "ok")
