@@ -1,4 +1,4 @@
-"""Video 2: cut A-roll from the EDL, slow-mo b-roll close-ups, new music + SFX.
+"""Video 2: cut A-roll from the EDL, b-roll close-ups, new music + SFX.
 Run from repo root: python3 scripts/v2/build_media.py [--preview]
 No colour grade: only full->limited range conversion so browser colours match the source."""
 import json, subprocess, os, sys
@@ -37,7 +37,7 @@ run(["ffmpeg", "-v", "error", "-y", "-i", SRC, "-filter_complex", ";".join(fc),
      "-map", "[vo]", *VENC, f"{OUT}/aroll.mp4", "-map", "[ao]", "-c:a", "pcm_s16le", f"{OUT}/voice.wav"])
 print("aroll ok")
 
-# ---------- B-roll close-ups: 9:16 crop on the shoe, 0.6x slow motion, muted
+# ---------- B-roll close-ups: 9:16 crop on the shoe, normal speed, muted
 BROLL = {  # name: (src_start, crop w, crop h, x, y)
     "broll_design": (15.0, 720, 1280, 180, 220),
     "broll_kalis": (39.6, 720, 1280, 0, 300),
@@ -46,10 +46,9 @@ BROLL = {  # name: (src_start, crop w, crop h, x, y)
     "broll_ringan": (30.0, 720, 1280, 260, 160),
     "broll_cta": (48.6, 720, 1280, 200, 220),
 }
-SPEED = 0.6
-for name, (s, cw, ch, x, y) in BROLL.items():
-    vf = f"crop={cw}:{ch}:{x}:{y},setpts=PTS/{SPEED},minterpolate=fps=30:mi_mode=blend,{RANGE}"
-    run(["ffmpeg", "-v", "error", "-y", "-ss", str(s), "-t", f"{2.8*SPEED:.3f}", "-i", SRC,
+for name, (s, cw, ch, x, y) in BROLL.items():   # normal speed (no slow-mo)
+    vf = f"crop={cw}:{ch}:{x}:{y},{RANGE}"
+    run(["ffmpeg", "-v", "error", "-y", "-ss", str(s), "-t", "2.8", "-i", SRC,
          "-vf", vf, "-an", *VENC, f"{OUT}/{name}.mp4"])
     print(name, "ok")
 

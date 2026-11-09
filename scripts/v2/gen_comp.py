@@ -198,7 +198,7 @@ for c in cuts:
     scale = 1.0 if scale != 1.0 else 1.06
     js.append(f'tl.set("#aroll-wrap", {{ scale: {scale} }}, {c});')
 
-# ---------- B-roll close-ups: full screen, soft fade, slow-mo (in clip), slow zoom, light sweep
+# ---------- B-roll close-ups: full screen, soft fade, slow zoom, light sweep (normal speed)
 for i, (t, a) in enumerate(brolls):
     bid = f"br{i}"
     el.append(f'<video id="{bid}" class="clip broll" src="assets/{a}.mp4" data-start="{t}" data-duration="{BR_LEN}" data-media-start="0" data-track-index="1" muted playsinline></video>')

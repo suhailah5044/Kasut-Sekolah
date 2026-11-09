@@ -100,14 +100,14 @@
   "clearance_px": 23
  },
  "kw9": {
-  "x": 48,
-  "y": 244,
+  "x": 56,
+  "y": 260,
   "layout": 5,
   "dt": 0.0,
   "d": 1.8,
   "on_face_hands_shoe_px": 0,
   "on_clothes_px": 0,
-  "clearance_px": 23
+  "clearance_px": 21
  },
  "kw10": {
   "x": 48,
@@ -120,9 +120,9 @@
   "clearance_px": 102
  },
  "kw11": {
-  "x": 64,
-  "y": 420,
-  "layout": 3,
+  "x": 96,
+  "y": 604,
+  "layout": 2,
   "dt": 0.0,
   "d": 1.702,
   "on_face_hands_shoe_px": 0,
@@ -137,7 +137,7 @@
   "d": 1.4,
   "on_face_hands_shoe_px": 0,
   "on_clothes_px": 0,
-  "clearance_px": 48
+  "clearance_px": 100
  },
  "kw13": {
   "x": 592,
@@ -150,13 +150,13 @@
   "clearance_px": 117
  },
  "comfort": {
-  "x": 48,
+  "x": 608,
   "y": 228,
   "layout": 0,
-  "dt": 0.25,
-  "d": 1.984,
+  "dt": 0.0,
+  "d": 2.2,
   "on_face_hands_shoe_px": 0,
   "on_clothes_px": 0,
-  "clearance_px": 214
+  "clearance_px": 128
  }
 }
