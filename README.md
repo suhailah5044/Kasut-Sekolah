@@ -19,3 +19,23 @@ cd hyperframes/kasut && npx hyperframes@0.9.26 preview            # studio previ
 npx hyperframes@0.9.26 render -q draft                             # draft preview
 ```
 (Scripts expect to run from a working dir containing `src/` and `hf/kasut/`; adjust paths as needed.)
+
+---
+
+# Phone holder — TikTok edit (HyperFrames)
+
+9:16 edit (~44s) of the "Headphone" raw (the footage shows a car phone holder), built in `hyperframes/phone-holder/`.
+
+- **Hook (0–3s):** glass card "Phone holder ni memang worth it!" (Lexend Mega, top-left empty area) + swish + double "ting".
+- **Cuts:** opening false start (0–8s) removed; repeats removed ("Nampak tak… tulis open", "Tengok korang nak letak kat mana"); stutter "Lepas tu korang yang… lepas tu…" removed; pauses trimmed to 0.12s. Footage stays in sync with the script.
+- **Overlays:** 10 small white UI-prompt pills (Lexend Mega 24px, frosted dark glass) on key words only, placed in empty space; each with a UI pop/tick SFX (new set, different from the kasut video), sparkle on the last one.
+- **Audio:** cleaned voice at -14 LUFS, original lo-fi music at low volume.
+- No colour grade or filters on the footage (only subtle punch-in on jump cuts).
+
+## Rebuild
+```
+# put the raw at src/headphone.mov, then:
+python3 scripts/phone-holder/build.py          # writes hf/phone-holder/ (media + index.html)
+cd hf/phone-holder && npx hyperframes@0.9.26 snapshot --at 1.6,9.8,20.5   # image preview
+npx hyperframes@0.9.26 render                    # final render (after preview is approved)
+```

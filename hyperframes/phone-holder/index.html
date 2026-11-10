@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="ms" data-resolution="portrait">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "Lexend Mega"; src: url("assets/LexendMega-Regular.ttf") format("truetype"); font-weight: 400; font-display: block; }
+      @font-face { font-family: "Lexend Mega"; src: url("assets/LexendMega-Medium.ttf") format("truetype"); font-weight: 500; font-display: block; }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1920px; overflow: hidden; background: #000; }
+      #root { position: relative; width: 1080px; height: 1920px; overflow: hidden; }
+      .clip { position: absolute; inset: 0; }
+      #aroll-wrap { position: absolute; inset: 0; transform-origin: 50% 40%; }
+      #aroll-wrap video { width: 1080px; height: 1920px; object-fit: cover; transform-origin: 50% 40%; }
+      /* glass card behind white text: keeps text bright on any background */
+      .hook, .prompt { inset: auto; color: #fff; font-family: "Lexend Mega", sans-serif;
+        background: rgba(12,12,14,.42); backdrop-filter: blur(14px) saturate(1.1);
+        border: 1px solid rgba(255,255,255,.22); box-shadow: 0 8px 30px rgba(0,0,0,.25); opacity: 0; }
+      /* empty area: top-left (car roof / window), below TikTok's top bar, clear of face & product */
+      .hook { left: 64px; top: 270px; padding: 22px 30px 24px; border-radius: 26px; }
+      .hook .tag { font-size: 15px; letter-spacing: .3em; opacity: .75; margin-bottom: 12px; }
+      .hook .lines span { display: block; font-size: 34px; font-weight: 500; line-height: 1.35; letter-spacing: -.02em; }
+      .prompt { left: 64px; top: 290px; display: flex; align-items: center; gap: 14px;
+        padding: 14px 26px 14px 16px; border-radius: 999px; }
+      .prompt.right { left: auto; right: 64px; }  /* product arm sits top-left in these shots */
+      .prompt i { font-style: normal; width: 34px; height: 34px; border-radius: 50%; background: #fff; color: #111;
+        display: grid; place-items: center; font-size: 18px; font-family: system-ui, sans-serif; }
+      .prompt b { font-weight: 400; font-size: 24px; letter-spacing: -.01em; white-space: nowrap; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="44.04" data-width="1080" data-height="1920">
+      <div id="aroll-wrap" class="stage">
+      <video id="aroll" class="clip" src="assets/aroll.mp4" data-start="0" data-duration="44.04"
+        data-media-start="0" data-track-index="0" muted playsinline></video>
+    </div>
+      <div id="hook" class="clip hook" data-start="0.1" data-duration="2.90" data-track-index="3"><div class="tag">REVIEW</div><div class="lines"><span>Phone holder ni</span><span>memang worth it!</span></div></div>
+      <div id="p0" class="clip prompt" data-start="4.36" data-duration="1.9" data-track-index="3"><i>✓</i><b>senang je pasang</b></div>
+      <div id="p1" class="clip prompt right" data-start="8.95" data-duration="1.9" data-track-index="3"><i>↺</i><b>OPEN</b></div>
+      <div id="p2" class="clip prompt right" data-start="11.15" data-duration="1.9" data-track-index="3"><i>↻</i><b>TIGHT</b></div>
+      <div id="p3" class="clip prompt" data-start="13.43" data-duration="1.9" data-track-index="3"><i>•</i><b>open = longgarkan</b></div>
+      <div id="p4" class="clip prompt" data-start="19.67" data-duration="1.9" data-track-index="3"><i>•</i><b>tight = ketatkan</b></div>
+      <div id="p5" class="clip prompt" data-start="26.72" data-duration="1.9" data-track-index="3"><i>↺</i><b>pusing dulu</b></div>
+      <div id="p6" class="clip prompt" data-start="32.1" data-duration="1.9" data-track-index="3"><i>•</i><b>pilih kedudukan</b></div>
+      <div id="p7" class="clip prompt" data-start="34.6" data-duration="1.9" data-track-index="3"><i>✓</i><b>tekap dulu</b></div>
+      <div id="p8" class="clip prompt" data-start="37.84" data-duration="1.9" data-track-index="3"><i>↻</i><b>pusing &amp; lock</b></div>
+      <div id="p9" class="clip prompt" data-start="42.56" data-duration="1.36" data-track-index="3"><i>✓</i><b>siap! senang kan?</b></div>
+      <audio id="voice" src="assets/voice.wav" data-start="0" data-duration="44.04" data-media-start="0" data-volume="1" data-track-index="10"></audio>
+      <audio id="music" src="assets/music.wav" data-start="0" data-duration="44.04" data-media-start="0" data-volume="0.12" data-fade-in="0.6" data-fade-out="1.2" data-track-index="11"></audio>
+      <audio id="sfx0" src="assets/sfx_swish.wav" data-start="0.05" data-duration="0.5" data-media-start="0" data-volume="0.35" data-track-index="12"></audio>
+      <audio id="sfx1" src="assets/sfx_ting2.wav" data-start="0.3" data-duration="1.3" data-media-start="0" data-volume="0.45" data-track-index="13"></audio>
+      <audio id="sfx2" src="assets/sfx_pop.wav" data-start="4.36" data-duration="1.3" data-media-start="0" data-volume="0.5" data-track-index="14"></audio>
+      <audio id="sfx3" src="assets/sfx_tick.wav" data-start="8.95" data-duration="1.3" data-media-start="0" data-volume="0.5" data-track-index="12"></audio>
+      <audio id="sfx4" src="assets/sfx_pop.wav" data-start="11.15" data-duration="1.3" data-media-start="0" data-volume="0.5" data-track-index="13"></audio>
+      <audio id="sfx5" src="assets/sfx_tick.wav" data-start="13.43" data-duration="1.3" data-media-start="0" data-volume="0.5" data-track-index="14"></audio>
+      <audio id="sfx6" src="assets/sfx_pop.wav" data-start="19.67" data-duration="1.3" data-media-start="0" data-volume="0.5" data-track-index="12"></audio>
+      <audio id="sfx7" src="assets/sfx_tick.wav" data-start="26.72" data-duration="1.3" data-media-start="0" data-volume="0.5" data-track-index="13"></audio>
+      <audio id="sfx8" src="assets/sfx_pop.wav" data-start="32.1" data-duration="1.3" data-media-start="0" data-volume="0.5" data-track-index="14"></audio>
+      <audio id="sfx9" src="assets/sfx_tick.wav" data-start="34.6" data-duration="1.3" data-media-start="0" data-volume="0.5" data-track-index="12"></audio>
+      <audio id="sfx10" src="assets/sfx_pop.wav" data-start="37.84" data-duration="1.3" data-media-start="0" data-volume="0.5" data-track-index="13"></audio>
+      <audio id="sfx11" src="assets/sfx_sparkle.wav" data-start="42.56" data-duration="1.3" data-media-start="0" data-volume="0.42" data-track-index="14"></audio>
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      tl.set("#aroll-wrap", { scale: 1.04 }, 4.05);
+      tl.set("#aroll-wrap", { scale: 1.0 }, 5.18);
+      tl.set("#aroll-wrap", { scale: 1.04 }, 8.275);
+      tl.set("#aroll-wrap", { scale: 1.0 }, 9.83);
+      tl.set("#aroll-wrap", { scale: 1.04 }, 15.66);
+      tl.set("#aroll-wrap", { scale: 1.0 }, 16.76);
+      tl.set("#aroll-wrap", { scale: 1.04 }, 17.835);
+      tl.set("#aroll-wrap", { scale: 1.0 }, 23.56);
+      tl.set("#aroll-wrap", { scale: 1.04 }, 24.56);
+      tl.set("#aroll-wrap", { scale: 1.0 }, 25.72);
+      tl.set("#aroll-wrap", { scale: 1.04 }, 30.91);
+      tl.set("#aroll-wrap", { scale: 1.0 }, 31.515);
+      tl.set("#aroll-wrap", { scale: 1.04 }, 33.08);
+      tl.set("#aroll-wrap", { scale: 1.0 }, 36.68);
+      tl.set("#aroll-wrap", { scale: 1.04 }, 37.51);
+      tl.set("#aroll-wrap", { scale: 1.0 }, 39.275);
+      tl.set("#aroll-wrap", { scale: 1.04 }, 40.34);
+      tl.set("#aroll-wrap", { scale: 1.0 }, 42.14);
+      tl.fromTo("#aroll", { scale: 1.0 }, { scale: 1.03, duration: 3.0, ease: "sine.out" }, 0);
+      tl.set("#aroll", { scale: 1.0 }, 3.0);
+      tl.fromTo("#hook", { opacity: 0, y: 18, scale: 0.96 }, { opacity: 1, y: 0, scale: 1, duration: 0.55, ease: "back.out(1.6)" }, 0.1);
+      tl.fromTo("#hook .lines span", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.4, ease: "power2.out", stagger: 0.16 }, 0.3);
+      tl.to("#hook", { opacity: 0, y: -10, duration: 0.3, ease: "sine.in" }, 2.65);
+      tl.fromTo("#p0", { opacity: 0, y: 12, scale: 0.9 }, { opacity: 1, y: 0, scale: 1, duration: 0.35, ease: "back.out(2)" }, 4.36);
+      tl.fromTo("#p0 b", { clipPath: "inset(0 100% 0 0)" }, { clipPath: "inset(0 0% 0 0)", duration: 0.35, ease: "power2.out" }, 4.440);
+      tl.to("#p0", { opacity: 0, y: -6, duration: 0.25, ease: "sine.in" }, 6.010);
+      tl.fromTo("#p1", { opacity: 0, y: 12, scale: 0.9 }, { opacity: 1, y: 0, scale: 1, duration: 0.35, ease: "back.out(2)" }, 8.95);
+      tl.fromTo("#p1 b", { clipPath: "inset(0 100% 0 0)" }, { clipPath: "inset(0 0% 0 0)", duration: 0.35, ease: "power2.out" }, 9.030);
+      tl.to("#p1", { opacity: 0, y: -6, duration: 0.25, ease: "sine.in" }, 10.600);
+      tl.fromTo("#p2", { opacity: 0, y: 12, scale: 0.9 }, { opacity: 1, y: 0, scale: 1, duration: 0.35, ease: "back.out(2)" }, 11.15);
+      tl.fromTo("#p2 b", { clipPath: "inset(0 100% 0 0)" }, { clipPath: "inset(0 0% 0 0)", duration: 0.35, ease: "power2.out" }, 11.230);
+      tl.to("#p2", { opacity: 0, y: -6, duration: 0.25, ease: "sine.in" }, 12.800);
+      tl.fromTo("#p3", { opacity: 0, y: 12, scale: 0.9 }, { opacity: 1, y: 0, scale: 1, duration: 0.35, ease: "back.out(2)" }, 13.43);
+      tl.fromTo("#p3 b", { clipPath: "inset(0 100% 0 0)" }, { clipPath: "inset(0 0% 0 0)", duration: 0.35, ease: "power2.out" }, 13.510);
+      tl.to("#p3", { opacity: 0, y: -6, duration: 0.25, ease: "sine.in" }, 15.080);
+      tl.fromTo("#p4", { opacity: 0, y: 12, scale: 0.9 }, { opacity: 1, y: 0, scale: 1, duration: 0.35, ease: "back.out(2)" }, 19.67);
+      tl.fromTo("#p4 b", { clipPath: "inset(0 100% 0 0)" }, { clipPath: "inset(0 0% 0 0)", duration: 0.35, ease: "power2.out" }, 19.750);
+      tl.to("#p4", { opacity: 0, y: -6, duration: 0.25, ease: "sine.in" }, 21.320);
+      tl.fromTo("#p5", { opacity: 0, y: 12, scale: 0.9 }, { opacity: 1, y: 0, scale: 1, duration: 0.35, ease: "back.out(2)" }, 26.72);
+      tl.fromTo("#p5 b", { clipPath: "inset(0 100% 0 0)" }, { clipPath: "inset(0 0% 0 0)", duration: 0.35, ease: "power2.out" }, 26.800);
+      tl.to("#p5", { opacity: 0, y: -6, duration: 0.25, ease: "sine.in" }, 28.370);
+      tl.fromTo("#p6", { opacity: 0, y: 12, scale: 0.9 }, { opacity: 1, y: 0, scale: 1, duration: 0.35, ease: "back.out(2)" }, 32.1);
+      tl.fromTo("#p6 b", { clipPath: "inset(0 100% 0 0)" }, { clipPath: "inset(0 0% 0 0)", duration: 0.35, ease: "power2.out" }, 32.180);
+      tl.to("#p6", { opacity: 0, y: -6, duration: 0.25, ease: "sine.in" }, 33.750);
+      tl.fromTo("#p7", { opacity: 0, y: 12, scale: 0.9 }, { opacity: 1, y: 0, scale: 1, duration: 0.35, ease: "back.out(2)" }, 34.6);
+      tl.fromTo("#p7 b", { clipPath: "inset(0 100% 0 0)" }, { clipPath: "inset(0 0% 0 0)", duration: 0.35, ease: "power2.out" }, 34.680);
+      tl.to("#p7", { opacity: 0, y: -6, duration: 0.25, ease: "sine.in" }, 36.250);
+      tl.fromTo("#p8", { opacity: 0, y: 12, scale: 0.9 }, { opacity: 1, y: 0, scale: 1, duration: 0.35, ease: "back.out(2)" }, 37.84);
+      tl.fromTo("#p8 b", { clipPath: "inset(0 100% 0 0)" }, { clipPath: "inset(0 0% 0 0)", duration: 0.35, ease: "power2.out" }, 37.920);
+      tl.to("#p8", { opacity: 0, y: -6, duration: 0.25, ease: "sine.in" }, 39.490);
+      tl.fromTo("#p9", { opacity: 0, y: 12, scale: 0.9 }, { opacity: 1, y: 0, scale: 1, duration: 0.35, ease: "back.out(2)" }, 42.56);
+      tl.fromTo("#p9 b", { clipPath: "inset(0 100% 0 0)" }, { clipPath: "inset(0 0% 0 0)", duration: 0.35, ease: "power2.out" }, 42.640);
+      tl.to("#p9", { opacity: 0, y: -6, duration: 0.25, ease: "sine.in" }, 43.670);
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>
