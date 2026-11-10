@@ -29,7 +29,7 @@ npx hyperframes@0.9.26 render -q draft                             # draft previ
 - **Hook (0–3s):** glass card "Phone holder ni memang worth it!" (Lexend Mega, top-left empty area) + swish + double "ting".
 - **Cuts:** opening false start (0–8s) removed; repeats removed ("Nampak tak… tulis open", "Tengok korang nak letak kat mana"); stutter "Lepas tu korang yang… lepas tu…" removed; pauses trimmed to 0.12s. Footage stays in sync with the script.
 - **Overlays:** 10 small white UI-prompt pills (Lexend Mega 24px, frosted dark glass) on key words only, placed in empty space; each with a UI pop/tick SFX (new set, different from the kasut video), sparkle on the last one.
-- **Audio:** cleaned voice at -14 LUFS, original lo-fi music at low volume.
+- **Audio:** cleaned voice at -14 LUFS + SFX only (no music).
 - No colour grade or filters on the footage (only subtle punch-in on jump cuts).
 
 ## Rebuild

@@ -255,8 +255,7 @@ for i, (t0, d, txt, ic, side) in enumerate(ov):
     last = i == len(ov) - 1
     sfx.append((t0, "sfx_sparkle" if last else ("sfx_pop" if i % 2 == 0 else "sfx_tick"), 0.42 if last else 0.5, 1.3))
 
-aud = [f'<audio id="voice" src="assets/voice.wav" data-start="0" data-duration="{DUR}" data-media-start="0" data-volume="1" data-track-index="10"></audio>',
-       f'<audio id="music" src="assets/music.wav" data-start="0" data-duration="{DUR}" data-media-start="0" data-volume="0.12" data-fade-in="0.6" data-fade-out="1.2" data-track-index="11"></audio>']
+aud = [f'<audio id="voice" src="assets/voice.wav" data-start="0" data-duration="{DUR}" data-media-start="0" data-volume="1" data-track-index="10"></audio>']  # no music (voice + SFX only)
 for i, (t0, name, vol, d) in enumerate(sorted(sfx)):
     aud.append(f'<audio id="sfx{i}" src="assets/{name}.wav" data-start="{max(t0, 0)}" data-duration="{d}" data-media-start="0" data-volume="{vol}" data-track-index="{12 + i % 3}"></audio>')
 
