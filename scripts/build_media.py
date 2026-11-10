@@ -20,25 +20,31 @@ def run(cmd):
     subprocess.run(cmd, check=True)
 
 
-# ---------- A-roll: concat all ranges, 8ms audio fades at every cut (no clicks)
-parts_v, parts_a, fc = [], [], []
+# ---------- A-roll: cut each range on its own (low memory), then join.
+# 8ms audio fades at every cut (no clicks). Ranges are frame-aligned (build_edl.py).
+TMP = "tmp_segs"
+os.makedirs(TMP, exist_ok=True)
+vlist = []
 for i, r in enumerate(edl):
     s, e = r["src_start"], r["src_end"]
     d = e - s
-    k = IDX[r["src"]]
-    fc.append(f"[{k}:v]trim={s}:{e},setpts=PTS-STARTPTS[v{i}]")
-    fc.append(f"[{k}:a]atrim={s}:{e},asetpts=PTS-STARTPTS,afade=t=in:d=0.008,"
-              f"afade=t=out:st={d-0.008:.3f}:d=0.008[a{i}]")
-    parts_v.append(f"[v{i}]"); parts_a.append(f"[a{i}]")
-n = len(edl)
-fc.append("".join(p for pair in zip(parts_v, parts_a) for p in pair) + f"concat=n={n}:v=1:a=1[cv][ca]")
-fc.append(f"[cv]{RANGE}[vo]")
+    src = SRCS[r["src"]]
+    run(["ffmpeg", "-v", "error", "-y", "-ss", f"{s:.4f}", "-i", src, "-t", f"{d:.4f}",
+         "-vf", RANGE, "-an", "-frames:v", str(round(d * 30)), *VENC, f"{TMP}/v{i:02d}.mp4"])
+    run(["ffmpeg", "-v", "error", "-y", "-ss", f"{s:.4f}", "-i", src, "-t", f"{d:.4f}", "-vn",
+         "-af", f"afade=t=in:d=0.008,afade=t=out:st={d-0.008:.4f}:d=0.008,aresample=48000",
+         "-c:a", "pcm_s16le", f"{TMP}/a{i:02d}.wav"])
+    vlist.append(f"file 'v{i:02d}.mp4'")
+open(f"{TMP}/v.txt", "w").write("\n".join(vlist) + "\n")
+run(["ffmpeg", "-v", "error", "-y", "-f", "concat", "-safe", "0", "-i", f"{TMP}/v.txt", "-c", "copy",
+     "-movflags", "+faststart", f"{OUT}/aroll.mp4"])
+ain = [x for i in range(len(edl)) for x in ("-i", f"{TMP}/a{i:02d}.wav")]
 # voice: gentle cleanup + loudness to TikTok-ish level (no colour/visual change)
-fc.append("[ca]highpass=f=80,acompressor=threshold=-20dB:ratio=2.5:attack=10:release=150,"
-          "loudnorm=I=-15:TP=-1.5:LRA=9,aresample=48000[ao]")
-INPUTS = [x for p in SRCS.values() for x in ("-i", p)]
-run(["ffmpeg", "-v", "error", "-y", *INPUTS, "-filter_complex", ";".join(fc),
-     "-map", "[vo]", *VENC, f"{OUT}/aroll.mp4", "-map", "[ao]", "-c:a", "pcm_s16le", f"{OUT}/voice.wav"])
+run(["ffmpeg", "-v", "error", "-y", *ain, "-filter_complex",
+     "".join(f"[{i}:a]" for i in range(len(edl))) + f"concat=n={len(edl)}:v=0:a=1,"
+     "highpass=f=80,acompressor=threshold=-20dB:ratio=2.5:attack=10:release=150,"
+     "loudnorm=I=-15:TP=-1.5:LRA=9,aresample=48000[ao]",
+     "-map", "[ao]", "-c:a", "pcm_s16le", f"{OUT}/voice.wav"])
 # A-roll video stays muted in the composition; voice.wav is the voice track
 print("aroll ok")
 

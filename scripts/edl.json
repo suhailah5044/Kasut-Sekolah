@@ -1,37 +1,37 @@
 {
- "duration": 52.76,
+ "duration": 52.7,
  "edl": [
   {
    "src": "k1",
    "src_start": 60.0,
-   "src_end": 61.559,
+   "src_end": 61.5667,
    "out_start": 0.0,
    "label": "HOOK: kena air pun jangan risau, takkan tembus ke dalam"
   },
   {
    "src": "k1",
-   "src_start": 61.659,
-   "src_end": 64.32,
-   "out_start": 1.559,
+   "src_start": 61.6667,
+   "src_end": 64.3333,
+   "out_start": 1.567,
    "label": "HOOK: kena air pun jangan risau, takkan tembus ke dalam"
   },
   {
    "src": "k2",
-   "src_start": 8.62,
+   "src_start": 8.6333,
    "src_end": 11.8,
-   "out_start": 4.22,
+   "out_start": 4.233,
    "label": "ibu ayah cari kasut sekolah, memang recommend"
   },
   {
    "src": "k2",
-   "src_start": 12.14,
-   "src_end": 13.873,
+   "src_start": 12.1333,
+   "src_end": 13.8667,
    "out_start": 7.4,
    "label": "harga murah, design sporty, cantik"
   },
   {
    "src": "k2",
-   "src_start": 13.974,
+   "src_start": 13.9667,
    "src_end": 18.2,
    "out_start": 9.133,
    "label": "harga murah, design sporty, cantik"
@@ -40,84 +40,84 @@
    "src": "k2",
    "src_start": 18.5,
    "src_end": 23.1,
-   "out_start": 13.359,
+   "out_start": 13.367,
    "label": "mall takkan dapat harga bawah RM50, anak-anak suka"
   },
   {
    "src": "k1",
-   "src_start": 30.16,
-   "src_end": 35.88,
-   "out_start": 17.959,
+   "src_start": 30.1667,
+   "src_end": 35.8667,
+   "out_start": 17.967,
    "label": "tapak anti-slip, selesa, aktiviti, bersukan"
   },
   {
    "src": "k1",
-   "src_start": 40.12,
-   "src_end": 43.026,
-   "out_start": 23.679,
+   "src_start": 40.1333,
+   "src_end": 43.0333,
+   "out_start": 23.667,
    "label": "anak lasak, recommend"
   },
   {
    "src": "k1",
-   "src_start": 43.126,
-   "src_end": 44.78,
-   "out_start": 26.585,
+   "src_start": 43.1333,
+   "src_end": 44.7667,
+   "out_start": 26.567,
    "label": "anak lasak, recommend"
   },
   {
    "src": "k2",
-   "src_start": 83.48,
-   "src_end": 85.94,
-   "out_start": 28.239,
+   "src_start": 83.4667,
+   "src_end": 85.9333,
+   "out_start": 28.2,
    "label": "kasut sekolah ni sangat ringan"
   },
   {
    "src": "k2",
    "src_start": 53.1,
-   "src_end": 56.16,
-   "out_start": 30.699,
+   "src_end": 56.1667,
+   "out_start": 30.667,
    "label": "senang guna, tiada tali, tarik & ketat, darjah 1-3"
   },
   {
    "src": "k2",
-   "src_start": 56.259,
-   "src_end": 57.359,
-   "out_start": 33.759,
+   "src_start": 56.2667,
+   "src_end": 57.3667,
+   "out_start": 33.733,
    "label": "senang guna, tiada tali, tarik & ketat, darjah 1-3"
   },
   {
    "src": "k2",
-   "src_start": 57.459,
+   "src_start": 57.4667,
    "src_end": 63.5,
-   "out_start": 34.859,
+   "out_start": 34.833,
    "label": "senang guna, tiada tali, tarik & ketat, darjah 1-3"
   },
   {
    "src": "k1",
-   "src_start": 55.74,
-   "src_end": 57.757,
-   "out_start": 40.9,
+   "src_start": 55.7333,
+   "src_end": 57.7667,
+   "out_start": 40.867,
    "label": "anak suka, kotor just lap"
   },
   {
    "src": "k1",
-   "src_start": 57.857,
-   "src_end": 59.95,
-   "out_start": 42.917,
+   "src_start": 57.8667,
+   "src_end": 59.9333,
+   "out_start": 42.9,
    "label": "anak suka, kotor just lap"
   },
   {
    "src": "k2",
    "src_start": 90.5,
-   "src_end": 94.75,
-   "out_start": 45.01,
+   "src_end": 94.7333,
+   "out_start": 44.967,
    "label": "CTA: murah, cantik, beg kuning"
   },
   {
    "src": "k2",
    "src_start": 98.8,
    "src_end": 102.3,
-   "out_start": 49.26,
+   "out_start": 49.2,
    "label": "beli sekarang, takut size tak ada"
   }
  ]

@@ -40,6 +40,9 @@ for src, s, e, label in SEGMENTS:
             cur = round(mid + KEEP_GAP / 2, 3)
     ranges.append([src, cur, e, label])
 
+FPS = 30  # snap cut points to whole frames so per-segment video/audio stay in sync
+ranges = [[src, round(round(s * FPS) / FPS, 4), round(round(e * FPS) / FPS, 4), label] for src, s, e, label in ranges]
+
 t = 0.0
 edl = []
 for src, s, e, label in ranges:
